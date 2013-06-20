@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+#gem 'sqlite3'
 #gem 'mysql'
 gem 'pg'
 
@@ -15,6 +15,8 @@ end
 
 gem 'jquery-rails'
 
-gem 'debugger'
+group :development, :test do
+	gem 'debugger'
+end
 
 gem 'therubyracer'
