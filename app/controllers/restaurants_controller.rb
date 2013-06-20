@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
 
     # GET /restaurants/:id/edit
     def edit
-        @restaurant = Restaurant.find(paramd[:id])
+        @restaurant = Restaurant.find(params[:id])
     end
 
     # POST /restaurants
@@ -43,5 +43,6 @@ class RestaurantsController < ApplicationController
     def destroy
         @restaurant = Restaurant.find(params[:id])
         @restaurant.destroy
+        redirect_to restaurants_url
     end
 end
