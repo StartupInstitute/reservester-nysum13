@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'sqlite3'
+#gem 'mysql'
+gem 'pg'
+
 
 
 group :assets do
@@ -13,3 +16,5 @@ end
 gem 'jquery-rails'
 
 gem 'debugger'
+
+gem 'therubyracer'
