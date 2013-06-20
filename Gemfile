@@ -16,7 +16,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-	gem 'debugger'
+	#gem 'debugger'
 end
 
 gem 'therubyracer'
