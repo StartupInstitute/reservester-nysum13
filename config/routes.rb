@@ -3,7 +3,7 @@ Reservester::Application.routes.draw do
   resources :test1s
 
 
-	resources :restaurants  # The priority is based upon order of creation:
+  resources :restaurants  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
@@ -52,7 +52,7 @@ Reservester::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'restaurants#index'
 
   # See how all your routes lay out with "rake routes"
 
