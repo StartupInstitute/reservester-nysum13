@@ -10,8 +10,8 @@ class Restaurant < ActiveRecord::Base
   def google_map
     street = self.street.gsub(" ", "+") if !self.street.nil?
     city = self.city.gsub(" ", "+") if !self.city.nil?
-    "http://maps.googleapis.com/maps/api/staticmap?center=#{street},#{city},#{state}&zoom=13&size=600x300&maptype=roadmap
-    &markers=size:tiny%7Ccolor:blue%7C#{street},#{city},#{state}\&sensor=false"
+    "http://maps.googleapis.com/maps/api/staticmap?center=#{street},#{city},#{state}&zoom=13&size=450x300&maptype=roadmap
+    &markers=label%7size:small%7Ccolor:blue%7C#{street},#{city},#{state}\&sensor=false"
   end
   
 end
