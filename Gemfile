@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
 
 group :development do
 	gem 'sqlite3'

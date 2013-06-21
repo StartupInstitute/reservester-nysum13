@@ -1,6 +1,8 @@
 Reservester::Application.routes.draw do
 
-  root to: "restaurants#index"
+  get "pages/index"
+
+  root to: "pages#index"
   resources :restaurants
 
   # The priority is based upon order of creation:
