@@ -1,7 +1,9 @@
 <h1>Restaurants</h1>
 <%= link_to "Add new restaurant", new_restaurant_path %><br/><br/>
 <% @restaurants.each do |restaurant| %>
-	<%= link_to restaurant.name, restaurant_path(restaurant) %><br/>
-	<%= restaurant.address %>
-	<%= image_tag(restaurant.image_url(:thumb).to_s) %><br/><br/>
+	<%= link_to restaurant.name, restaurant_path(restaurant) %> <%= restaurant.address %><br/>
+	<% if !restaurant.image_url.nil? %>
+	<%= image_tag(restaurant.image_url(:thumb).to_s) %>
+	<% end %>
+	<br/><br/>
 <% end %>
