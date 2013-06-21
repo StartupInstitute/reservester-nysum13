@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-group :development do
-	gem 'sqlite3'
-end
+# group :development do
+# 	gem 'sqlite3'
+# end
+
+gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -13,9 +15,9 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
-group :production do
-	gem 'pg'
-end
+# group :production do
+# 	gem 'pg'
+# end
 
 gem 'jquery-rails'
 
@@ -26,3 +28,4 @@ gem 'less-rails'
 
 gem 'rmagick'
 gem 'carrierwave'
+gem 'fog', '~> 1.3.1'
