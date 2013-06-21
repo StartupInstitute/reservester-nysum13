@@ -2,11 +2,17 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<div class="hero-unit">
+  <h1>Reserve Your Place</h1>
+  <p>
+    With Reservester you can find the perfect spot and ensure it's still there for your dining pleasure
+  </p>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th>Thumbnail</th>
+      <th><%= model_class.human_attribute_name(:photo) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
@@ -19,7 +25,7 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= link_to restaurant.id, restaurant_path(restaurant) %></td>
-        <td><%= image_tag restaurant.photo_url(:thumb) if restaurant.photo? %></td>
+        <td><%= link_to ( image_tag restaurant.photo_url(:thumb) ), restaurant_path(restaurant) if restaurant.photo? %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.description %></td>
         <td><%= restaurant.address %></td>
