@@ -1,7 +1,4 @@
 Reservester::Application.routes.draw do
-  resources :statics
-
-
     resources :restaurants
     match 'about' => 'statics#about'
   # The priority is based upon order of creation:
