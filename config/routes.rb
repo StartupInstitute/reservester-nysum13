@@ -1,4 +1,18 @@
 Reservester::Application.routes.draw do
+  get "rest_control/index"
+
+  get "rest_control/show"
+
+  get "rest_control/new"
+
+  get "rest_control/create"
+
+  get "rest_control/edit"
+
+  get "rest_control/update"
+
+  get "rest_control/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +62,7 @@ Reservester::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'rest_control#index'
 
   # See how all your routes lay out with "rake routes"
 
