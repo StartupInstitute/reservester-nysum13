@@ -6,6 +6,7 @@ gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem "fog", "~> 1.3.1"
+gem "figaro"
 
 group :development do
 	gem 'sqlite3'
