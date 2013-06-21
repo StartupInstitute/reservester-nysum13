@@ -6,6 +6,12 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @restaurant.name %></dd>
+  <dt><strong>Photo:</strong></dt>
+  <% if @restaurant.photo? %>
+      <dd><%= image_tag @restaurant.photo_url %></dd>
+  <% else %>
+      <dd>No photo found</dd>
+  <% end %>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @restaurant.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>

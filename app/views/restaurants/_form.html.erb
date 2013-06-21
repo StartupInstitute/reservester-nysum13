@@ -1,32 +1,39 @@
-<%= form_for @restaurant, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :description, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :address, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :address, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :phone, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field' %>
-    </div>
-  </div>
+<%= form_for @restaurant, :html => {:multipart => true} do |f| %>
+    <% if @restaurant.errors.any? %>
+        <div id="errorExplanation">
+            <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+            <ul>
+            <% @restaurant.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                restaurants_path, :class => 'btn' %>
-  </div>
+    <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.file_field :photo %>
+    </div>
+    <div class="field">
+        <%= f.label :remote_photo_url, "or photo URL" %><br />
+        <%= f.text_field :remote_photo_url %>
+    </div>
+    <div class="field">
+        <%= f.label :description %><br />
+        <%= f.text_area :description %>
+    </div>
+    <div class="field">
+        <%= f.label :address %><br />
+        <%= f.text_area :address %>
+    </div>
+    <div class="field">
+        <%= f.label :phone %><br />
+        <%= f.text_field :phone %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
 <% end %>
