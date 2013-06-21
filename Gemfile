@@ -20,3 +20,5 @@ group :development, :test do
 end
 
 gem 'therubyracer'
+
+gem 'bootstrap-sass'

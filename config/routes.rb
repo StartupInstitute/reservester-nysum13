@@ -1,9 +1,9 @@
 Reservester::Application.routes.draw do
   
-	resources :restaurants
-  resources :tests
+  resources :test1s
 
-  # The priority is based upon order of creation:
+
+	resources :restaurants  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

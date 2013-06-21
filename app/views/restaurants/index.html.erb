@@ -1,2 +1,28 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1>Restaurant Listing</h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @restaurants.each do |restaurant| %>
+  <tr>
+  	<td><%= restaurant.name %></td>
+  	<td><%= restaurant.description %></td>
+  	<td><%= restaurant.address %></td>
+  	<td><%= restaurant.phone%></td>
+    <td><%= link_to 'Show', restaurant %></td>
+    <td><%#= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

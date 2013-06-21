@@ -1,0 +1,35 @@
+<%= form_for(@test1) do |f| %>
+  <% if @test1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test1.errors.count, "error") %> prohibited this test1 from being saved:</h2>
+
+      <ul>
+      <% @test1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
