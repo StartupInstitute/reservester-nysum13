@@ -1,8 +1,4 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# Workding SQLITE directive
 #development:
 #  adapter: sqlite3
 #  database: db/development.sqlite3
@@ -13,19 +9,12 @@
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  dapter: postgresql
+  adapter: postgresql
   database: reservester_test
   pool: 5
   timeout: 5000
   username: postgres
   password: root
-  host: localhost
-
-production:
-  dapter: postgresql
-  database: reservester_production
-  pool: 5
-  timeout: 5000
   host: localhost
 
 development:
