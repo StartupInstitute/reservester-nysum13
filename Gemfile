@@ -24,4 +24,5 @@ gem 'debugger'
 gem 'therubyracer'
 gem 'less-rails'
 
+gem 'rmagick'
 gem 'carrierwave'

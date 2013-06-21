@@ -18,6 +18,10 @@
 	</div>
 	<div class="field">
 		<%= r.file_field :image %>
+	<div class="field">
+		<%= r.label :remote_image_url, "or image URL:" %>
+		<%= r.text_field :remote_image_url %>
+	</div>
 	<div class="actions">
 		<%= r.submit %>
 	</div>

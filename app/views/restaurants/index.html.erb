@@ -1,17 +1,22 @@
 <h1>Restaurants</h1>
 
-<table>
-	<tr>
-		<th>Restaurant</th>
-		<th></th>
-	</tr>
-
-	<%- @restaurants.each do |restaurant| %>
+<table border="1">
+	<thead>
 		<tr>
-			<td><%= restaurant.name %></td>
-			<td><%= link_to 'Show', restaurant %></td>
+			<th>Restaurant</th>
+			<th></th>
+			<th></th>
 		</tr>
-	<%- end %>
+	</thead>
+	<tbody>
+		<%- @restaurants.each do |restaurant| %>
+			<tr>
+				<td><%= restaurant.name %></td>
+				<td><%= image_tag restaurant.image_url(:thumb).to_s %>
+				<td><%= link_to 'Show', restaurant %></td>
+			</tr>
+		<%- end %>
+	</tbody>
 </table>
 
 <br />

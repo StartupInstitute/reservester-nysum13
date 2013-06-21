@@ -1,12 +1,8 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1><%= @restaurant.name %></h1>
+<!-- <p>Find me in app/views/restaurants/show.html.erb</p> -->
 
 <p id="notice"><%= notice %></p>
-<img src=<%= @restaurant.image %>>
-<p>
-	<b>Name:</b>
-	<%= @restaurant.name %>
-</p>
+<%= image_tag @restaurant.image_url(:thumb).to_s %>
 <p>
 	<b>Description:</b>
 	<%= @restaurant.description %>
