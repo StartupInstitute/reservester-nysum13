@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore uploaded photos
+/public/uploads
+
+# Ignore API KEYS in .env
+/.env
