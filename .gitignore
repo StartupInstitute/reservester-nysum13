@@ -16,3 +16,6 @@
 
 # Ignore uploaded photos
 /public/uploads
+
+# Ignore API KEYS in .env
+/.env
