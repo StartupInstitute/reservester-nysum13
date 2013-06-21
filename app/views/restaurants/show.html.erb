@@ -4,3 +4,5 @@
 <% if !@restaurant.image_url.nil? %>
 <%= image_tag(@restaurant.image_url(:masthead).to_s) %>
 <% end %>
+<br/><br/>
+<%= image_tag(@restaurant.google_map) if @restaurant.street? %>
