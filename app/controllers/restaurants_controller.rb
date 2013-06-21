@@ -12,7 +12,6 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    debugger
     @restaurant = Restaurant.new(params[:restaurant])
     @restaurant.save
     redirect_to restaurants_path
