@@ -14,6 +14,14 @@
   <% else %>
       <dd>No photo found</dd>
   <% end %>
+  <dt><strong>Menu:</strong></dt>
+  <% if @restaurant.menu? %>
+    <dd>
+      <%= link_to "Download Menu", @restaurant.menu_url %>
+    </dd>
+  <% else %>
+    <dd>No menu found</dd>
+  <% end %>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @restaurant.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
