@@ -2,7 +2,7 @@
 <p>Find me in app/views/restaurants/show.html.erb</p>
 
 <p id="notice"><%= notice %></p>
-
+<img src=<%= @restaurant.image %>>
 <p>
 	<b>Name:</b>
 	<%= @restaurant.name %>
@@ -20,4 +20,4 @@
 	<%= @restaurant.phone %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> | <%= link_to 'Delete', restaurant, method: :delete, data: {confirm: 'Are you sure?'} %> | <%= link_to 'Back', restaurants_path %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> | <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: 'Are you sure?'} %> | <%= link_to 'Back', restaurants_path %>

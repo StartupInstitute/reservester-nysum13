@@ -1,4 +1,4 @@
-<%= form_for(@restaurant) do |r| %>
+<%= form_for(@restaurant, :html => {:multipart => true}) do |r| %>
 
 	<div class="field">
 		<%= r.label :name %><br />
@@ -14,8 +14,10 @@
 	</div>
 	<div class="field">
 		<%= r.label :phone %><br />
-		<%= r.text_area :phone %>
+		<%= r.text_field :phone %>
 	</div>
+	<div class="field">
+		<%= r.file_field :image %>
 	<div class="actions">
 		<%= r.submit %>
 	</div>
