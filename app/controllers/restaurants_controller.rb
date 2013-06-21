@@ -6,7 +6,12 @@ class RestaurantsController < ApplicationController
 
     #GET /restaurants/:id
     def show
-        @restaurant = Restaurant.find(params[:id])
+        begin
+            @restaurant = Restaurant.find(params[:id])
+            render action: "show"
+        rescue 
+            redirect_to restaurants_url, notice: "Restaurant was not found"
+        end
     end
 
     # GET /restaurants/new
