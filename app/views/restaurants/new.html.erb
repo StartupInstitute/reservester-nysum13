@@ -1,2 +1,16 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<h1>Add new restaurant</h1>
+<%= form_for(@restaurant, :html => {:multipart => true}) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :address %>
+	<%= f.text_field :address %>
+	<%= f.label :phone %>
+	<%= f.text_field :phone %>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<%= f.label :upload_image %>
+	<%= f.file_field :image %>
+	<%= f.label :remote_image_url, "or image URL:" %>
+	<%= f.text_field :remote_image_url %><br/><br/>
+	<%= f.submit "Create Restaurant" %>
+<% end %>
