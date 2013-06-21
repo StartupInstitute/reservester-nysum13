@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th>Thumbnail</th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
@@ -18,6 +19,7 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= link_to restaurant.id, restaurant_path(restaurant) %></td>
+        <td><%= image_tag restaurant.photo_url(:thumb) if restaurant.photo? %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.description %></td>
         <td><%= restaurant.address %></td>
