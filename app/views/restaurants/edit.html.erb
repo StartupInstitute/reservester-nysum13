@@ -11,6 +11,8 @@
 	<%= f.label :upload_image %>
 	<%= f.file_field :image %>
 	<%= f.label :remote_image_url, "or image URL:" %>
-	<%= f.text_field :remote_image_url %><br/><br/>
+	<%= f.text_field :remote_image_url %>
+	<%= f.label :upload_menu %>
+	<%= f.file_field :menu %><br/><br/>
 	<%= f.submit "Update Restaurant" %>
 <% end %>
