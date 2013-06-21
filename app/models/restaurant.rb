@@ -1,7 +1,7 @@
 class Restaurant < ActiveRecord::Base
   attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu
   mount_uploader :image, ImageUploader
-  mount_uploader :menu, ImageUploader
+  mount_uploader :menu, MenuUploader
   
   def address
     "#{self.street} #{self.city}, #{self.state} #{self.zip}"
