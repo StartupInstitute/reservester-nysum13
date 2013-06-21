@@ -8,7 +8,7 @@
   <dd><%= @restaurant.name %></dd>
   <dt><strong>Photo:</strong></dt>
   <% if @restaurant.photo? %>
-      <dd><%= image_tag @restaurant.photo_url %></dd>
+      <dd><%= image_tag @restaurant.photo_url(:thumb) %></dd>
   <% else %>
       <dd>No photo found</dd>
   <% end %>
