@@ -1,5 +1,7 @@
 Reservester::Application.routes.draw do
 
+  devise_for :owners
+
   get "pages/index"
 
   root to: "pages#index"
