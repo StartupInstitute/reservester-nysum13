@@ -8,6 +8,7 @@
 	
 	<div class="show-header">
 		<h1><%= @restaurant.name %></h1>
+		<a href="<%= @restaurant.menu_url %>" target="_blank">View menu</a>
 		<div class="restaurant-show-address">
 		<%= @restaurant.format_phone %><br/>
 		<%= @restaurant.street %><br/>
