@@ -13,7 +13,7 @@
 		</div>
 		<br/>
 		<% if !restaurant.image_url.nil? %>
-		<%= image_tag(restaurant.image_url(:thumb).to_s) %>
+		<a href="<%= restaurant_path(restaurant) %>"><%= image_tag(restaurant.image_url(:thumb).to_s) %></a>
 		<% end %>
 		</div>
 	<% end %>
