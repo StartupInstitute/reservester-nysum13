@@ -1,0 +1,29 @@
+/usr/local/rvm/rubies/ruby-1.9.3-p392/bin/ruby extconf.rb 
+checking for main() in -lpthread... yes
+checking for main() in -lobjc... yes
+creating Makefile
+
+make
+compiling accessor.cc
+i686-apple-darwin11-llvm-g++-4.2: projects/reservester-nysum13/vendor/bundle/ruby/1.9.1/gems/libv8-3.11.8.17-x86_64-darwin-10/vendor/v8/include: No such file or directory
+In file included from accessor.cc:1:
+rr.h:4:16: error: v8.h: No such file or directory
+In file included from accessor.cc:1:
+rr.h:48: error: ‘v8’ has not been declared
+rr.h:48: error: expected `)' before ‘<’ token
+rr.h:77: error: ‘v8’ has not been declared
+rr.h:77: error: expected ‘,’ or ‘...’ before ‘type’
+rr.h:179: error: ‘v8’ has not been declared
+rr.h:179: error: expected `)' before ‘<’ token
+rr.h:192: error: expected type-specifier before ‘v8’
+accessor.cc:181: error: expected `}' at end of input
+rr.h: In member function ‘virtual rr::Ref<T>::operator VALUE() const’:
+rr.h:187: error: ‘handle’ was not declared in this scope
+rr.h:187: error: ‘Class’ was not declared in this scope
+rr.h:187: error: expected type-specifier before ‘Holder’
+rr.h:187: error: expected `)' before ‘Holder’
+rr.h:187: error: expected `)' before ‘;’ token
+rr.h: At global scope:
+rr.h:188: error: expected unqualified-id at end of input
+rr.h:188: error: expected `}' at end of input
+make: *** [accessor.o] Error 1
