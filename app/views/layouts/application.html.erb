@@ -68,6 +68,13 @@
 		                <li><a href="#">One more separated link</a></li>
 		              </ul>
 		            </li>
+								<li>
+									<% if owner_signed_in? %>
+										<a href="<%= destroy_owner_session_path %>">Sign out</a>
+									<% else %>
+										<a href="<%= new_owner_session_path %>">Sign in</a>
+									<% end %>
+								</li>
 		          </ul>
 		        </div><!--/.nav-collapse -->
 		      </div><!-- /.navbar-inner -->
@@ -80,8 +87,6 @@
       <div class="row-fluid">
 				<div class="container">
           <%= bootstrap_flash %>
-					<p class="notice"><%= notice %></p>
-					<p class="alert"><%= alert %></p>
           <%= yield %>
 				</div>
 				<hr>

@@ -3,6 +3,7 @@ Reservester::Application.routes.draw do
   devise_for :owners
 
   get "pages/index"
+  match "/owners/sign_out", to: "restaurants#index"
 
   root to: "pages#index"
   resources :restaurants
