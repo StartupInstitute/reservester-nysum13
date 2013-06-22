@@ -1,0 +1,88 @@
+<%- model_class = Restaurant -%>
+
+<% content_for :head do %>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?key=<%=j ENV['GOOGLE_MAPS_API_KEY'] %>&sensor=false">
+    </script>
+    <script type="text/javascript">
+      var map, geocoder, address;
+      function initialize() {
+        geocoder = new google.maps.Geocoder();
+        var address = "<%=j @restaurant.address %>";
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        geocoder.geocode({'address': address}, function(results, status) {
+          if(status == google.maps.GeocoderStatus.OK) 
+          {
+            result = results[0].geometry.location;
+            console.log(result);
+            map.setCenter(result);
+            marker = new google.maps.Marker({
+              position: result,
+              map: map
+            })
+          }
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+<% end %>
+
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @restaurant.name %></dd>
+  <dt><strong>Photo:</strong></dt>
+  <% if @restaurant.photo? %>
+      <dd>
+        <%= link_to (image_tag @restaurant.photo_url(:thumb)), @restaurant.photo_url %>
+      </dd>
+  <% else %>
+      <dd>No photo found</dd>
+  <% end %>
+  <dt><strong>Menu:</strong></dt>
+  <% if @restaurant.menu? %>
+    <dd>
+      <%= link_to "Download Menu", @restaurant.menu_url %>
+    </dd>
+  <% else %>
+    <dd>No menu found</dd>
+  <% end %>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @restaurant.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @restaurant.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @restaurant.phone %></dd>
+  <dt><strong>Map:</strong></dt>
+  <dd>
+    <div style="width: 300px; height: 300px;">
+      <div id="map-canvas"/>
+    </div>
+  </dd>
+</dl>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              restaurants_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_restaurant_path(@restaurant), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              restaurant_path(@restaurant),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
