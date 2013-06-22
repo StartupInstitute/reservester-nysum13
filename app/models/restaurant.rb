@@ -15,8 +15,10 @@ class Restaurant < ActiveRecord::Base
   end
   
   def format_phone
+    if self.phone?
     numbers = self.phone.split('')
     "(#{numbers[0,3].inject(:+)}) #{numbers[3,3].inject(:+)}-#{numbers[6,7].inject(:+)}"
+    end
   end
   
 end
