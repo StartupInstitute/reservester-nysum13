@@ -13,8 +13,12 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(params[:restaurant])
-    @restaurant.save
-    redirect_to restaurants_path
+    if @restaurant.save
+      redirect_to restaurants_path
+    else
+      flash[:error] = "<ul>" + @restaurant.errors.full_messages.map{|o| "<li>" + o + "</li>" }.join("") + "</ul>"
+      redirect_to new_restaurant_path
+    end
   end
 
   def edit

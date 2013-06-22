@@ -3,6 +3,10 @@ class Restaurant < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   mount_uploader :menu, MenuUploader
   
+  validates :name, presence: true
+  validates :phone, :numericality => true, :length => {:is => 10}, :allow_blank => true
+
+  
   def address
     "#{self.street} #{self.city}, #{self.state} #{self.zip}"
   end
