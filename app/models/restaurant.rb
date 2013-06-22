@@ -14,4 +14,9 @@ class Restaurant < ActiveRecord::Base
     &markers=label%7size:small%7Ccolor:blue%7C#{street},#{city},#{state}\&sensor=false"
   end
   
+  def format_phone
+    numbers = self.phone.split('')
+    "(#{numbers[0,3].inject(:+)}) #{numbers[3,3].inject(:+)}-#{numbers[6,7].inject(:+)}"
+  end
+  
 end

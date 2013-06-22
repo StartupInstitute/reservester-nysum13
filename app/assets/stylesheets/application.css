@@ -54,3 +54,56 @@
  }
 
 
+
+/* Restaurant show page */
+
+.restaurants div {
+	display: inline-block;
+	margin: 0px;
+}
+
+.restaurants .restaurant {
+	margin: 15px 10px 15px 10px;
+	text-align: center;
+	
+}
+
+.restaurant-address {
+	font-size: 12px;
+}
+
+.show-header .header div {
+	display: inline-block;
+}
+
+.restaurant-show h1 {
+	text-align: center;
+}
+
+.restaurant-show-address {
+	text-align: center;
+}
+
+
+.restaurant-show-images .masthead {
+	text-align: center;
+}
+
+
+body div.content div#image {
+	border: 25px solid;
+}
+
+.restaurant-description {
+	text-align: center;
+}
+
+.restaurant-show .google-map {
+	margin-left :auto;
+	margin-right: auto;
+}
+
+.edit-delete {
+	float: right;
+	font-size: 16px;
+}
