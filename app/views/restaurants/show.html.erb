@@ -1,8 +1,8 @@
-<h1> Your Restaurants </h1>
 <p><%= @restaurant.name %></p>
 <p><%= @restaurant.phone %></p>
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.description %></p>
 <%= link_to 'Edit', edit_restaurant_path %>
-<%= link_to 'Destroy', restaurants_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete', @restaurants, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
+<%= link_to 'Home', restaurants_path %>
 
