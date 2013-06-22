@@ -1,4 +1,4 @@
-<%= form_for(@restaurant) do |f| %>
+<%= form_for @restaurant,:html => {:multipart => true} do |f| %>
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
@@ -26,6 +26,12 @@
   <div class="field">
     <%= f.label :phone %><br />
     <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <% f.file_field :menu %><br />
+    <% f.file_field :image %><br />
+    <p><%= f.label :remote_image_url, "or image URL" %>
+    <%= f.text_field :remote_image_url %></p>
   </div>
   <div class="actions">
     <%= f.submit %>
