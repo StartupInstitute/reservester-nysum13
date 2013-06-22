@@ -11,6 +11,7 @@ gem 'figaro'
 group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails', '~> 2.0'
+	gem 'debugger'
 end
 
 group :production do
@@ -24,5 +25,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-gem 'debugger'
