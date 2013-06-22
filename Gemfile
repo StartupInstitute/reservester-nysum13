@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'therubyracer'
+# gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'rmagick'
