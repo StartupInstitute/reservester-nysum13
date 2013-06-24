@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_filter :authenticate_owner!
+  skip_before_filter :authenticate_owner!, :only => [:index, :show]
 
   def index
     @restaurants = Restaurant.all
@@ -10,11 +10,11 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.new
+    @restaurant = current_owner.restaurants.new
   end
 
   def create
-    @restaurant = Restaurant.new(params[:restaurant])
+    @restaurant = current_owner.restaurants.build(params[:restaurant])
   
     if @restaurant.save #ensure restaurant has been saved
       redirect_to @restaurant, notice: 'Restaurant was successfully created!'
@@ -24,11 +24,11 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = current_owner.restaurants.find(params[:id])
   end
 
   def update
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = current_owner.restaurants.find(params[:id])
 
     if @restaurant.update_attributes(params[:restaurant])
       redirect_to @restaurant, notice: 'Restaurant was successfully updated!'

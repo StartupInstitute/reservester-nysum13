@@ -38,7 +38,7 @@
   <p class="alert"><%= alert %></p>
   <body>
 
-    <div class="navbar navbar-fluid-top">
+    <div class="navbar navbar-inverse-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -46,16 +46,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Reservester</a>
+          <a class="brand" href="<%= root_path %>">Reservester</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Home", "/path1"  %></li>
+              <li><%= link_to "Restaurants", restaurants_path  %></li>
               <li><%= link_to "Users", "/path2"  %></li>
               <li><%= link_to "About Us", "/path3"  %></li>
               <li><%- if owner_signed_in? == true %>
-                  <%= link_to "Logout?", destroy_session_path, :method => :delete%>
+                  <a href="<%= destroy_owner_session_path %>">Logout?</a>
                 <%- else %>
-                  <%= link_to "Login?", new_owner_session_path %>
+                  <a href="<%= new_owner_session_path %>">Login</a>
                 <%- end %>
               </li>
             </ul>
