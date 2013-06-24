@@ -29,3 +29,6 @@ gem 'less-rails'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
+
+# devise authentification gem
+gem 'devise'
