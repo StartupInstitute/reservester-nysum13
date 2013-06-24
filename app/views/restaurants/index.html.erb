@@ -1,0 +1,12 @@
+<h1>Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %>
+      <%= link_to restaurant.name, restaurant %></td>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
