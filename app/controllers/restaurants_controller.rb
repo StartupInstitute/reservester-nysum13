@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  before_filter :authenticate_owner!
+
   def index
     @restaurants = Restaurant.all
   end

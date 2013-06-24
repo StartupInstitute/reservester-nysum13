@@ -52,6 +52,12 @@
               <li><%= link_to "Home", "/path1"  %></li>
               <li><%= link_to "Users", "/path2"  %></li>
               <li><%= link_to "About Us", "/path3"  %></li>
+              <li><%- if owner_signed_in? == true %>
+                  <%= link_to "Logout?", destroy_session_path, :method => :delete%>
+                <%- else %>
+                  <%= link_to "Login?", new_owner_session_path %>
+                <%- end %>
+              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

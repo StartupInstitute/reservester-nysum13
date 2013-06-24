@@ -1,5 +1,12 @@
-Reservester::Application.routes.draw do root :to => 'restaurants#index'
+Reservester::Application.routes.draw do 
+  get "home/index"
+
+  root :to => 'home#index'
   resources :restaurants
+  # needed for devise to work
+  devise_for :owners do
+    get "/owners/sign_out", to: "devise/sessions#destroy"
+  end
  
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

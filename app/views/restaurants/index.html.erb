@@ -12,7 +12,7 @@
 		<%- @restaurants.each do |restaurant| %>
 			<tr>
 				<td><%= restaurant.name %></td>
-				<td><%= image_tag restaurant.image_url(:thumb).to_s %>
+				<td><%= image_tag restaurant.image_url(:thumb).to_s %></td>
 				<td><%= link_to 'Show', restaurant, :class => "btn btn-primary some-class" %></td>
 			</tr>
 		<%- end %>
