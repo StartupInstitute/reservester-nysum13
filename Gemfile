@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+gem 'pg'
 
 
 group :assets do
@@ -13,3 +13,12 @@ end
 gem 'jquery-rails'
 
 gem 'debugger'
+
+group :test, :development do
+gem 'turn'
+gem 'rspec-rails' 
+gem "factory_girl_rails"
+gem "database_cleaner"
+gem 'capybara'
+gem 'guard-rspec'
+end
