@@ -1,6 +1,9 @@
 Reservester::Application.routes.draw do
+  devise_for :owners
+
   resources :restaurants
 
+  root :to => 'restaurants#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
