@@ -10,5 +10,6 @@ class Owner < ActiveRecord::Base
   attr_accessible :name
   # attr_accessible :title, :body
   has_many :restaurants
-  validate_uniqueness_of :name, :email
+  validates :name, :uniqueness => true
+  validates :email, :uniqueness => true
 end
