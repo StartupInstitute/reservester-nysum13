@@ -11,6 +11,9 @@ class Owner < ActiveRecord::Base
   
   has_many :restaurants
   
+  validates :name, presence: true
+  validates :email, presence: true
+  
   def check_ownership(restaurant)
     !self.restaurants.find_by_id(restaurant.id).nil?
   end

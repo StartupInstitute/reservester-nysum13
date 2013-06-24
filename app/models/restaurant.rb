@@ -6,6 +6,7 @@ class Restaurant < ActiveRecord::Base
   
   validates :name, presence: true
   validates :phone, :numericality => true, :length => {:is => 10}, :allow_blank => true
+  validates :owner_id, presence: true
 
   
   def address
