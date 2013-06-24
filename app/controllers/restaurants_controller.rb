@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to restaurants_path
     else
-      flash[:error] = "<ul>" + @restaurant.errors.full_messages.map{|o| "<li>" + o + "</li>" }.join("") + "</ul>"
+      flash[:error] = display_errors(@restaurant)
       redirect_to new_restaurant_path
     end
   end
@@ -31,12 +31,12 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = current_owner.restaurants.find(params[:id])
     @restaurant.update_attributes(params[:restaurant])
-    # if flash[:error]
-    #   flash[:error] = "<ul>" + @restaurant.errors.full_messages.map{|o| "<li>" + o + "</li>" }.join("") + "</ul>"
-    #   redirect_to edit_restaurant_path
-    # else
+    if @restaurant.errors.any?
+      flash[:error] = display_errors(@restaurant)
+      redirect_to edit_restaurant_path
+    else
       redirect_to restaurant_path(@restaurant)
-    # end
+    end
   end
 
   def destroy
@@ -54,6 +54,10 @@ class RestaurantsController < ApplicationController
         flash[:error]= "You do not have permission to do that." 
         redirect_to :back
       end
+    end
+    
+    def display_errors(restaurant)
+      "<ul>" + restaurant.errors.full_messages.map{|o| "<li>" + o + "</li>" }.join("") + "</ul>"
     end
 
 end
