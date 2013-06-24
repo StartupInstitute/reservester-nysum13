@@ -3,7 +3,8 @@ class Restaurant < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :address, :presence => true
-  validates :phone, :presence => true, :length => {:minimum => 10}
+  validates :phone, :numericality => true, :presence => true, :length => {:minimum => 10}
+  validates :owner_id, :presence => true
 
   mount_uploader :image, RestimgUploader
 

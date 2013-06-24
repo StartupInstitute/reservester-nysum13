@@ -24,7 +24,9 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = current_owner.restaurants.find(params[:id])
+    if check_if_owner
+      @restaurant = current_owner.restaurants.find(params[:id])
+    end
   end
 
   def update
@@ -38,8 +40,23 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy
-    redirect_to restaurants_url
+    if check_if_owner
+      @restaurant = Restaurant.find(params[:id])
+      @restaurant.destroy
+      redirect_to restaurants_url
+    end
   end
+
+private
+
+  def check_if_owner
+    if current_owner.has_ownership?(Restaurant.find(params[:id]))
+      return true
+    else
+      flash[:error]="I'm afraid I can't let you do that #{current_owner.email}."
+      redirect_to :back
+      return false
+    end
+  end
+
 end
