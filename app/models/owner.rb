@@ -10,4 +10,9 @@ class Owner < ActiveRecord::Base
   # attr_accessible :title, :body
   
   has_many :restaurants
+  
+  def check_ownership(restaurant)
+    !self.restaurants.find_by_id(restaurant.id).nil?
+  end
+  
 end
