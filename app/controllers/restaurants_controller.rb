@@ -1,4 +1,8 @@
 class RestaurantsController < ApplicationController
+
+  before_filter :authenticate_owner!, :except => [:index, :show]
+  before_filter :require_restaurent_owner_match!, :only => [:edit, :update, :destroy]
+
   def index
     @restaurants = Restaurant.all
   end
@@ -8,6 +12,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new
+    @owner = Owner.find(params[:owner_id])
     @restaurant = Restaurant.new
   end
 
@@ -16,7 +21,8 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(params[:restaurant])
+    @owner = Owner.find(params[:owner_id])
+    @restaurant = @owner.restaurants.build(params[:restaurant])
 
     if @restaurant.save
       redirect_to @restaurant, notice: 'Restaurant was successfully created.'
@@ -37,8 +43,19 @@ class RestaurantsController < ApplicationController
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
+
     @restaurant.destroy
 
     redirect_to restaurants_url
+  end
+
+  private
+
+  def require_restaurent_owner_match!
+    @restaurant = Restaurant.find(params[:id])
+
+    unless @restaurant.owner == current_owner
+      render "unauthorized", :status => :unauthorized
+    end
   end
 end

@@ -1,12 +1,20 @@
-<h1>Restaurants</h1>
+<h1>
+  Restaurants
+  <%- if current_owner %>
+    <div class="pull-right">
+      <%= link_to 'New Restaurant', new_owner_restaurant_path(current_owner), :class => 'btn' %>
+    </div>
+  <%- end %>
+</h1>
 
-<ul>
+<ul class="thumbnails">
   <% @restaurants.each do |restaurant| %>
-    <li>
-      <%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %>
-      <%= link_to restaurant.name, restaurant %></td>
+    <li class="span4">
+      <%= link_to restaurant do %>
+        <%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %>
+        <h3><%= restaurant.name %><h3>
+      <%- end %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
