@@ -1,4 +1,9 @@
 Reservester::Application.routes.draw do
+    devise_for :owners
+    devise_scope :owner do
+        get '/owners/sign_out' => 'devise/sessions#destroy'
+    end
+
     resources :restaurants
     match 'about' => 'statics#about'
   # The priority is based upon order of creation:

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
     <title><%= content_for?(:title) ? yield(:title) : "Reservester" %></title>
     <%= csrf_meta_tags %>
 
@@ -47,10 +48,24 @@
           </a>
           <a class="brand" href="#">Reservester</a>
           <div class="container-fluid nav-collapse">
-            <ul class="nav">
+            <ul class="nav" role="navigation">
               <li><%= link_to "Home", "/"  %></li>
               <li><%= link_to "Listing", "/restaurants"  %></li>
               <li><%= link_to "About", "/about"  %></li>
+            </ul>
+            <ul class="nav pull-right">
+              <% if owner_signed_in? %>
+                <li class="dropdown">
+                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><%= current_owner.name %><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Edit my Account", "/owners/edit" %></li>
+                    <li class="divider" />
+                    <li><%= link_to "Sign Out", destroy_owner_session_path %></li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to "Sign In", "/owners/sign_in" %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

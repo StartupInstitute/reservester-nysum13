@@ -6,6 +6,7 @@ gem 'rake', '>= 10.1.0'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
