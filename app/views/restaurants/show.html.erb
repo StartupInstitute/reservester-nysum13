@@ -27,7 +27,9 @@
 	<br/>
 	
 	<div class="restaurant-description">
-		Owned by: <%= @restaurant.owner.name %>
+		<% if @restaurant.owner %>
+			Owned by: <%= @restaurant.owner.name %>
+		<% end %>
 		<%= @restaurant.description %>
 	</div>
 	<br/>
