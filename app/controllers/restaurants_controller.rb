@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    check_if_owner(Restaurant.find(params[:id]))
+    # check_if_owner(Restaurant.find(params[:id]))
     @restaurant = current_owner.restaurants.find(params[:id])
   end
 
@@ -48,11 +48,11 @@ class RestaurantsController < ApplicationController
   private
   
     def check_if_owner(restaurant)
-      begin
-      current_owner.check_ownership(restaurant)
-      rescue Exception
-        redirect_to :back
+      debugger
+      if current_owner.check_ownership(restaurant)
         return
+      else
+        redirect_to :back
       end
     end
   
