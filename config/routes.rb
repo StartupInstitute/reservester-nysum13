@@ -1,5 +1,19 @@
 Reservester::Application.routes.draw do
 
+  get "reservations/index"
+
+  get "reservations/new"
+
+  get "reservations/create"
+
+  get "reservations/show"
+
+  get "reservations/edit"
+
+  get "reservations/update"
+
+  get "reservations/delete"
+
   devise_for :owners do
     get "/owners/sign_out", to: "devise/sessions#destroy"
   end
