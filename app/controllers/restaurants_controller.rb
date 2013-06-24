@@ -25,7 +25,6 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    return unless check_if_owner(Restaurant.find(params[:id]))
     @restaurant = current_owner.restaurants.find(params[:id])
   end
 
