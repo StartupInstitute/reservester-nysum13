@@ -48,6 +48,16 @@ class RestaurantsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should 401 for edit when restaurant owner do not match" do
+    @current_owner = create_and_sign_in_owner
+    actual_owner = Owner.create :name => 'Phil', :email => 'phil@restaurant.com', :password => 'foobar123', :password_confirmation => 'foobar123'
+
+    @restaurant = actual_owner.restaurants.create :name => "Phil's Restaurant"
+
+    get :edit, id: @restaurant
+    assert_response :unauthorized
+  end
+
   test "should update restaurant" do
     @owner = create_and_sign_in_owner
 
@@ -55,6 +65,17 @@ class RestaurantsControllerTest < ActionController::TestCase
 
     put :update, id: @restaurant, restaurant: {  }
     assert_redirected_to restaurant_path(assigns(:restaurant))
+  end
+
+  test "should 401 for update when restaurant owner do not match" do
+    @current_owner = create_and_sign_in_owner
+    actual_owner = Owner.create :name => 'Phil', :email => 'phil@restaurant.com', :password => 'foobar123', :password_confirmation => 'foobar123'
+
+    @restaurant = actual_owner.restaurants.create :name => "Phil's Restaurant"
+
+    put :update, id: @restaurant, restaurant: {  }
+
+    assert_response :unauthorized
   end
 
   test "should destroy restaurant" do
@@ -67,6 +88,19 @@ class RestaurantsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to restaurants_path
+  end
+
+  test "should 401 for destroy when restaurant owner do not match" do
+    @current_owner = create_and_sign_in_owner
+    actual_owner = Owner.create :name => 'Phil', :email => 'phil@restaurant.com', :password => 'foobar123', :password_confirmation => 'foobar123'
+
+    @restaurant = actual_owner.restaurants.create :name => "Phil's Restaurant"
+
+    assert_no_difference('Restaurant.count') do
+      delete :destroy, id: @restaurant
+    end
+
+    assert_response :unauthorized
   end
 
   private

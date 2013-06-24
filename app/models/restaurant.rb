@@ -3,6 +3,8 @@ class Restaurant < ActiveRecord::Base
 
   belongs_to :owner
 
+  validates :name, :owner, :presence => true
+
   mount_uploader :photo, PhotoUploader
 
 end
