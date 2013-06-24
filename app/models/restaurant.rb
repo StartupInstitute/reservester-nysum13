@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :string(255)
+#  street      :string(255)
+#  phone       :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  image       :string(255)
+#  menu        :string(255)
+#  city        :string(255)
+#  state       :string(255)
+#  zip         :string(255)
+#  owner_id    :integer
+#
+
 class Restaurant < ActiveRecord::Base
   attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu
   belongs_to :owner

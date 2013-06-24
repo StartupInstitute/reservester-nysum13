@@ -10,6 +10,7 @@ gem "devise"
 gem "figaro"
 
 group :development do
+	gem 'annotate'
 	gem 'sqlite3'
 	gem 'rspec-rails', '~> 2.0'
 	gem 'debugger'
