@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class RestaurantsControllerTest < ActionController::TestCase
-  setup do
-    @restaurant = restaurants(:one)
-  end
-
   test "should get index" do
     get :index
     assert_response :success
@@ -12,19 +8,27 @@ class RestaurantsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    @owner = create_and_sign_in_owner
+
+    get :new, :owner_id => @owner.id
     assert_response :success
   end
 
   test "should create restaurant" do
+    @owner = create_and_sign_in_owner
+
     assert_difference('Restaurant.count') do
-      post :create, restaurant: {  }
+      post :create, :owner_id => @owner.id, :restaurant => { :name => 'A Restaurant' }
     end
 
     assert_redirected_to restaurant_path(assigns(:restaurant))
   end
 
   test "should show restaurant" do
+    @owner = create_and_sign_in_owner
+
+    @restaurant = @owner.restaurants.create :name => 'My Restaurant'
+
     get :show, id: @restaurant
     assert_response :success
   end
@@ -36,20 +40,42 @@ class RestaurantsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    @owner = create_and_sign_in_owner
+
+    @restaurant = @owner.restaurants.create :name => 'My Restaurant'
+
     get :edit, id: @restaurant
     assert_response :success
   end
 
   test "should update restaurant" do
+    @owner = create_and_sign_in_owner
+
+    @restaurant = @owner.restaurants.create :name => 'My Restaurant'
+
     put :update, id: @restaurant, restaurant: {  }
     assert_redirected_to restaurant_path(assigns(:restaurant))
   end
 
   test "should destroy restaurant" do
+    @owner = create_and_sign_in_owner
+
+    @restaurant = @owner.restaurants.create :name => 'My Restaurant'
+
     assert_difference('Restaurant.count', -1) do
       delete :destroy, id: @restaurant
     end
 
     assert_redirected_to restaurants_path
+  end
+
+  private
+
+  def create_and_sign_in_owner
+    owner = Owner.create :name => 'John', :email => 'john@restaurant.com', :password => 'foobar123', :password_confirmation => 'foobar123'
+
+    sign_in owner
+
+    owner
   end
 end
