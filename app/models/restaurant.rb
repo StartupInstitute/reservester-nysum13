@@ -1,5 +1,6 @@
 class Restaurant < ActiveRecord::Base
   attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu
+  belongs_to :owner
   mount_uploader :image, ImageUploader
   mount_uploader :menu, MenuUploader
   

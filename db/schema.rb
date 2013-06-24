@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622220730) do
+ActiveRecord::Schema.define(:version => 20130624024638) do
 
   create_table "owners", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130622220730) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.integer  "owner_id"
   end
 
 end
