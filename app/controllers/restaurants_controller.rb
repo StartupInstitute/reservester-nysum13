@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   before_filter :authenticate_owner!, except: [:index, :show]
-  # before_filter :check_if_owner, only: [:edit, :update, :destroy]
+  before_filter :check_if_owner, only: [:edit, :update, :destroy]
+  
   def index
     @restaurants = Restaurant.all
   end
@@ -24,7 +25,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    # check_if_owner(Restaurant.find(params[:id]))
+    return unless check_if_owner(Restaurant.find(params[:id]))
     @restaurant = current_owner.restaurants.find(params[:id])
   end
 
@@ -47,13 +48,13 @@ class RestaurantsController < ApplicationController
   
   private
   
-    def check_if_owner(restaurant)
-      debugger
-      if current_owner.check_ownership(restaurant)
+    def check_if_owner
+      if current_owner.has_ownership?(Restaurant.find(params[:id]))
         return
       else
+        flash[:error]= "You do not have permission to do that." 
         redirect_to :back
       end
     end
-  
+
 end

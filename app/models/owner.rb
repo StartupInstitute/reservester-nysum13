@@ -34,8 +34,8 @@ class Owner < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true
   
-  def check_ownership(restaurant)
-    !self.restaurants.find_by_id(restaurant.id).nil?
+  def has_ownership?(restaurant)
+    self.restaurants.find_by_id(restaurant.id).present?
   end
-  
+
 end
