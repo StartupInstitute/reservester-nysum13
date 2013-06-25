@@ -15,6 +15,9 @@
 #  state       :string(255)
 #  zip         :string(255)
 #  owner_id    :integer
+#  open_time   :integer
+#  close_time  :integer
+#  table_qty   :integer
 #
 
 class Restaurant < ActiveRecord::Base
