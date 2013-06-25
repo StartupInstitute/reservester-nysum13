@@ -38,7 +38,17 @@
 	<%= image_tag(@restaurant.google_map) if @restaurant.street? %>
 	</div>
 	
+	<br/>
 	<div>
-		<%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant) %>
+		<% if !current_owner.nil? %>
+			<% if current_owner.has_ownership?(@restaurant) %>
+				<b><u>Reservations</u></b><br/>
+				<% @restaurant.reservations.each do |reservation| %>
+					<%=  reservation.date.strftime("%m/%d/%y") %> at <%= reservation.format_time(reservation.time) %><br/>
+				<% end %>
+			<% end %>
+		<% else %>
+			<%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant) %>
+		<% end %>
 	</div>
 </div>
