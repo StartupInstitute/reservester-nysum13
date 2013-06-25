@@ -13,6 +13,7 @@
 class Reservation < ActiveRecord::Base
   attr_accessible :restaurant_id, :date, :time
   belongs_to :restaurant
+  apply_simple_captcha
   # after_create :update_inventory
   
   # def update_inventory

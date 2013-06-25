@@ -8,6 +8,7 @@ gem 'rmagick'
 gem "fog", "~> 1.3.1"
 gem "devise"
 gem "figaro"
+gem "galetahub-simple_captcha", :require => "simple_captcha"
 
 group :development do
 	gem 'annotate'

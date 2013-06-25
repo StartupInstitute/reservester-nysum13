@@ -4,6 +4,7 @@
 	<%= date_select :date, "date"  %><br/>
 	<%= f.label :choose_time %>
 	<%= select_hour Time.now, :ampm => true, :prefix => :time %><br/>
+	<%= f.simple_captcha :label => "Prove that you're not a robot." %>
 	<%= f.submit "Make reservation" %>
 	
 <% end %>
