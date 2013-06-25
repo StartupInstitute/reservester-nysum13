@@ -52,7 +52,10 @@
 		        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
 		        <div class="nav-collapse collapse">
 		          <ul class="nav">
-		            <li class="active"><a href="<%= restaurants_path %>">Restaurants</a></li>
+		            <li><a href="<%= restaurants_path %>">Restaurants</a></li>
+								<% if owner_signed_in? %>
+								<li><a href="<%= dashboard_show_path %>">Dashboard</a></li>
+								<% end %>
 		            <li><a href="#about">About</a></li>
 		            <li><a href="#contact">Contact</a></li>
 		            <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
