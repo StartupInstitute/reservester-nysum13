@@ -44,7 +44,7 @@
 			<% if current_owner.has_ownership?(@restaurant) %>
 				<b><u>Reservations</u></b><br/>
 				<% @restaurant.reservations.each do |reservation| %>
-					<%=  reservation.date.strftime("%m/%d/%y") %> at <%= reservation.format_time(reservation.time) %><br/>
+					<%=  reservation.date.strftime("%m/%d/%y") %> at <%= reservation.format_time %><br/>
 				<% end %>
 			<% end %>
 		<% else %>

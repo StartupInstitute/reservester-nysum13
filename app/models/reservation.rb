@@ -19,8 +19,8 @@ class Reservation < ActiveRecord::Base
   #   self.restaurant.inventory[self.time]-=1
   # end
   
-  def format_time(time)
-    case time
+  def format_time
+    case self.time
     when 1
       "1 AM"
     when 2

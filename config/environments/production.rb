@@ -1,6 +1,15 @@
 Reservester::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   
+  config.action_mailer.smtp_settings = {
+    enable_starttls_auto: true,
+    address: 'smtp.gmail.com',
+    port: 587,
+    authentication: 'plain',
+    user_name: 'reservesterapp@gmail.com',
+    password: 'siny2013'
+  }
+  
   # config.action_mailer.default_url_options = { :host => 'TBD' }
 
   # Code is not reloaded between requests

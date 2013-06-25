@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.build(date: DateTime.new(params[:date]["date(1i)"].to_i, params[:date]["date(2i)"].to_i, params[:date]["date(3i)"].to_i), time: (params[:time][:hour]).to_i)
     @reservation.save
+    @restaurant.owner.send_reservation_notification(@reservation)
     redirect_to restaurant_path(Restaurant.find(params[:restaurant_id]))
   end
 

@@ -37,5 +37,9 @@ class Owner < ActiveRecord::Base
   def has_ownership?(restaurant)
     self.restaurants.find_by_id(restaurant.id).present?
   end
+  
+  def send_reservation_notification(reservation)
+    OwnerMailer.reservation_notification(self, reservation).deliver
+  end
 
 end
