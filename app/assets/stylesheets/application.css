@@ -101,7 +101,46 @@ body div.content div#image {
     margin: 0 auto;
 }
 
+.restaurant-description {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.restaurant-show-address {
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+/* Restaurants index */
+
+h1 {
+	text-align: center;
+}
+
+
+
+/* Reservation new */
+
+.reservation-form  {
+	text-align: center;
+}
+
+.simple_captcha {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 
 
 
 /* Restaurant form */
+
+.new-restaurant-form {
+	text-align: center;
+}

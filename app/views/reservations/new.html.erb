@@ -1,10 +1,11 @@
-<h1>Make a reservation</h1>
+<h1>Reserve your table.</h1>
+<br/>
 
+<div class="reservation-form">
 <%= form_for([@restaurant, @reservation]) do |f| %>
 	<%= date_select :date, "date"  %><br/>
-	<%= f.label :choose_time %>
-	<%= select_hour Time.now, :ampm => true, :prefix => :time %><br/>
-	<%= f.simple_captcha :label => "Prove that you're not a robot." %>
-	<%= f.submit "Make reservation" %>
-	
+	<%= select_hour Time.now, :ampm => true, :prefix => :time %><br/><br/>
+	<%= f.simple_captcha :label => "Prove that you're not a robot." %><br/>
+	<%= f.submit "Make reservation", class: "btn btn-primary" %>
 <% end %>
+</div>

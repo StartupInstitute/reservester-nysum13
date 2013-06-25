@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
       @restaurant.owner.send_reservation_notification(@reservation)
       redirect_to restaurant_path(Restaurant.find(params[:restaurant_id]))
     else
-      flash[:error] = "You enterd the wrong digits." 
+      flash[:error] = "Captcha incorrect. You enterd the wrong digits." 
       redirect_to :back
     end
   end

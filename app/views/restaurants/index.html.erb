@@ -1,20 +1,27 @@
-<h1>Restaurants</h1>
-<%= link_to "Add new restaurant", new_restaurant_path %><br/><br/>
-
-<div class="restaurants">
-	<% @restaurants.each do |restaurant| %>
-	<div class="restaurant">
-		<div class="restaurant-title">
-			<%= link_to restaurant.name, restaurant_path(restaurant) %> 
-		</div>
-		<br/>
-		<div class="restaurant-address">
-			<%= restaurant.address %>
-		</div>
-		<br/>
-		<% if !restaurant.image_url.nil? %>
-		<a href="<%= restaurant_path(restaurant) %>"><%= image_tag(restaurant.image_url(:thumb).to_s) %></a>
-		<% end %>
-		</div>
+<div class="restaurants-index">
+	
+	<% if !current_owner.nil? %>
+		<div class="pull-right add-new-restaurant"><%= link_to "Add new restaurant", new_restaurant_path %></div><br/><br/>
 	<% end %>
+
+	<h1>Restaurants</h1>
+
+	<div class="restaurants">
+		<% @restaurants.each do |restaurant| %>
+		<div class="restaurant">
+			<div class="restaurant-title">
+				<%= link_to restaurant.name, restaurant_path(restaurant) %> 
+			</div>
+			<br/>
+			<div class="restaurant-address">
+				<%= restaurant.address %>
+			</div>
+			<br/>
+			<% if !restaurant.image_url.nil? %>
+			<a href="<%= restaurant_path(restaurant) %>"><%= image_tag(restaurant.image_url(:thumb).to_s) %></a>
+			<% end %>
+			</div>
+		<% end %>
+	</div>
+	
 </div>

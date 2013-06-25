@@ -10,14 +10,15 @@
 	
 	<div class="show-header">
 		<h1><%= @restaurant.name %></h1>
-		<a href="<%= @restaurant.menu_url %>" target="_blank">View menu</a>
-		<div class="restaurant-show-address">
+		<a class="btn btn-primary" href="<%= @restaurant.menu_url %>" target="_blank">View menu</a>
+		<a class="btn btn-primary" href="<%= new_restaurant_reservation_path(@restaurant) %>">Make reservation</a>
+		<br/><br/>
+		<div class="restaurant-show-address well well-small">
 		<%= @restaurant.format_phone %><br/>
 		<%= @restaurant.street %><br/>
 		<%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip %>
 		</div>
 	</div>
-	<br/>
 
 	<div class="restaurant-show-images">
 		<div class="masthead">
@@ -28,7 +29,7 @@
 	</div>
 	<br/>
 	
-	<div class="restaurant-description">
+	<div class="restaurant-description well well-large">
 		<% if @restaurant.owner %>
 			Owned by: <%= @restaurant.owner.name %>
 		<% end %>
@@ -47,8 +48,6 @@
 				<% @restaurant.reservations.each do |reservation| %>
 					<%=  reservation.date.strftime("%m/%d/%y") %> at <%= reservation.format_time %><br/>
 				<% end %>
-		<% else %>
-			<%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant) %>
 		<% end %>
 	</div>
 </div>

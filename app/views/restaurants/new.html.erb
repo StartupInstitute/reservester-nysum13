@@ -1,5 +1,5 @@
-<h1>Add new restaurant</h1>
-<div class="form-horizontal">
+<h1>Add new restaurant</h1><br/>
+<div class="new-restaurant-form">
 <%= form_for(@restaurant, :html => {:multipart => true}) do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
@@ -27,6 +27,6 @@
 	<%= f.text_field :remote_image_url %>
 	<%= f.label :upload_menu %>
 	<%= f.file_field :menu %><br/><br/>
-	<%= f.submit "Create Restaurant" %>
+	<%= f.submit "Create Restaurant", class: "btn btn-primary" %>
 <% end %>
 </div>
