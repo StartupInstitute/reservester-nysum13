@@ -5,7 +5,7 @@ class OwnerMailer < ActionMailer::Base
       @owner = owner
       @reservation = reservation
       # mail(:to => user.email, :subject => "Weekly Trim")
-      mail(:to => "castillo@wow.com", :subject => "Reservation confirmation")
+      mail(:to => @owner.email, :subject => "Reservation confirmation")
     end
 
 end
