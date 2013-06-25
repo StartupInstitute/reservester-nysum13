@@ -51,6 +51,10 @@ class Restaurant < ActiveRecord::Base
     end
   end
   
+  def owned_by?(current_owner)
+    owner == current_owner
+  end
+  
   #   def inventory
   #   inventory = {}
   #   times = (self.open_time.strftime("%H").to_i..self.close_time.strftime("%H").to_i).to_a
