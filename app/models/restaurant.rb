@@ -18,7 +18,7 @@
 #
 
 class Restaurant < ActiveRecord::Base
-  attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu
+  attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu, :open_time, :close_time, :table_qty
   belongs_to :owner
   has_many :reservations
   
@@ -47,5 +47,12 @@ class Restaurant < ActiveRecord::Base
     "(#{numbers[0,3].inject(:+)}) #{numbers[3,3].inject(:+)}-#{numbers[6,7].inject(:+)}"
     end
   end
+  
+  def	self.inventory
+		inventory = {}
+		times = (self.open_time..self.close_time).to_a
+		times.each { |i| inventory[i] = self.table_qty}
+		inventory
+	end
   
 end
