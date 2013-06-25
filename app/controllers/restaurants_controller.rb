@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-
+skip_before_filter only: [:index, :show]
   def index
     @restaurants = Restaurant.all
 

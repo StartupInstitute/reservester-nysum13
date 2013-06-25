@@ -2,7 +2,7 @@
 Feature: Show Restaurant link or button available and accessible
 
   Scenario: User want to show restaurant detail
-    Given user at homepage
+    Given owner at homepage
     And the restaurant A exist
-    When user want to see the restaurant A info detail
-    Then user should see the restaurant A info
+    When owner want to see the restaurant A info detail
+    Then owner should see the restaurant A info
