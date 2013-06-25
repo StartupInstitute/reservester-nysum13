@@ -4,6 +4,6 @@ class Restaurant < ActiveRecord::Base
   validates :name, :presence => true
   validates :phone, :presence => true
 
-    mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
 end

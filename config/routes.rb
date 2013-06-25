@@ -1,6 +1,7 @@
 Reservester::Application.routes.draw do
   devise_for :owners
 
+  resources :owners
   resources :restaurants
 
 
