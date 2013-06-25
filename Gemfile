@@ -13,7 +13,13 @@ group :assets do
   gem "less-rails" 
 end
 
+group :test do 
+  gem 'rspec'
+  gem 'capybara'
+  gem 'launchy'
+end
 gem 'jquery-rails'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'debugger'
+gem 'devise'

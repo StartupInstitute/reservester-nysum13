@@ -22,16 +22,20 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="localhost:3000/restaurants">Reservester
-      </a>
+      <a class="brand" href="<%= root_path %>">Reservester</a>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
         <ul class="nav">
   			<li class="active"><a href="#">Home</a></li>
   			<li><a href="#">Link1</a></li>
-  			<li><a href="#">Link2</a></li>
-		</ul>
+  			<li><% if owner_signed_in? %>  
+            <%= link_to('Logout', destroy_owner_session_path, :method => :delete) %></li>
+            <% else %>
+        <li><%= link_to('Login', new_owner_session_path)  %></li>
+        <li><%= link_to('Sign-Up!', new_owner_registration_path)  %></li>
+            <% end %>
+		    </ul>
       </div>
     </div>
   </div>
