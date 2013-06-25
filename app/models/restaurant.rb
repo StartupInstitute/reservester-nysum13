@@ -51,11 +51,13 @@ class Restaurant < ActiveRecord::Base
     end
   end
   
-  def	self.inventory
+  def	inventory
 		inventory = {}
-		times = (self.open_time..self.close_time).to_a
-		times.each { |i| inventory[i] = self.table_qty}
+		times = (self.open_time.strftime("%H").to_i..self.close_time.strftime("%H").to_i).to_a
+		if inventory.blank?
+		  times.each { |i| inventory[i] = self.table_qty}
+	  end
 		inventory
 	end
-  
+
 end

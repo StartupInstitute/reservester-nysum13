@@ -37,4 +37,8 @@
 	<div class="google-map" style="display: block; margin-left: auto; margin-right: auto;">
 	<%= image_tag(@restaurant.google_map) if @restaurant.street? %>
 	</div>
+	
+	<div>
+		<%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant) %>
+	</div>
 </div>

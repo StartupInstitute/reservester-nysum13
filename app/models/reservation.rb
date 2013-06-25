@@ -13,11 +13,11 @@
 class Reservation < ActiveRecord::Base
   attr_accessible :restaurant_id, :date, :time
   belongs_to :restaurant
-  after_create :update_inventory
+  # after_create :update_inventory
   
-  def update_inventory
-    self.restaurant.inventory[self.time]-=1
-  end
+  # def update_inventory
+  #   self.restaurant.inventory[self.time]-=1
+  # end
 
 end
 

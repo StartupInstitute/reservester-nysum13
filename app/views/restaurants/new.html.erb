@@ -15,6 +15,10 @@
 	</div>
 	<%= f.label :phone %>
 	<%= f.text_field :phone %>
+	<%= f.label :open_time %>
+	<%= select_hour Time.now, :ampm => true, :prefix => :open_time %>
+	<%= f.label :close_time %>
+	<%= select_hour Time.now, :ampm => true, :prefix => :close_time %><br/>
 	<%= f.label :description %>
 	<%= f.text_field :description %>
 	<%= f.label :upload_image %>
