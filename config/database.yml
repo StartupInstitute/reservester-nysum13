@@ -1,15 +1,15 @@
 development:
-  adapter: mysql2
+  adapter: sqlite3
   database: reservester_development
-  username: root
+  username: huge
   password: 
   pool: 5
   timeout: 5000
 
 test:
-  adapter: mysql2
+  adapter: sqlite3
   database: reservester_test
-  username: root
+  username: huge
   password: 
   pool: 5
   timeout: 5000

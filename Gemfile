@@ -10,7 +10,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'mysql2'
+  gem 'sqlite3'
 end
 
 # Gems used only for assets and not required
@@ -20,7 +20,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'twitter-bootstrap-rails'
 
@@ -31,7 +31,7 @@ gem 'carrierwave'
 
 gem 'jquery-rails'
 
-gem 'mini_magick'
+gem 'rmagick'
 gem 'fog', '~> 1.3.1'
 
 gem 'dotenv-rails'
