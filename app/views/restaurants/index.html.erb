@@ -1,14 +1,28 @@
 <h1>Restaurants</h1>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li>
-      <%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %>
-      <%= link_to restaurant.name, restaurant %></td>
-      <%= link_to "Edit", edit_restaurant_path(restaurant) %>
-      <%= link_to "Delete", restaurant ,confirm: "really", method: :delete%>
-    </li>
-  <% end %>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+    	<tr>
+	      <td> <%= restaurant.name %></td>
+	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x10&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true" %></td>
+	      <td><%= link_to "View", restaurant %></td>
+	      <td><%= link_to "Edit", edit_restaurant_path(restaurant) %></td>
+	      <td><%= link_to "Delete", restaurant ,confirm: "really", method: :delete%></td>
+	      <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
+	    </tr>
+	  <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'New Restaurant', new_restaurant_path %>

@@ -28,7 +28,7 @@ group :assets do
 end
 
 gem 'carrierwave'
-
+gem 'devise'
 gem 'jquery-rails'
 
 gem 'rmagick'
