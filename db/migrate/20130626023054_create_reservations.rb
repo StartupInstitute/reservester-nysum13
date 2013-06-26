@@ -3,7 +3,7 @@ class CreateReservations < ActiveRecord::Migration
     create_table :reservations do |t|
       t.string :email
       t.datetime :reserve_on
-      t.text :message
+      t.string :message
       t.integer :restaurant_id
 
       t.timestamps

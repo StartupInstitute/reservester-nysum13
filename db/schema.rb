@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130626023054) do
   create_table "reservations", :force => true do |t|
     t.string   "email"
     t.datetime "reserve_on"
-    t.text     "message"
+    t.string   "message"
     t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
