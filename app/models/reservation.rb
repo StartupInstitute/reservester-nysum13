@@ -16,6 +16,7 @@ class Reservation < ActiveRecord::Base
   apply_simple_captcha
   
   validate :restaurant_is_not_overbooked
+  after_create :reduce_table_qty
   
   # scope :during, ->(time_of_day) {
   #   # hour_of_day = time_of_day.change(min: 0) # e.g. 2:15pm -> 2:00pm
@@ -26,14 +27,10 @@ class Reservation < ActiveRecord::Base
   #     hour_of_day + 59.minutes
   #   )
   # }
-  # 
-  # protected
   
-  # def restaurant_is_not_overbooked
-  #   if restaurant.full?(reserved_at)
-  #     errors.add(:restaurant, "is overbooked")
-  #   end
-  # end
+  def reduce_table_qty
+    restaurant.table_qty -= 1
+  end
   
   def format_time
     case self.time
@@ -87,6 +84,15 @@ class Reservation < ActiveRecord::Base
       "12 AM"
     end
   end
+  
+  protected
+  
+  def restaurant_is_not_overbooked
+    if restaurant.full?(date, time)
+      errors.add(:restaurant, "is overbooked")
+    end
+  end
+  
 
 end
 

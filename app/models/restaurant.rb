@@ -32,9 +32,9 @@ class Restaurant < ActiveRecord::Base
   validates :phone, :numericality => true, :length => {:is => 10}, :allow_blank => true
   validates :owner_id, presence: true
   
-  # def full?(time_of_day)
-  #   reservations.during(time_of_day).count >= table_count
-  # end
+  def full?(date, time)
+    reservations.where(date: date, time: time).count >= table_qty
+  end
   
   def address
     "#{self.street} #{self.city}, #{self.state} #{self.zip}"
