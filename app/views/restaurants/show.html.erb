@@ -1,0 +1,19 @@
+<h1><%= @restaurant.name %></h1>
+<!-- <p>Find me in app/views/restaurants/show.html.erb</p> -->
+
+<p id="notice"><%= notice %></p>
+<%= image_tag @restaurant.image_url(:masthead).to_s %>
+<p>
+	<b>Description:</b>
+	<%= @restaurant.description %>
+</p>
+<p>
+	<b>Address:</b>
+	<%= @restaurant.address %>
+</p>
+<p>
+	<b>Phone:</b>
+	<%= @restaurant.phone %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> | <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: 'Are you sure?'} %> | <%= link_to 'Back', restaurants_path %>
