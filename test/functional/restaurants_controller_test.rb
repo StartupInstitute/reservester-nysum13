@@ -102,14 +102,4 @@ class RestaurantsControllerTest < ActionController::TestCase
 
     assert_response :unauthorized
   end
-
-  private
-
-  def create_and_sign_in_owner
-    owner = Owner.create :name => 'John', :email => 'john@restaurant.com', :password => 'foobar123', :password_confirmation => 'foobar123'
-
-    sign_in owner
-
-    owner
-  end
 end

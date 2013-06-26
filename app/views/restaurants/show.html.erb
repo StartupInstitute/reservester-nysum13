@@ -14,6 +14,29 @@
   <dd><%= @restaurant.owner.name if @restaurant.owner %></dd>
 </dl>
 
+<%- if current_owner == @restaurant.owner %>
+  <h2>Reservations</h2>
+  <table class="table table-striped">
+    <tr>
+      <th>Email</th>
+      <th>Reserve On</th>
+      <th>Message</th>
+      <th></th>
+    </tr>
+    <%- @restaurant.reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.email %></td>
+        <td><%= reservation.reserve_on %></td>
+        <td><%= reservation.message %></td>
+        <td><%= link_to 'Marked as Confirmed', reservation_path(reservation), :method => :delete, :confirm => 'Mark this reservation confirmed?' %></td>
+      </tr>
+    <%- end %>
+  </table>
+<%- else %>
+  <h2>New Reservation</h2>
+  <%= render 'reservations/form', :reservation => @reservation %>
+<%- end %>
+
 <%- if current_owner == @restaurant.owner && !current_owner.blank? %>
   <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
   <%= link_to 'Destroy', restaurant_path(@restaurant), :method => :delete, :confirm => 'Are you sure that you want to delete this restaurant?' %> |
