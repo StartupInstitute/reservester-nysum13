@@ -9,6 +9,7 @@
         <tr>
           <th>Name</th>
           <th>Address</th>
+          <th>Owner</th>
           <th>Action</th>
           <th>Image</th>
         </tr>
@@ -20,6 +21,7 @@
     	      <td><%= link_to restaurant.name, restaurant %></td>
     	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x150&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true" %>
             </td>
+            <td><%= restaurant.owner.name %></td>            
             <td>
               <%- if current_owner == restaurant.owner %>
                 <%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %>
