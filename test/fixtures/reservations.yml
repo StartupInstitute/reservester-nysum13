@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  reserve_on: 2013-06-25 22:30:54
+  message: MyText
+  restaurant_id: 1
+
+two:
+  email: MyString
+  reserve_on: 2013-06-25 22:30:54
+  message: MyText
+  restaurant_id: 1
