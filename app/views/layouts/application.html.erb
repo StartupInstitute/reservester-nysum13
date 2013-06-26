@@ -18,7 +18,7 @@
           <div class="brand"><%= link_to "Reservester", restaurants_path%></div>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
+              <%= owner_signed_in? ? link_to("Logout", destroy_owner_session_path, :method => :delete) : link_to("Sign In", destroy_owner_session_path, :method => :delete)%>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
