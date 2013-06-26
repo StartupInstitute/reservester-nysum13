@@ -1,15 +1,8 @@
 <%= form_for @restaurant, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
+    <%= f.label :name, :class => 'control-label' %><%= mark_required(@restaurant, :name) %>
       <div class="controls">
         <%= f.text_field :name, :class => 'text_field' %>
-      </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_area :description, :class => 'text_area' %>
       </div>
   </div>
 
@@ -24,6 +17,13 @@
     <%= f.label :phone, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :phone, :class => 'text_field' %>
+      </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => 'text_area' %>
       </div>
   </div>
 
