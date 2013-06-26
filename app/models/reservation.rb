@@ -11,13 +11,28 @@
 #
 
 class Reservation < ActiveRecord::Base
-  attr_accessible :restaurant_id, :date, :time
+  attr_accessible :restaurant_id, :date, :time # , :reserved_at
   belongs_to :restaurant
   apply_simple_captcha
-  # after_create :update_inventory
   
-  # def update_inventory
-  #   self.restaurant.inventory[self.time]-=1
+  validate :restaurant_is_not_overbooked
+  
+  # scope :during, ->(time_of_day) {
+  #   # hour_of_day = time_of_day.change(min: 0) # e.g. 2:15pm -> 2:00pm
+  #   
+  #   where(
+  #     "reserved_at >= ? AND reserved_at <= ?",
+  #     hour_of_day,
+  #     hour_of_day + 59.minutes
+  #   )
+  # }
+  # 
+  # protected
+  
+  # def restaurant_is_not_overbooked
+  #   if restaurant.full?(reserved_at)
+  #     errors.add(:restaurant, "is overbooked")
+  #   end
   # end
   
   def format_time

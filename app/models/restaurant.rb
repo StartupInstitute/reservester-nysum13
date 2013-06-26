@@ -31,7 +31,10 @@ class Restaurant < ActiveRecord::Base
   validates :name, presence: true
   validates :phone, :numericality => true, :length => {:is => 10}, :allow_blank => true
   validates :owner_id, presence: true
-
+  
+  # def full?(time_of_day)
+  #   reservations.during(time_of_day).count >= table_count
+  # end
   
   def address
     "#{self.street} #{self.city}, #{self.state} #{self.zip}"
@@ -54,14 +57,5 @@ class Restaurant < ActiveRecord::Base
   def owned_by?(current_owner)
     owner == current_owner
   end
-  
-  #   def inventory
-  #   inventory = {}
-  #   times = (self.open_time.strftime("%H").to_i..self.close_time.strftime("%H").to_i).to_a
-  #   if inventory.blank?
-  #     times.each { |i| inventory[i] = self.table_qty}
-  #   end
-  #   inventory
-  # end
 
 end
