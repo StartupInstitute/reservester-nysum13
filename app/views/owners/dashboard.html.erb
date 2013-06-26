@@ -1,0 +1,21 @@
+<h1>
+  <%= @owner.name %>'s Dashboard
+  <div class="pull-right">
+    <%= link_to new_owner_restaurant_path(@owner), :class => 'btn' do %>
+      New Restaurant
+    <%- end %>
+  </div>
+</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  <%- @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= link_to restaurant.name, restaurant %></td>
+      <td><%= link_to 'Remove', restaurant, :method => :delete, :confirm => "Are you sure that you want to remove #{restaurant.name}?" %></td>
+    </tr>
+  <%- end %>
+</table>
