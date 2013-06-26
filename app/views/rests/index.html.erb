@@ -1,2 +1,25 @@
-<h1>Rests#index</h1>
-<p>Find me in app/views/rests/index.html.erb</p>
+<h1>Restaurants</h1>
+<p id='notice'>
+<%= notice %>
+</p>
+
+<table border="1">
+<tr>
+	<td><%="Name"%></td>
+	<td><%="Description"%></td>
+	<td><%="Address"%></td>
+	<td><%="Phone Number"%></td>
+</tr>
+
+	<% @rests.each do |r| %>
+	<tr>
+		<td><%= r.name %> | <%= link_to 'Show', rest_path(r) %></td>
+		<td><%= r.description %></td>
+		<td><%= r.address %></td>
+		<td><%= r.phone %></td>
+	</tr>
+	<% end %>
+
+</table>
+<p>
+<%= link_to 'Add New Restaurant',new_rest_path %>

@@ -1,0 +1,18 @@
+
+
+<%= form_for @rest do |r| %>
+
+  <%= r.label :name %>
+  <%= r.text_field :name %><br>
+
+  <%= r.label :description %>
+  <%= r.text_field :description %><br>
+
+   <%= r.label :address %>
+  <%= r.text_field :address %><br>
+
+    <%= r.label :phone %>
+  <%= r.text_field :phone %><br>
+  
+  <%= r.submit %>
+  <% end %>

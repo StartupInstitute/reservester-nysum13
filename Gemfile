@@ -15,10 +15,9 @@ gem 'jquery-rails'
 gem 'debugger'
 
 group :test, :development do
-gem 'turn'
-gem 'rspec-rails' 
-gem "factory_girl_rails"
-gem "database_cleaner"
-gem 'capybara'
-gem 'guard-rspec'
+	gem 'rspec-rails' 
+	gem "factory_girl_rails", "~>4.0"
+	gem "database_cleaner"
+	gem 'capybara'
+	gem 'launchy'
 end

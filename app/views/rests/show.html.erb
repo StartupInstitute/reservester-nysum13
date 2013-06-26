@@ -1,0 +1,22 @@
+<h1> Restaurant </h1>
+<p id='notice'>
+<%= notice %>
+</p>
+
+<table border="1">
+<tr>
+	<td><%="Name"%></td>
+	<td><%="Description"%></td>
+	<td><%="Address"%></td>
+	<td><%="Phone Number"%></td>
+</tr>
+
+<tr>
+	<td><%= @rest.name %> | <%= link_to 'Edit', edit_rest_path(@rest) %> | <%= link_to 'Delete', rest_path(@rest), method: :delete %></td>
+	<td><%= @rest.description %></td>
+	<td><%= @rest.address %></td>
+	<td><%= @rest.phone %></td>
+</tr>
+</table>
+<p>
+<%= link_to 'Back',rests_path %>
