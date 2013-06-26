@@ -1,28 +1,40 @@
-<h1>Restaurants</h1>
+<div class="row-fluid">
+  <div class="span8">
+    <h1>Restaurants</h1>
+    <div>Number of restaurants: <%= Restaurant.all.count %> </div>
+    <div>Number of owners: <%= Owner.all.count %> </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>View</th>
-      <th>Edit</th>
-      <th>Delete</th>
-      <th>Image</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-    	<tr>
-	      <td> <%= restaurant.name %></td>
-	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x150&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true" %></td>
-	      <td><%= link_to "View", restaurant %></td>
-	      <td><%= link_to "Edit", edit_restaurant_path(restaurant) %></td>
-	      <td><%= link_to "Delete", restaurant ,confirm: "really", method: :delete%></td>
-	      <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
-	    </tr>
-	  <% end %>
-  </tbody>
-</table>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Action</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @restaurants.each do |restaurant| %>
+        </div>
+        	<tr>
+    	      <td><%= link_to restaurant.name, restaurant %></td>
+    	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x150&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true" %>
+            </td>
+            <td>
+              <%- if current_owner == restaurant.owner %>
+                <%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %>
+                <%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%>
+              <% end %>
+            </td>
+    	      <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
+    	    </tr>
+    	  <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+  <%= link_to 'New Restaurant', new_restaurant_path if owner_signed_in? %>
+  </div>
+  <div class="span4">
+    <div>This is the best place to reserve a meal at NY's hottest restaurants!</div>
+  </div>
+</div>
