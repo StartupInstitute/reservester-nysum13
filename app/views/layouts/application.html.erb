@@ -72,7 +72,7 @@
 		              </ul>
 		            </li>
 								<li>
-									<% if owner_signed_in? %>
+									<% if owner_signed_in? || user_signed_in? %>
 										<a href="<%= destroy_owner_session_path %>">Sign out</a>
 									<% else %>
 										<a href="<%= new_owner_session_path %>">Sign in</a>
