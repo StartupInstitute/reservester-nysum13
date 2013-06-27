@@ -36,8 +36,7 @@ ActiveRecord::Schema.define(:version => 20130627130147) do
     t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.date     "date"
-    t.integer  "time"
+    t.datetime "reserve_on"
   end
 
   create_table "restaurants", :force => true do |t|
