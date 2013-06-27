@@ -9,13 +9,13 @@ class ReservationsController < ApplicationController
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @reservation = @restaurant.reservations.build(date: DateTime.new(params[:date]["date(1i)"].to_i, params[:date]["date(2i)"].to_i, params[:date]["date(3i)"].to_i), time: (params[:time][:hour]).to_i)
-    if @reservation.valid_with_captcha?
-      @reservation.save
+    @reservation = @restaurant.reservations.build(params[:reservation])
+    # if @reservation.valid_with_captcha?
+    if @reservation.save
       @restaurant.owner.send_reservation_notification(@reservation)
-      redirect_to restaurant_path(Restaurant.find(params[:restaurant_id]))
+      redirect_to restaurant_path(Restaurant.find(params[:restaurant_id])), notice: "Your reservation has been created."
     else
-      flash[:error] = "Captcha incorrect. You enterd the wrong digits." 
+      # flash[:error] = "Captcha incorrect. You enterd the wrong digits." 
       redirect_to :back
     end
   end
@@ -30,6 +30,11 @@ class ReservationsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    debugger
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    
+    redirect_to @reservation.restaurant
   end
 end

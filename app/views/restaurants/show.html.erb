@@ -46,7 +46,8 @@
 		<% if !current_owner.nil? && current_owner.has_ownership?(@restaurant) %>
 				<b><u>Reservations</u></b><br/>
 				<% @restaurant.reservations.each do |reservation| %>
-					<%=  reservation.date.strftime("%m/%d/%y") %> at <%= reservation.format_time %><br/>
+					<%= link_to 'Marked as Confirmed', restaurant_reservation_path(reservation), method: :delete, confirm: 'Mark this reservation confirmed?' %>
+					<%=  reservation.reserve_on.strftime("%m/%d/%y at %I:%M %p") %>
 				<% end %>
 		<% end %>
 	</div>

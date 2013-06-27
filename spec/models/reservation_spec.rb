@@ -6,8 +6,7 @@
 #  restaurant_id :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  date          :date
-#  time          :integer
+#  reserve_on    :datetime
 #
 
 require 'spec_helper'
