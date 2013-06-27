@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3"
-
 gem 'rails', '3.2.13'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
@@ -21,6 +19,7 @@ end
 
 group :production do
 	gem 'pg'
+	ruby '1.9.3'
 end
 
 group :assets do
