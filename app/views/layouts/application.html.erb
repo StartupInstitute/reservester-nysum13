@@ -28,9 +28,9 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
   			<li class="active"><a href="#">Home</a></li>
-  			<li><a href="#">Link1</a></li>
-  			<li><% if owner_signed_in? %>  
-            <%= link_to('Logout', destroy_owner_session_path, :method => :delete) %></li>
+  			    <% if owner_signed_in? %>  
+            <li><a href="#">Dashboard</a></li>
+            <li><%= link_to('Logout', destroy_owner_session_path, :method => :delete) %></li>
             <% else %>
         <li><%= link_to('Login', new_owner_session_path)  %></li>
         <li><%= link_to('Sign-Up!', new_owner_registration_path)  %></li>

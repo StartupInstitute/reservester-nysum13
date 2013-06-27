@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  restaurant_id: 1
+  reserved_at: 2013-06-27 07:47:45
+  reserved_on: 2013-06-27
+
+two:
+  name: MyString
+  restaurant_id: 1
+  reserved_at: 2013-06-27 07:47:45
+  reserved_on: 2013-06-27
