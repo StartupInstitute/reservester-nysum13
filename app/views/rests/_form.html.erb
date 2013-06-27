@@ -1,7 +1,7 @@
+<%= form_for @rest, :html => {:multipark => true} do |r| %>
 
-
-<%= form_for @rest do |r| %>
-
+  <%= r.label :image %>
+  <%= r.file_field :image %><br>
   <%= r.label :name %>
   <%= r.text_field :name %><br>
 

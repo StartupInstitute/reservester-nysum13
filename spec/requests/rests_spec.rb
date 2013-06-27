@@ -7,7 +7,6 @@ describe "Rests" do
   end
   
   describe "GET /rests" do
-   
     it "should display some restaurants" do
     visit rests_path
     page.should have_content "Danies Vegan Awesomeness"
@@ -31,7 +30,6 @@ describe "Rests" do
       current_path.should == edit_rest_path(@rest)
 
       find_field('rest_name').value.should == 'Danies Vegan Awesomeness'
-
       fill_in 'rest_name', :with => 'updated rest name'
       click_button 'Update Rest'
 

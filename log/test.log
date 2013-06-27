@@ -5746,3 +5746,763 @@ Processing by RestsController#index as HTML
   [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (41.6ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/33" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mRest Load (1.3ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "33"]]
+  Rendered rests/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 1.3ms)
+Started DELETE "/rests/33" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "33"]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "rests" WHERE "rests"."id" = $1  [["id", 33]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
+  Rendered rests/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (7.5ms)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", ""], ["created_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.7ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/37" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "37"]]
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+Started GET "/rests/37/edit" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"37"}
+  [1m[35mRest Load (0.7ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "37"]]
+  Rendered rests/_form.html.erb (3.3ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+Started PUT "/rests/37" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"37"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "37"]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests/37/edit
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+Started GET "/rests/37/edit" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"37"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "37"]]
+  Rendered rests/_form.html.erb (2.7ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 16:55:45 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/38" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "38"]]
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+Started GET "/rests/38/edit" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mRest Load (0.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "38"]]
+  Rendered rests/_form.html.erb (2.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+Started PUT "/rests/38" for 127.0.0.1 at 2013-06-27 12:55:45 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"38"}
+  [1m[35mRest Load (0.4ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "38"]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (36.1ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:00 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:00 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:16:00 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.8ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (7.8ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", ""], ["created_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/42" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mRest Load (1.1ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "42"]]
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 1.1ms)
+Started GET "/rests/42/edit" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mRest Load (0.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "42"]]
+  Rendered rests/_form.html.erb (2.9ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+Started PUT "/rests/42" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"42"}
+  [1m[35mRest Load (0.4ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "42"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/43" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mRest Load (0.4ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "43"]]
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+Started GET "/rests/43/edit" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "43"]]
+  Rendered rests/_form.html.erb (4.8ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+Started PUT "/rests/43" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"43"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "43"]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests/43/edit
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/rests/43/edit" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "43"]]
+  Rendered rests/_form.html.erb (2.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:01 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/44" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "44"]]
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+Started DELETE "/rests/44" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "44"]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "rests" WHERE "rests"."id" = $1  [["id", 44]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:16:01 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.7ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.5ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/45" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mRest Load (1.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "45"]]
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 1.4ms)
+Started DELETE "/rests/45" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "45"]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "rests" WHERE "rests"."id" = $1  [["id", 45]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/46" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "46"]]
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+Started GET "/rests/46/edit" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mRest Load (0.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "46"]]
+  Rendered rests/_form.html.erb (7.9ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.4ms)
+Started PUT "/rests/46" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"46"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "46"]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/47" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "47"]]
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+Started GET "/rests/47/edit" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "47"]]
+  Rendered rests/_form.html.erb (2.9ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+Started PUT "/rests/47" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"47"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "47"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests/47/edit
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/rests/47/edit" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "47"]]
+  Rendered rests/_form.html.erb (4.8ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.7ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (3.8ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", ""], ["created_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 17:16:36 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:16:36 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.7ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (37.4ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/51" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mRest Load (1.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "51"]]
+  Rendered rests/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 1.4ms)
+Started GET "/rests/51/edit" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "51"]]
+  Rendered rests/_form.html.erb (7.7ms)
+  Rendered rests/edit.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.6ms)
+Started PUT "/rests/51" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"51"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "51"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests/51/edit
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+Started GET "/rests/51/edit" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "51"]]
+  Rendered rests/_form.html.erb (2.6ms)
+  Rendered rests/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/52" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "52"]]
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+Started GET "/rests/52/edit" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "52"]]
+  Rendered rests/_form.html.erb (2.7ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+Started PUT "/rests/52" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"52"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "52"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/53" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"53"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "53"]]
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+Started DELETE "/rests/53" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"53"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "53"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "rests" WHERE "rests"."id" = $1[0m  [["id", 53]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (2.6ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", ""], ["created_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:21:02 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:21:02 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.7ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (39.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/57" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mRest Load (1.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "57"]]
+  Rendered rests/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 1.4ms)
+Started GET "/rests/57/edit" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "57"]]
+  Rendered rests/_form.html.erb (7.8ms)
+  Rendered rests/edit.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.6ms)
+Started PUT "/rests/57" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"57"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "57"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 4ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/58" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"58"}
+  [1m[36mRest Load (0.7ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "58"]]
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+Started GET "/rests/58/edit" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"58"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "58"]]
+  Rendered rests/_form.html.erb (2.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+Started PUT "/rests/58" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"58"}
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "58"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests/58/edit
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/rests/58/edit" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"58"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "58"]]
+  Rendered rests/_form.html.erb (2.5ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (2.9ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", ""], ["created_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:24:17 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/62" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "62"]]
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+Started DELETE "/rests/62" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"62"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "62"]]
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "rests" WHERE "rests"."id" = $1  [["id", 62]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:24:17 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (36.4ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:25:56 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:25:56 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:25:56 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.8ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+  Rendered rests/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:25:56 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:25:56 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 13:25:56 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (8.0ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", ""], ["created_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/66" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[35mRest Load (1.2ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "66"]]
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.2ms)
+Started GET "/rests/66/edit" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "66"]]
+  Rendered rests/_form.html.erb (3.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+Started PUT "/rests/66" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"66"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "66"]]
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/67" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "67"]]
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+Started GET "/rests/67/edit" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "67"]]
+  Rendered rests/_form.html.erb (2.8ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+Started PUT "/rests/67" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"67"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "67"]]
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:25:57 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/68" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"68"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "68"]]
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+Started DELETE "/rests/68" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"68"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "68"]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "rests" WHERE "rests"."id" = $1[0m  [["id", 68]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:25:57 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (39.0ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/69" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mRest Load (1.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "69"]]
+  Rendered rests/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 53ms (Views: 49.4ms | ActiveRecord: 1.4ms)
+Started GET "/rests/69/edit" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"69"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "69"]]
+  Rendered rests/_form.html.erb (8.1ms)
+  Rendered rests/edit.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.6ms)
+Started PUT "/rests/69" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"69"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "69"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests/69/edit
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+Started GET "/rests/69/edit" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"69"}
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "69"]]
+  Rendered rests/_form.html.erb (2.6ms)
+  Rendered rests/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/70" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "70"]]
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+Started GET "/rests/70/edit" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#edit as HTML
+  Parameters: {"id"=>"70"}
+  [1m[36mRest Load (0.4ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "70"]]
+  Rendered rests/_form.html.erb (2.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+Started PUT "/rests/70" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"updated rest name", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Update Rest", "id"=>"70"}
+  [1m[35mRest Load (0.4ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "70"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 4ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests/new" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#new as HTML
+  Rendered rests/_form.html.erb (2.8ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started POST "/rests" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "rest"=>{"name"=>"Danies Chicken and Waffles", "description"=>"", "address"=>"", "phone"=>""}, "commit"=>"Create Rest"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", ""], ["created_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00], ["description", ""], ["name", "Danies Chicken and Waffles"], ["phone", ""], ["updated_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/rests
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.8ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#index as HTML
+  [1m[36mRest Load (0.6ms)[0m  [1mSELECT "rests".* FROM "rests" [0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "rests" ("address", "created_at", "description", "name", "phone", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", nil], ["created_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00], ["description", nil], ["name", "Danies Vegan Awesomeness"], ["phone", nil], ["updated_at", Thu, 27 Jun 2013 17:26:26 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/74" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#show as HTML
+  Parameters: {"id"=>"74"}
+  [1m[36mRest Load (0.5ms)[0m  [1mSELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1[0m  [["id", "74"]]
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+Started DELETE "/rests/74" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#destroy as HTML
+  Parameters: {"id"=>"74"}
+  [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" WHERE "rests"."id" = $1 LIMIT 1  [["id", "74"]]
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "rests" WHERE "rests"."id" = $1  [["id", 74]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/rests
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+Started GET "/rests" for 127.0.0.1 at 2013-06-27 13:26:26 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.5ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m

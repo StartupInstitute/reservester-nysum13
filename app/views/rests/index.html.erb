@@ -1,10 +1,12 @@
-<h1>Restaurants</h1>
+<h1><center>Restaurants</center></h1>
 <p id='notice'>
 <%= notice %>
 </p>
 
-<table border="1">
+
+<table class="table table-bordered">
 <tr>
+	<td><%="Image"%></td>
 	<td><%="Name"%></td>
 	<td><%="Description"%></td>
 	<td><%="Address"%></td>
@@ -13,6 +15,7 @@
 
 	<% @rests.each do |r| %>
 	<tr>
+		<td><%= image_tag r.image_url(:thumb).to_s %></td>
 		<td><%= r.name %> | <%= link_to 'Show', rest_path(r) %></td>
 		<td><%= r.description %></td>
 		<td><%= r.address %></td>

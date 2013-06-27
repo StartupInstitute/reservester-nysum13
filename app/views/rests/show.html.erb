@@ -1,9 +1,13 @@
-<h1> Restaurant </h1>
+<h1><center> Restaurant </center></h1>
 <p id='notice'>
 <%= notice %>
 </p>
 
-<table border="1">
+<table class="table table-bordered">
+<tr>
+	<td><%="Image"%></td>
+	<td><%= image_tag @rest.image_url(:thumb).to_s %></td>
+</tr>
 <tr>
 	<td><%="Name"%></td>
 	<td><%="Description"%></td>
