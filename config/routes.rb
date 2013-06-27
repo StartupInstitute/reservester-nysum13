@@ -1,5 +1,7 @@
 Reservester::Application.routes.draw do
 
+  devise_for :users
+
   devise_for :owners do
     get "/owners/sign_out", to: "devise/sessions#destroy"
   end
