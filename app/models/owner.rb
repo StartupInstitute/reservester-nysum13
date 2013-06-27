@@ -30,7 +30,7 @@ class Owner < ActiveRecord::Base
   # attr_accessible :title, :body
   
   has_many :restaurants
-  has_many :users, through: :reservations
+  has_many :users, :through => :reservations
   
   validates :name, presence: true
   validates :email, presence: true
