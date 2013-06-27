@@ -16,6 +16,7 @@ class Reservation < ActiveRecord::Base
   apply_simple_captcha
   
   validate :restaurant_is_not_overbooked
+  # validate :user_is_not_already_reserved
   after_create :reduce_table_qty
   
   # scope :during, ->(time_of_day) {
@@ -27,6 +28,12 @@ class Reservation < ActiveRecord::Base
   #     hour_of_day + 59.minutes
   #   )
   # }
+  
+  # def user_is_not_already_reserved
+  #   if where(date: date, customer_id: user.id, restaurant_id: restaurant.id)
+  #     errors.add(:user, "has already reserved today")
+  #   end
+  # end
   
   def reduce_table_qty
     restaurant.table_qty -= 1
