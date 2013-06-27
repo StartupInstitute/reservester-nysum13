@@ -1,0 +1,24 @@
+<% restaurant = Restaurant.find(params[:restaurant_id]) %>
+
+<h1>
+  Reservation for <%= restaurant.name %>
+</h1>
+
+<table>
+  <tr>
+    <th>Reserver Name</th>
+    <th>Date of Reservation</th>
+    <th>Time of Reservation</th>
+  </tr>
+  <% @reservations.each do |reserve| %>
+  <tr>
+    <td><%= reserve.reserver_name %></td>
+    <td><%= reserve.reservation_date %></td>
+    <td><%= reserve.reservation_time %></td>
+    <td><%= link_to 'Show' , [reserve.restaurant, reserve] %></td>
+    <td><%= link_to 'Edit' , edit_restaurant_reservation_path(reserve.restaurant, reserve) %></td>
+    <td><%= link_to 'Destroy', [reserve.restaurant, reserve], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+

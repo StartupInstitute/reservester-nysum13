@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'rake', '~>10.1.0'
 gem 'pg'
 
 group :assets do
@@ -26,6 +27,8 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+gem 'gmaps4rails'
+gem 'recaptcha' , :require => 'recaptcha/rails'
 gem 'devise'
 gem 'parsley-rails'
 gem 'jquery-rails'

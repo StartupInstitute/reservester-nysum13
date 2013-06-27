@@ -1,8 +1,9 @@
 class RestaurantsController < ApplicationController
-skip_before_filter only: [:index, :show]
+  before_filter :authenticate_owner!, :except => [:index, :show]
+
   def index
     @restaurants = Restaurant.all
-
+    #@json = Restaurant.all.to_gmaps4rails
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @restaurants }
@@ -11,7 +12,7 @@ skip_before_filter only: [:index, :show]
 
   def show
     @restaurant = Restaurant.find(params[:id])
-
+    @json = Restaurant.find(params[:id]).to_gmaps4rails
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @restaurant }

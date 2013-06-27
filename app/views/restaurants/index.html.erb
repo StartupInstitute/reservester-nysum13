@@ -1,11 +1,15 @@
 <h1>Listing restaurants</h1>
 
+<%= link_to 'New Restaurant', new_restaurant_path %>
+
 <table>
   <tr>
     <th>Picture</th>
     <th>Name</th>
     <th>Description</th>
-    <th>Address</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
     <th>Phone</th>
     <th></th>
     <th></th>
@@ -17,16 +21,23 @@
     <td><%= restaurant.image %></td>
     <td><%= restaurant.name %></td>
     <td><%= restaurant.description %></td>
-    <td><%= restaurant.address %></td>
+    <td><%= restaurant.street %></td>
+    <td><%= restaurant.city %></td>
+    <td><%= restaurant.state %></td>
     <td><%= restaurant.phone %></td>
 
     <td><%= link_to 'Show', restaurant %></td>
-    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <% if owner_signed_in? %>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+
+
+
+

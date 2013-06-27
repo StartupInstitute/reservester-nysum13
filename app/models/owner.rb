@@ -11,4 +11,6 @@ class Owner < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :restaurants
+
+  has_many :users, :through => :reservations
 end

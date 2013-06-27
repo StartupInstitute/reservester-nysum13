@@ -1,0 +1,10 @@
+<!--<p id='notice'><%= notice %></p>-->
+<h1>Reservation Details</h1>
+
+<div>
+<p>Reserver Name : <%= @reservation.reserver_name %> </p>
+<p>Date of Reservation : <%= @reservation.reservation_date %>  </p>
+<p>Time of Reservation : <%= @reservation.reservation_time %> </p>
+</div>
+<%= link_to 'Back', restaurant_reservations_path(@reservation.restaurant) %> |
+<%= link_to 'Edit', edit_restaurant_reservation_path(@reservation.restaurant, @reservation) %>

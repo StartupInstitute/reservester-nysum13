@@ -1,3 +1,17 @@
 // Place all the styles related to the page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: rgb(250,235,241);
+}
+
+.navbar {
+  .navbar-inner {
+    background-color: #cc0000;
+    background-image: none;
+    font-family: 'Marker Felt';
+  }
+}
+
+
