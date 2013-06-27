@@ -16,7 +16,10 @@
 		<div class="restaurant-show-address well well-small">
 		<%= @restaurant.format_phone %><br/>
 		<%= @restaurant.street %><br/>
-		<%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip %>
+		<%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip %><br/>
+		<% if @restaurant.open_time.present?  && @restaurant.close_time.present? %>
+			Hours: <%= @restaurant.open_time.strftime("%I:%M %p") %> - <%= @restaurant.close_time.strftime("%I:%M %p") %>
+		<% end %>
 		</div>
 	</div>
 
