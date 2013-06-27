@@ -56,7 +56,11 @@ class RestaurantsController < ApplicationController
   # DELETE /tests/1.json
   def destroy
     @restaurant = Restaurant.find(params[:id])
+    
+    @restaurant.remove_image!
+    @restaurant.remove_menu!
     @restaurant.destroy
+
 
     respond_to do |format|
     	format.html { redirect_to restaurants_path }

@@ -22,3 +22,14 @@ end
 gem 'therubyracer'
 
 gem 'bootstrap-sass'
+
+gem 'carrierwave'
+gem 'rmagick'
+gem "fog", "~> 1.3.1"
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+gem 'figaro'

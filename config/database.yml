@@ -10,21 +10,21 @@
 # Do not set this db to the same as development or production.
 test:
   adapter: postgresql
-  database: reservester_test
+  database: <%= ENV["DATABASE"] %>
   pool: 5
   timeout: 5000
-  username: postgres
-  password: root
-  host: localhost
+  username: <%= ENV["USERNAME"] %>
+  password: <%= ENV["PASSWORD"] %>
+  host: <%= ENV["HOST"] %>
 
 development:
   adapter: postgresql
-  database: reservester_development
+  database: <%= ENV["DATABASE"] %>
   pool: 5
   timeout: 5000
-  username: postgres
-  password: root
-  host: localhost
+  username: <%= ENV["USERNAME"] %>
+  password: <%= ENV["PASSWORD"] %>
+  host: <%= ENV["HOST"] %>
 
 
 # Working SQL directive  

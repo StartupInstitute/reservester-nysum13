@@ -3,6 +3,7 @@
 
 <table>
   <tr>
+    <th>Image</th>
     <th>Name</th>
     <th>Description</th>
     <th>Address</th>
@@ -12,6 +13,7 @@
   </tr>
 <% @restaurants.each do |restaurant| %>
   <tr>
+  	<td><b><%= restaurant.image_url ? image_tag(restaurant.image_url(:thumb)) : "Booo!" %></b></td>
   	<td><%= restaurant.name %></td>
   	<td><%= restaurant.description %></td>
   	<td><%= restaurant.address %></td>
