@@ -7,6 +7,8 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  reserve_on    :datetime
+#  user_id       :integer
+#  owner_id      :integer
 #
 
 require 'spec_helper'

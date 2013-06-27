@@ -12,12 +12,13 @@ class ReservationsController < ApplicationController
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.build(params[:reservation])
+    @reservation.update_attributes(user_id: current_user.id, owner_id: @restaurant.owner.id)
     # if @reservation.valid_with_captcha?
     if @reservation.save
       @restaurant.owner.send_reservation_notification(@reservation)
       redirect_to restaurant_path(Restaurant.find(params[:restaurant_id])), notice: "Your reservation has been created."
     else
-      # flash[:error] = "Captcha incorrect. You enterd the wrong digits." 
+      flash[:error] = "You are already reserved for this restaurant today" 
       redirect_to :back
     end
   end

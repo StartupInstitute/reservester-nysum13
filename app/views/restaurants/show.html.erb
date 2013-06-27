@@ -47,7 +47,7 @@
 				<b><u>Reservations</u></b><br/>
 				<% @restaurant.reservations.each do |reservation| %>
 					<%= link_to 'Marked as Confirmed', restaurant_reservation_path(reservation), method: :delete, confirm: 'Mark this reservation confirmed?' %>
-					<%=  reservation.reserve_on.strftime("%m/%d/%y at %I:%M %p") %>
+					<%=  reservation.reserve_on.strftime("%m/%d/%y at %I:%M %p") %><br/>
 				<% end %>
 		<% end %>
 	</div>
