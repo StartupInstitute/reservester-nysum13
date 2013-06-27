@@ -10,6 +10,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+ gem 'debugger'
+ end
+
 gem 'jquery-rails'
 
+gem 'rmagick'
 gem 'debugger'
+gem 'carrierwave'

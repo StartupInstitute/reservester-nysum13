@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Name:</b>
+  <%= @restaurant.name %>
+</p>
+ 
+<p>
+  <b>description:</b>
+  <%= @restaurant.description%>
+</p>
+ 
+<p>
+  <b>addres:</b>
+  <%= @restaurant.address %>
+</p>
+<p>
+  <b>Content:</b>
+  <%= @restaurant.phone %>
+</p>
+ <p>
+ 	<%= image_tag @restaurant.image_url.to_s %>
+ 	<%= image_tag @restaurant.pdf_url.to_s %>
+ </p>
+ 
+<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Edit', edit_restaurant_path %>
+<%= link_to 'Destroy', restaurant_path, confirm: "Are you sure?", method: :delete %>
+
