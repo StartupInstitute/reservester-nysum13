@@ -1,0 +1,32 @@
+<p>
+  <b>Name:</b>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @restaurant.description %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @restaurant.address %>
+  <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@restaurant.address}&markers=#{@restaurant.address}&zoom=13&size=600x300&sensor=false&visual_refresh=true" %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @restaurant.phone %>
+</p>
+
+
+<p>
+  <b>Menu:</b>
+  <%= @restaurant.menu? ? (link_to 'Download', @restaurant.menu.url) : "Not uploaded" %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', restaurants_path %>

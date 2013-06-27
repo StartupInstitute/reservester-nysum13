@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+#gem 'sqlite3'
+#gem 'mysql'
+gem 'pg'
+
 
 
 group :assets do
@@ -12,4 +15,21 @@ end
 
 gem 'jquery-rails'
 
-gem 'debugger'
+group :development, :test do
+	#gem 'debugger'
+end
+
+gem 'therubyracer'
+
+gem 'bootstrap-sass'
+
+gem 'carrierwave'
+gem 'rmagick'
+gem "fog", "~> 1.3.1"
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+gem 'figaro'
