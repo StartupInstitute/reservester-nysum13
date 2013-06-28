@@ -2,8 +2,7 @@ class Restaurant < ActiveRecord::Base
 
   acts_as_gmappable
 
-  attr_accessible :description, :street, :city, :state, :longitude, :latitude, :name, :phone, :image, :remote_image_url, :menu, :owner_id
-
+  attr_accessible :description, :street, :city, :state, :longitude, :latitude, :name, :phone, :image, :remote_image_url, :menu
 
   mount_uploader :image, ImageUploader
   mount_uploader :menu, MenuUploader
