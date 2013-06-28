@@ -114,6 +114,9 @@ GEM
     parsley-rails (1.1.16.0)
     pg (0.15.1)
     polyglot (0.3.3)
+    pusher (0.11.3)
+      multi_json (~> 1.0)
+      signature (~> 0.1.6)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -158,6 +161,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    signature (0.1.7)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -206,6 +210,7 @@ DEPENDENCIES
   nokogiri
   parsley-rails
   pg
+  pusher
   rails (= 3.2.13)
   rake (~> 10.1.0)
   recaptcha
