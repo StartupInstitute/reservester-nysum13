@@ -1,0 +1,23 @@
+<div class="row-fluid">
+  <% @restaurants.each do |restaurant| %>
+    </div>
+    	<tr>
+	      <td><%= link_to restaurant.name, restaurant %></td>
+	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x150&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true" %>
+        </td>
+        <td><%= restaurant.owner.name %></td>            
+        <td>
+          <%- if current_owner %>
+            <%- if current_owner == restaurant.owner %>
+              <%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %>
+              <%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%>
+            <%- end %>
+          <%- else %>
+            <%= link_to "Make Reservation", new_restaurant_reservation_path(restaurant), class:"btn btn-mini" %>
+          <% end %>
+        </td>
+	      <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
+	    </tr>
+    </div>
+  <% end %>
+</div>

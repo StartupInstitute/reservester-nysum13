@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OwnerTest < ActiveSupport::TestCase
+class ReservationsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
