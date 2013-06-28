@@ -18,7 +18,7 @@
 
 <% @restaurants.each do |restaurant| %>
   <tr>
-    <td><%= image_tag(restaurant.image(:thumb)) if restaurant.image? %></td>
+    <td><%= image_tag(restaurant.image_url(:thumb).to_s) if restaurant.image? %></td>
     <td><%= restaurant.name %></td>
     <td><%= restaurant.description %></td>
     <td><%= restaurant.street %></td>

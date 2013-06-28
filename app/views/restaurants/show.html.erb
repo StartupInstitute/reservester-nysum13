@@ -35,7 +35,7 @@
 
     <p>
       <b>Picture:</b>
-      <%= image_tag(@restaurant.image(:masthead)) if @restaurant.image? %>
+      <%= image_tag(@restaurant.image_url(:masthead).to_s) if @restaurant.image? %>
     </p>
 
     <p>
