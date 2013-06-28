@@ -16,3 +16,6 @@
 
 .idea
 .gitignore
+
+# Ignore application configuration
+/config/application.yml
