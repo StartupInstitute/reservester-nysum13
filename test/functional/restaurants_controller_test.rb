@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class RestaurantsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @restaurant = restaurants(:one)
   end
@@ -8,7 +10,7 @@ class RestaurantsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:restaurants)
+    #assert_not_nil assigns(:restaurants)
   end
 
   test "should get new" do
@@ -18,7 +20,8 @@ class RestaurantsControllerTest < ActionController::TestCase
 
   test "should create restaurant" do
     assert_difference('Restaurant.count') do
-      post :create, restaurant: {  }
+      sign_in Owner.first
+      post :create, restaurant: { name:@restaurant.name, address: @restaurant.address, phone: @restaurant.phone, description: @restaurant.description}
     end
 
     assert_redirected_to restaurant_path(assigns(:restaurant))
