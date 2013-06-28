@@ -35,7 +35,7 @@
 
     <p>
       <b>Picture:</b>
-      <%= @restaurant.image %>
+      <%= image_tag(@restaurant.image(:masthead)) if @restaurant.image? %>
     </p>
 
     <p>
