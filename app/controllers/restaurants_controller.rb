@@ -1,6 +1,6 @@
 # Controller for restaurants
 class RestaurantsController < ApplicationController
-  
+  before_filter :authenticate_owner!, only: [:new, :create, :destroy, :edit, :update]
   # Creat an object for creating new restaurant
   def new
     @restaurant = Restaurant.new

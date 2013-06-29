@@ -1,5 +1,8 @@
 Reservester::Application.routes.draw do
   
+  devise_for :owners
+  #, :controllers => { :sessions => "owners/sessions" }
+
   resources :test1s
 
 
