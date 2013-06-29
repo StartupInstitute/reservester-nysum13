@@ -8,7 +8,7 @@ gem 'jquery-rails'
 
 gem 'rmagick'
 gem 'fog', '~> 1.3.1'
-
+gem 'figaro'
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead:
