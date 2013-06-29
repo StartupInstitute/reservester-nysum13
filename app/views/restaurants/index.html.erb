@@ -23,9 +23,12 @@
             </td>
             <td><%= restaurant.owner.name %></td>            
             <td>
-              <%- if current_owner == restaurant.owner %>
-                <%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %>
-                <%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%>
+              <%- if current_owner %>
+                <%- if current_owner == restaurant.owner %>
+                  <%= link_to "Reservations", restaurant_reservations_path(restaurant), class:"btn btn-mini" %>
+                  <%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %>
+                  <%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%>
+                <% end %>
               <%- else %>
                 <%= link_to "Make Reservation", new_restaurant_reservation_path(restaurant), class:"btn btn-mini" %>
               <% end %>

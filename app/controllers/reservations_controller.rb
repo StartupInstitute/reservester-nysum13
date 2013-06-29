@@ -1,8 +1,13 @@
 class ReservationsController < ApplicationController
 
-
   def index
-    @reservations = Reservation.all
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservations = Reservation.where(["restaurant_id = ?", @restaurant.id])
+  end
+
+  def show
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.find(params[:id])
   end
 
   def new
@@ -28,7 +33,7 @@ class ReservationsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @reservation = Reservation.find(params[:id])
+    @reservation = @restaurant.reservations.find(params[:id])
 
     if @reservation.update_attributes(params[:reservation])
       redirect_to @reservation, notice: 'Reservation was successfully updated.'
@@ -39,9 +44,10 @@ class ReservationsController < ApplicationController
 
   def destroy
     @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.find(params[:id])
     @reservation.destroy
 
-    redirect_to Reservations_path
+    redirect_to restaurant_reservations_path
   end
 
 end

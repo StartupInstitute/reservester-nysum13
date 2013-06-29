@@ -3,8 +3,9 @@ Reservester::Application.routes.draw do
 
   resources :owners
   resources :restaurants do
-    resources :reservations #, only: [:index, :new, :create]
+    resources :reservations #, only: [:new, :create, :show, :edit]
   end 
+  #resources :reservations, only: [:index]
 
 
   # The priority is based upon order of creation:
