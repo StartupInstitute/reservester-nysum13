@@ -2,6 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem 'carrierwave'
+gem 'devise'
+gem 'jquery-rails'
+
+gem 'rmagick'
+gem 'fog', '~> 1.3.1'
+
+gem 'dotenv-rails'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -26,14 +35,7 @@ group :assets do
   gem "less-rails" 
 end
 
-gem 'carrierwave'
-gem 'devise'
-gem 'jquery-rails'
 
-gem 'rmagick'
-gem 'fog', '~> 1.3.1'
-
-gem 'dotenv-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

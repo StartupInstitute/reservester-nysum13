@@ -16,7 +16,7 @@ test:
 
 production:
   adapter: postgresql
-  database: reservester_prod
+  database: reservester_production
   username: huge
   password: 
   pool: 5
