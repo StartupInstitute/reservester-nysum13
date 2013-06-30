@@ -1,7 +1,12 @@
 Reservester::Application.routes.draw do
   devise_for :owners
 
-  resources :owners
+  resources :owners do
+    member do
+      get :dashboard
+    end
+  end
+
   resources :restaurants do
     resources :reservations #, only: [:new, :create, :show, :edit]
   end 

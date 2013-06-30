@@ -6,4 +6,8 @@ class Reservation < ActiveRecord::Base
   validates :datetime, :presence => true
   validates :name, :presence => true
 
+  def return_restaurant_name
+  	return :restaurant.name
+  end
+
 end
