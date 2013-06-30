@@ -1,9 +1,5 @@
 class OwnersController < ApplicationController
-
-  def index
-  	@owner = current_owner
-  	@restaurants = @owner.restaurants
-  end
+	before_filter :authenticate_owner!
 
   def dashboard
   	@owner = current_owner

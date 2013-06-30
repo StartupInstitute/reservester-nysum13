@@ -1,10 +1,9 @@
 Reservester::Application.routes.draw do
   devise_for :owners
 
+  get '/dashboard' => 'owners#dashboard', :as => :dashboard
+
   resources :owners do
-    member do
-      get :dashboard
-    end
   end
 
   resources :restaurants do

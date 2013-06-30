@@ -13,5 +13,19 @@
     body > .container-fluid {
       padding-top: 60px;
     }
-  
+}
+#options {
+  width:100%;
+}
+
+#options > div {
+  padding-bottom:5px;
+}
+
+#options > div > a.btn-mini {
+  width:80px;
+}
+
+
   @import "twitter/bootstrap/responsive";
+
