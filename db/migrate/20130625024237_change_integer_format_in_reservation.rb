@@ -1,6 +1,6 @@
 class ChangeIntegerFormatInReservation < ActiveRecord::Migration
   def up
-    change_column :reservations, :time, :time, :default => 'EST'
+    change_column :reservations, :time, :time, :default => "UTC"
   end
 
   def down
