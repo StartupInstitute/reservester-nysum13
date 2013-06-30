@@ -1,6 +1,6 @@
 class ChangeIntegerFormatInReservation < ActiveRecord::Migration
   def up
-    change_column :reservations, :time, :time
+    change_column :reservations, :time, :timestamp
   end
 
   def down
