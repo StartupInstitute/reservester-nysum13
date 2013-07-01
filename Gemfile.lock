@@ -55,9 +55,10 @@ GEM
       debugger-linecache (~> 1.2.0)
       debugger-ruby_core_source (~> 1.2.1)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.2)
+    debugger-ruby_core_source (1.2.3)
     diff-lcs (1.2.4)
     erubis (2.7.0)
+    excon (0.13.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -65,6 +66,20 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
+    fog (1.3.1)
+      builder
+      excon (~> 0.13.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.4)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -84,10 +99,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    mini_portile (0.5.0)
     multi_json (1.7.7)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.6.7)
+    nokogiri (1.5.10)
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -128,6 +144,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-hmac (0.4.0)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -168,9 +185,12 @@ DEPENDENCIES
   database_cleaner
   debugger
   factory_girl_rails (~> 4.0)
+  figaro
+  fog (~> 1.3.1)
   jquery-rails
   launchy
   less-rails
+  nokogiri (~> 1.5.0)
   pg
   rails (= 3.2.13)
   rmagick (= 2.13.2)

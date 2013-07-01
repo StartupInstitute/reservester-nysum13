@@ -14,8 +14,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'fog', "~> 1.3.1"
+gem 'nokogiri', "~> 1.5.0"
+gem 'figaro'
 
-gem 'debugger'
 gem 'carrierwave'
 gem 'rmagick', '2.13.2'
 
@@ -25,4 +27,5 @@ group :test, :development do
 	gem "database_cleaner"
 	gem 'capybara'
 	gem 'launchy'
+  gem 'debugger'
 end
