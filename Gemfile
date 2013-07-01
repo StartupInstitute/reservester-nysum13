@@ -63,5 +63,3 @@ end
 
 #Phony gem - validates phone numbers
 gem 'phony_rails'
-
-gem 'bootstrap_helper'
