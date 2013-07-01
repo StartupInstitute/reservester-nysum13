@@ -56,3 +56,5 @@ end
 # For sending emails
 #gem 'postmark-rails'
 gem 'mandrill-rails'
+
+gem 'newrelic_rpm'
