@@ -21,6 +21,8 @@
 	<%= select_hour Time.now, :ampm => true, :prefix => :close_time %><br/>
 	<%= f.label :description %>
 	<%= f.text_field :description %>
+	<%= f.label :category_tokens, "Categories" %>
+	<%= f.text_field :category_tokens, "data-pre" => @restaurant.categories.map(&:attributes).to_json %>
 	<p>
 		<%= f.label :category %>
 		<%= hidden_field_tag "restaurant[category_ids][]", nil %>

@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require parsley
+//= require jquery.tokeninput
 
 $(function() {
 	$("#restaurant_category_tokens").tokenInput("/categories.json", {

@@ -1,3 +1,12 @@
+Hi <%= @reservation.restaurant.owner.name %>,<br/><br/>
+
 You have a new reservation!
 <br/><br/>
-<%= @reservation.reserve_on.strftime("%m/%d/%y at %I:%M %p") %> 
+The reservation is scheduled for: <b><%= @reservation.reserve_on.strftime("%m/%d/%y at %I:%M %p") %></b><br/><br/>
+<u>Customer</u><br/><br/>
+<b>Name:</b> <%= @reservation.user.name %><br/>
+<b>Email:</b> <%= @reservation.user.email %><br/><br/><br/>
+
+Sincerely,
+<br/><br/>
+The Reservester Team
