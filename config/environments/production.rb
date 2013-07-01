@@ -66,6 +66,6 @@ Reservester::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   #Devise Mailer put the heroku URL
-  config.action_mailer.default_url_options = { :host => '...' }
+  config.action_mailer.default_url_options = { :host => 'http://restaurant-reserve.herokuapp.com/' }
 
 end
