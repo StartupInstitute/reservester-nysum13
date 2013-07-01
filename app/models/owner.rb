@@ -13,4 +13,11 @@ class Owner < ActiveRecord::Base
   validates_presence_of :name
 	validates_uniqueness_of :email, :case_sensitive => false
 
+  has_many :restaurants, dependent: :destroy
+
+  def own?(restaurant_id)
+    #if self.restaurants.present?
+    self.restaurants.find_by_id(restaurant_id).present?
+    #end
+  end
 end
