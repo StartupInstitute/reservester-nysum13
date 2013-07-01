@@ -102,6 +102,7 @@ GEM
     mysql2 (0.3.11)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    pg (0.15.1)
     phony (1.9.0)
     phony_rails (0.4.0)
       activesupport (>= 3.0)
@@ -203,6 +204,7 @@ DEPENDENCIES
   launchy
   less-rails
   mysql2
+  pg
   phony_rails
   rails (= 3.2.13)
   rspec-rails
