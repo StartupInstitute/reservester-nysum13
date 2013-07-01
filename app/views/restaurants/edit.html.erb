@@ -18,16 +18,17 @@
 	<%= select_hour Time.now, :ampm => true, :prefix => :close_time %><br/>
 	<%= f.label :description %>
 	<%= f.text_field :description %>
-	<p>
+	<!-- <p>
 	<%= f.label :category_tokens, "Categories" %>
 	<%= f.text_field :category_tokens %>
-	</p>
+	</p> -->
 	<p>
 		<%= f.label :category %>
-		<% for category in Category.find(:all) %>
+		<%= hidden_field_tag "restaurant[category_ids][]", nil %>
+		<% Category.all.each do |category| %>
 			<div>
-				<%= check_box_tag "restaurant[category_ids][]", category.id, @restaurant.categories.include?(category) %>
-				<%= category.name %>
+				<%= check_box_tag "restaurant[category_ids][]", category.id, @restaurant.category_ids.include?(category.id), id: dom_id(category) %>
+				<%= label_tag dom_id(category), category.name %>
 			</div>
 		<% end %>
 	</p>

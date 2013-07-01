@@ -25,7 +25,8 @@ class Restaurant < ActiveRecord::Base
   attr_reader :category_tokens
   belongs_to :owner
   has_many :reservations
-  has_and_belongs_to_many :categories
+  has_many :categorizations
+  has_many :categories, through: :categorizations
   
   mount_uploader :image, ImageUploader
   mount_uploader :menu, MenuUploader

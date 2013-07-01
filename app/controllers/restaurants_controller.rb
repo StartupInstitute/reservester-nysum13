@@ -20,7 +20,6 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    params[:restaurant][:category_ids] ||= []
     @restaurant = current_owner.restaurants.build(params[:restaurant])
     @restaurant.update_attributes(open_time: params[:open_time][:hour], close_time: params[:close_time][:hour])
     if @restaurant.save
@@ -36,7 +35,6 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    params[:restaurant][:category_ids] ||= []
     @restaurant = current_owner.restaurants.find(params[:id])
     @restaurant.update_attributes(params[:restaurant])
     @restaurant.update_attributes(open_time: params[:open_time][:hour], close_time: params[:close_time][:hour])
