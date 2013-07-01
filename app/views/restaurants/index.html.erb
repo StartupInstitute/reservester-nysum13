@@ -1,0 +1,26 @@
+<h1>Restaurants#index</h1>
+<p>Find me in app/views/restaurants/index.html.erb</p>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>Restaurant</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%- @restaurants.each do |restaurant| %>
+			<tr>
+				<td><%= restaurant.name %></td>
+				
+				<td><%= link_to 'Show', restaurant, :class => "btn btn-primary some-class" %></td>
+			</tr>
+		<%- end %>
+	</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Restaurant', new_restaurant_path%>
