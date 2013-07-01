@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
   def create
     restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = restaurant.reservations.create(params[:reservation])
-    if verify_recaptcha() and @reservation.save
+    if (verify_recaptcha() && @reservation.save)
       redirect_to [@reservation.restaurant, @reservation] , :notice => 'Reservation was successfully created. '
       ReservationMailer.reservation_confirmation(@reservation).deliver
     else
