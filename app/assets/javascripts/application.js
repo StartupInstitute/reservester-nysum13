@@ -15,3 +15,8 @@
 //= require twitter/bootstrap
 //= require_tree .
 
+$(function() {
+	$("#restaurant_category_tokens").tokenInput("/categories.json", {
+		crossDomain: false
+	})
+});

@@ -21,7 +21,8 @@
 #
 
 class Restaurant < ActiveRecord::Base
-  attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu, :open_time, :close_time, :table_qty, :category_ids
+  attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu, :open_time, :close_time, :table_qty, :category_ids, :category_tokens
+  attr_reader :category_tokens
   belongs_to :owner
   has_many :reservations
   has_and_belongs_to_many :categories
@@ -32,6 +33,10 @@ class Restaurant < ActiveRecord::Base
   validates :name, presence: true
   validates :phone, :numericality => true, :length => {:is => 10}, :allow_blank => true
   validates :owner_id, presence: true
+  
+  def catgory_tokens=(ids)
+    self.category_ids = ids.split(",")
+  end
   
   def full?(time_of_day)
     reservations.during(time_of_day).count >= table_qty

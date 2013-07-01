@@ -19,6 +19,10 @@
 	<%= f.label :description %>
 	<%= f.text_field :description %>
 	<p>
+	<%= f.label :category_tokens, "Categories" %>
+	<%= f.text_field :category_tokens %>
+	</p>
+	<p>
 		<%= f.label :category %>
 		<% for category in Category.find(:all) %>
 			<div>

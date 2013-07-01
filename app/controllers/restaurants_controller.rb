@@ -4,6 +4,11 @@ class RestaurantsController < ApplicationController
   
   def index
     @restaurants = Restaurant.all
+    @categories = Category.all
+    respond_to do |format|
+      format.html
+      format.json { render :json => @categories.map(&:attributes) }
+    end
   end
 
   def show
