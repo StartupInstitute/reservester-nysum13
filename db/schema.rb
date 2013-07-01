@@ -11,14 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130630224927) do
+ActiveRecord::Schema.define(:version => 20130630232948) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "restaurant_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  create_table "categories_restaurants", :id => false, :force => true do |t|
+    t.integer "restaurant_id"
+    t.integer "category_id"
+  end
+
+  add_index "categories_restaurants", ["category_id", "restaurant_id"], :name => "index_categories_restaurants_on_category_id_and_restaurant_id"
 
   create_table "owners", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

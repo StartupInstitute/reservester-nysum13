@@ -33,8 +33,11 @@
 	<br/>
 	
 	<div class="restaurant-description well well-large">
+		<% @restaurant.categories.each do |category| %>
+		<%= category.name %><br/>
+		<% end %>
 		<% if @restaurant.owner %>
-			Owned by: <%= @restaurant.owner.name %>
+			Owned by: <%= @restaurant.owner.name %><br/>
 		<% end %>
 		<%= @restaurant.description %>
 	</div>

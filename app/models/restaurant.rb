@@ -21,10 +21,10 @@
 #
 
 class Restaurant < ActiveRecord::Base
-  attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu, :open_time, :close_time, :table_qty
+  attr_accessible :street, :city, :state, :zip, :description, :name, :phone, :image, :remote_image_url, :menu, :open_time, :close_time, :table_qty, :category_ids
   belongs_to :owner
   has_many :reservations
-  has_many :categories
+  has_and_belongs_to_many :categories
   
   mount_uploader :image, ImageUploader
   mount_uploader :menu, MenuUploader

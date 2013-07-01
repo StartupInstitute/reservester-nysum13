@@ -18,6 +18,15 @@
 	<%= select_hour Time.now, :ampm => true, :prefix => :close_time %><br/>
 	<%= f.label :description %>
 	<%= f.text_field :description %>
+	<p>
+		<%= f.label :category %>
+		<% for category in Category.find(:all) %>
+			<div>
+				<%= check_box_tag "restaurant[category_ids][]", category.id, @restaurant.categories.include?(category) %>
+				<%= category.name %>
+			</div>
+		<% end %>
+	</p>
 	<%= f.label :total_number_of_tables %>
 	<%= f.number_field :table_qty %>
 	<%= f.label :upload_image %>
