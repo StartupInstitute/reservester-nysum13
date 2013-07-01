@@ -1,8 +1,8 @@
 <h1>Add new restaurant</h1><br/>
 <div class="new-restaurant-form">
-<%= form_for(@restaurant, :html => {:multipart => true}) do |f| %>
+<%= form_for(@restaurant, :html => {:multipart => true, :data => { :validate => "parsley" } }) do |f| %>
 	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<%= f.text_field :name, data: { trigger: "keyup", required: true } %>
 	<div class="form-address">
 	<%= f.label :address %>
 	<%= f.text_field :street %>
@@ -14,7 +14,7 @@
 	<%= f.text_field :zip %>
 	</div>
 	<%= f.label :phone %>
-	<%= f.text_field :phone %>
+	<%= f.text_field :phone, data: { trigger: "change", rangelength: "[10,10]"} %>
 	<%= f.label :open_time %>
 	<%= select_hour Time.now, :ampm => true, :prefix => :open_time %>
 	<%= f.label :close_time %>
