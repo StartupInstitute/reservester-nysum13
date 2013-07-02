@@ -26,7 +26,14 @@ development:
   password: <%= ENV["PASSWORD"] %>
   host: <%= ENV["HOST"] %>
 
-
+production:
+  adapter: postgresql
+  database: reservester_production
+  pool: 5
+  timeout: 5000
+  username: <%= ENV["USERNAME"] %>
+  password: <%= ENV["PASSWORD"] %>
+  host: <%= ENV["HOST"] %>
 # Working SQL directive  
 #development:
 #  adapter: mysql
