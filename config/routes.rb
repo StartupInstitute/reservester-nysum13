@@ -3,9 +3,6 @@ Reservester::Application.routes.draw do
   devise_for :owners
   #, :controllers => { :sessions => "owners/sessions" }
 
-  resources :test1s
-
-
   resources :restaurants  # The priority is based upon order of creation:
   # first created -> highest priority.
 
