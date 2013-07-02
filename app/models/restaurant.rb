@@ -48,8 +48,8 @@ class Restaurant < ActiveRecord::Base
   end
   
   def google_map
-    street = self.street.gsub(" ", "+") if !self.street.nil?
-    city = self.city.gsub(" ", "+") if !self.city.nil?
+    street = self.street.gsub(" ", "+") if self.street.present?
+    city = self.city.gsub(" ", "+") if self.city.present?
     "http://maps.googleapis.com/maps/api/staticmap?center=#{street},#{city},#{state}&zoom=13&size=550x400&maptype=roadmap
     &markers=label%7size:small%7Ccolor:blue%7C#{street},#{city},#{state}\&sensor=false"
   end
@@ -57,7 +57,7 @@ class Restaurant < ActiveRecord::Base
   def format_phone
     if self.phone?
     numbers = self.phone.split('')
-    "(#{numbers[0,3].inject(:+)}) #{numbers[3,3].inject(:+)}-#{numbers[6,7].inject(:+)}"
+    "(#{numbers[0]}#{numbers[1]}#{numbers[2]}) #{numbers[3]}#{numbers[4]}#{numbers[5]}-#{numbers[6]}#{numbers[7]}#{numbers[8]}#{numbers[9]}"
     end
   end
   

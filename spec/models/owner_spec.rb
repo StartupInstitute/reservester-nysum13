@@ -21,5 +21,31 @@
 require 'spec_helper'
 
 describe Owner do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it "has a valid factory" do
+    FactoryGirl.create(:owner).should be_valid
+  end
+  
+  it "is invalid without a name" do
+    FactoryGirl.build(:owner, name: nil).should_not be_valid
+  end
+  
+  # Why isn't this working? 
+  it "is invalid without an email" do
+    FactoryGirl.build(:owner, email: nil).should_not be_valid
+  end
+  
+  it "returns true if owner has ownership over a restaurant" do
+    owner = FactoryGirl.create(:owner)
+    restaurant = owner.restaurants.create!(name: "Connollys")
+    owner.has_ownership?(restaurant).should eq(true)
+  end
+  
+  it "returns false if owner does not have ownership over a restaurant" do
+    owner1 = FactoryGirl.create(:owner)
+    owner2 = FactoryGirl.create(:owner)
+    restaurant = owner1.restaurants.create!(name: "Connollys")
+    owner2.has_ownership?(restaurant).should eq(false)
+  end
+  
 end

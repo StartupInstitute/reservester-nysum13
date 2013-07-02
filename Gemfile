@@ -10,11 +10,23 @@ gem "devise"
 gem "figaro"
 gem "galetahub-simple_captcha", :require => "simple_captcha"
 
+
 group :development do
-	gem 'annotate'
+	gem 'debugger'
+end
+
+group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '~> 2.0'
-	gem 'debugger'
+	gem 'factory_girl_rails'
+	gem 'annotate'
+end
+
+group :test do
+	gem 'faker'
+	gem 'capybara'
+	gem 'guard-rspec'
+	gem 'launchy'
 end
 
 group :production do
