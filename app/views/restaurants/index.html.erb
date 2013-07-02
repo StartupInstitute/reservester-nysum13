@@ -1,49 +1,44 @@
-<div class="row-fluid">
-  <div class="span8">
-    <h1>Restaurants</h1>
-    <div>Number of restaurants: <%= Restaurant.all.count %> </div>
-    <div>Number of owners: <%= Owner.all.count %> </div>
-
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Address</th>
-          <th>Owner</th>
-          <th>Action</th>
-          <th>Image</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @restaurants.each do |restaurant| %>
-        </div>
-        	<tr>
-    	      <td><%= link_to restaurant.name, restaurant %></td>
-    	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x150&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true" %>
-            </td>
-            <td><%= restaurant.owner.name %></td>            
-            <td>
-              <%- if current_owner %>
-                <%- if current_owner == restaurant.owner %>
-                  <div class="span1" id="options">
-                    <div><%= link_to "Reservations", restaurant_reservations_path(restaurant), class:"btn btn-mini"%></div>
-                    <div><%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %></div>
-                    <div><%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%></div>
-                  </div>
-                <% end %>
-              <%- else %>
-                <%= link_to "Make Reservation", new_restaurant_reservation_path(restaurant), class:"btn btn-mini" %>
+<div class="span10">
+  <h1>Restaurants</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Owner</th>
+        <th>Action</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+      </div>
+      	<tr>
+  	      <td><%= link_to restaurant.name, restaurant %></td>
+  	      <td><%= link_to restaurant.address, "http://maps.googleapis.com/maps/api/staticmap?center="+restaurant.address+"%22&zoom=13&size=150x150&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true", target:"_blank" %>
+          </td>
+          <td><%= restaurant.owner.name %></td>            
+          <td>
+            <%- if current_owner %>
+              <%- if current_owner == restaurant.owner %>
+                <div class="span1" id="options">
+                  <div><%= link_to "Reservations", restaurant_reservations_path(restaurant), class:"btn btn-mini"%></div>
+                  <div><%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %></div>
+                  <div><%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%></div>
+                </div>
               <% end %>
-            </td>
-    	      <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
-    	    </tr>
-    	  <% end %>
-      </tbody>
-    </table>
+            <%- else %>
+              <%= link_to "Make Reservation", new_restaurant_reservation_path(restaurant), class:"btn btn-mini" %>
+            <% end %>
+          </td>
+  	      <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
+  	    </tr>
+  	  <% end %>
+    </tbody>
+  </table>
 
-  <%= link_to 'New Restaurant', new_restaurant_path, class:"btn" if owner_signed_in? %>
-  </div>
-  <div class="span4">
-    <div>This is the best place to reserve a meal at NY's hottest restaurants!</div>
-  </div>
+<%= link_to 'New Restaurant', new_restaurant_path, class:"btn" if owner_signed_in? %>
+</div>
+<div class="span2">
+  <div>This is the best place to reserve a meal at NY's hottest restaurants!</div>
 </div>

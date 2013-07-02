@@ -26,6 +26,14 @@
   width:80px;
 }
 
+textarea {
+  height:50px;
+}
+
+div.container-fluid > div.row-fluid {
+  max-width: 960px;
+  margin: 0 auto;
+}
 
   @import "twitter/bootstrap/responsive";
 
