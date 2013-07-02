@@ -1,0 +1,40 @@
+<div class="restaurant-show">
+	
+	<div class="edit-delete">
+		<%= link_to "Edit", edit_restaurant_path(@restaurant) %>&nbsp;&nbsp;
+		<%= link_to "Delete", restaurant_path(@restaurant), confirm: "Are you sure?", method: :delete %>
+	</div>
+	<br/>
+	
+	<div class="show-header">
+		<h1><%= @restaurant.name %></h1>
+		<a href="<%= @restaurant.menu_url %>" target="_blank">View menu</a>
+		<div class="restaurant-show-address">
+		<%= @restaurant.format_phone %><br/>
+		<%= @restaurant.street %><br/>
+		<%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip %>
+		</div>
+	</div>
+	<br/>
+
+	<div class="restaurant-show-images">
+		<div class="masthead">
+		<% if !@restaurant.image_url.nil? %>
+		<%= image_tag(@restaurant.image_url(:masthead).to_s) %>
+		<% end %>
+		</div>
+	</div>
+	<br/>
+	
+	<div class="restaurant-description">
+		<% if @restaurant.owner %>
+			Owned by: <%= @restaurant.owner.name %>
+		<% end %>
+		<%= @restaurant.description %>
+	</div>
+	<br/>
+	
+	<div class="google-map" style="display: block; margin-left: auto; margin-right: auto;">
+	<%= image_tag(@restaurant.google_map) if @restaurant.street? %>
+	</div>
+</div>

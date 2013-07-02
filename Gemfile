@@ -1,8 +1,24 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
+gem 'carrierwave'
+gem 'rmagick'
+gem "fog", "~> 1.3.1"
+gem "devise"
+gem "figaro"
 
+group :development do
+	gem 'annotate'
+	gem 'sqlite3'
+	gem 'rspec-rails', '~> 2.0'
+	gem 'debugger'
+end
+
+group :production do
+	gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -12,4 +28,3 @@ end
 
 gem 'jquery-rails'
 
-gem 'debugger'
