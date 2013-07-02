@@ -25,8 +25,14 @@
   <%= @restaurant.menu? ? (link_to 'Download', @restaurant.menu.url) : "Not uploaded" %>
 </p>
 
+<p>
+  <b>Owner</b>
+  <%= @restaurant.owner.name %>
+</p>
 
+<% if @restaurant.belong_to?(current_owner) %>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
 <%= link_to 'Back', restaurants_path %>
