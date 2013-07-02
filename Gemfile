@@ -52,3 +52,9 @@ group :test do
 	gem 'rb-inotify'
   gem 'libnotify'
 end
+
+# For sending emails
+#gem 'postmark-rails'
+gem 'mandrill-rails'
+
+gem 'newrelic_rpm'

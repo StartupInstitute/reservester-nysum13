@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Reservester" %></title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Kashyap Bhatt">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Reservester - Open Table clone" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -28,10 +28,17 @@
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
+
         </div>
       </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
+    </div> <!--! end of .main -->
+    <br />
+    <footer>
+      <div class="container">
+        <div class="content">
+          <%= render 'layouts/footer' %>
+        </div>
+      </div>
+    </footer> 
   </body>
 </html>
