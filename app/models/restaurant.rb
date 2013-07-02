@@ -7,4 +7,8 @@ class Restaurant < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :owner_id, :presence => true
+
+  # def full?(time_of_day)
+  # 	reservations.during(time_of_day).count >= table_count
+  # end
 end

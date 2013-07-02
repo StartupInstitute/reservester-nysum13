@@ -71,11 +71,9 @@ private
 
 	def check_if_owner 
 		if current_owner.has_ownership?(Restaurant.find(params[:id]))
-			return True
 		else
-			flash[:error]= "This action is for eligible restaurant owners only."
+			flash[:error] = "This action is for eligible restaurant owners only."
 			redirect_to :back
-			return False
 		end
 	end
 end

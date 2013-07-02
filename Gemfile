@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg'
 gem 'rake', '10.1.0'
+gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -13,13 +13,14 @@ group :assets do
   gem "less-rails" 
 end
 
-group :test do 
+group :test, :development do 
   gem 'rspec'
   gem 'capybara'
   gem 'launchy'
+  gem 'debugger'
 end
+
 gem 'jquery-rails'
 gem 'rmagick'
 gem 'carrierwave'
-gem 'debugger'
 gem 'devise'

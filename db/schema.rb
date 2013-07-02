@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627114745) do
+ActiveRecord::Schema.define(:version => 20130702184859) do
 
   create_table "owners", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(:version => 20130627114745) do
   create_table "reservations", :force => true do |t|
     t.string   "name"
     t.integer  "restaurant_id"
-    t.datetime "reserved_at"
-    t.date     "reserved_on"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "email"
+    t.datetime "reserved_for"
   end
 
   create_table "restaurants", :force => true do |t|

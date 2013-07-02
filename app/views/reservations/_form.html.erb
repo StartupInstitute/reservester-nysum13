@@ -1,0 +1,28 @@
+<h1>Make a Reservation</h1></br>
+<%= form_for [@restaurant, @reservation], :html => { :class => 'form-horizontal'} do |f| %>
+  <div class="control-group">
+    <%= f.label 'Full Name:', :class => 'control-label' %><%= mark_required(@reservation, :name) %>
+    <%= f.text_field :name, :class => 'text_field' %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label 'Email:', :class => 'control-label' %><%= mark_required(@reservation, :email) %>
+    <%= f.text_field :email, :class => 'text_area' %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label 'Date and Time: ', :class => 'control-label' %>
+    <%= datetime_select :reservation, :reserved_for, {:start_year => Date.current.year, 
+                                                :end_year => Date.current.year+1,   
+                                                :order => [:month, :day, :year],
+                                                :ampm => true, 
+                                                :minute_step => 30},
+                                                {:class => "input-small"} %> 
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                restaurants_path, :class => 'btn' %>
+  </div>
+<% end %>
