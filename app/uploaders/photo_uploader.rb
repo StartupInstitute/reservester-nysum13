@@ -10,10 +10,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :thumbnail do
-    process :resize_to_fill => [300,250]
+    process :resize_to_fill => [150,150]
   end
 
   version :masthead do
-    process :resize_to_fill => [600,500]
+    process :resize_to_fill => [960,400]
   end
 end
