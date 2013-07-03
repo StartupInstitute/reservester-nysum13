@@ -60,7 +60,15 @@ div.map_container {
   margin: 0;
 }
 
-#index_table {
+div#index_table {
   margin-left: 0 auto!important;
-  margin-right: 0 auto!important;
+}
+
+#index_bar {
+  padding:10px;
+  text-align: center;
+}
+
+#index_bar > .btn {
+  margin:5px;
 }

@@ -17,6 +17,10 @@ class RestaurantsController < ApplicationController
 
   def edit
     @restaurant = Restaurant.find(params[:id])
+
+    if !@restaurant.is_owner?(current_owner)
+      redirect_to @restaurant, notice: 'You are not the owner!'
+    end
   end
 
   def create

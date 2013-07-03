@@ -15,14 +15,18 @@
       <dd><%= @restaurant.address %></dd>
       <dt>Description</dt>
       <dd><%= @restaurant.description %></dd>
-
+    </dl>
     </div>
     <div class="span4 pull-right">
       <%= gmaps4rails(@json) %>
     </div>
   </div>
   <div>
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-    <%= link_to 'Destroy', restaurant_path(@restaurant), :method => :delete, :confirm => 'Are you sure that you want to delete this restaurant?' %> |
-    <%= link_to 'Back', restaurants_path %>
+    <% if owner_signed_in? %>
+     <% if @restaurant.is_owner?(current_owner) %>
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+      <%= link_to 'Delete', restaurant_path(@restaurant), :method => :delete, :confirm => 'Are you sure that you want to delete this restaurant?' %> |
+      <% end %>
+    <% end %>
+    <%= link_to( 'Restaurant List', restaurants_path) %>
   </div>

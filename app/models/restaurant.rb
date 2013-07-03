@@ -20,4 +20,8 @@ class Restaurant < ActiveRecord::Base
     "#{self.address}" 
   end
 
+  def is_owner?(owner)
+    owner.id == owner_id
+  end
+
 end
