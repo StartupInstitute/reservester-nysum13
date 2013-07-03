@@ -14,7 +14,7 @@ owner1_restaurant_list = [
 ]
 
 owner1_restaurant_list.each do |name, number, address, description|
-	owner1.restaurant.create(name: name, number: number, address: address, description: description)
+	owner1.restaurants.create(name: name, number: number, address: address, description: description)
 end
 
 owner2 = Owner.new(:name => 'Test Owner2', :email => 'emurphh@gmail.com', :password => 'test123')
@@ -25,5 +25,5 @@ owner2_restaurant_list = [
 ]
 
 owner2_restaurant_list.each do |name, number, address, description|
-	owner2.restaurant.create(name: name, number: number, address: address, description: description)
+	owner2.restaurants.create(name: name, number: number, address: address, description: description)
 end
