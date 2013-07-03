@@ -34,6 +34,8 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'bootstrap-sass'
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'chosen-rails'
 end
 
 

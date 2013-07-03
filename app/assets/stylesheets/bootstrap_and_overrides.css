@@ -14,6 +14,8 @@
       padding-top: 60px;
     }
 }
+  @import "twitter/bootstrap/responsive";
+
 #options {
   width:100%;
 }
@@ -35,5 +37,7 @@ div.container-fluid > div.row-fluid {
   margin: 0 auto;
 }
 
-  @import "twitter/bootstrap/responsive";
-
+.category_list {
+  min-height:100px!important;
+  margin-left:0px!important;
+}
