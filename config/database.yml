@@ -21,3 +21,11 @@ test:
   pool: 5
   username: egm0921
   password: 
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: restaurant_production
+  pool: 5
+  username: egm0921
+  password: 
