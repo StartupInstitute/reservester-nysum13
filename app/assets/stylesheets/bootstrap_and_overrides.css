@@ -41,3 +41,10 @@ div.container-fluid > div.row-fluid {
   min-height:100px!important;
   margin-left:0px!important;
 }
+
+#map img { 
+  max-width: none;
+}
+#map label { 
+  width: auto; display:inline; 
+} 

@@ -16,8 +16,6 @@
   		<li><%= link_to category.name, category %></li>
   	<% end %>
   </ul>
-	<dt>Fake Map</dt>
-  <dd><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center="+@restaurant.address+"%22&zoom=13&size=600x300&key=AIzaSyANhws2DK_qemJrhqdxZXk45IQVyDamDk4&sensor=true"%></dd>
   <dt>Real Map</dt>
   <dd><%= gmaps4rails(@json) %></dd>
 </dl>
