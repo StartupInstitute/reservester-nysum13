@@ -1,10 +1,10 @@
 <%- model_class = Restaurant -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h2>Restaurant Owner: <%= @restaurant.owner.name %></h2>
 </div>
 
+<div>
 <dl class="dl-horizontal">
-  <dd><h2>Restaurant Owner: <%= @restaurant.owner.name %></h2></dd>
   <dd><%= image_tag @restaurant.image_url(:masthead).to_s %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @restaurant.name %></dd>
@@ -14,7 +14,18 @@
   <dd><%= @restaurant.address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
   <dd><%= @restaurant.phone %></dd>
+  <% if current_owner == @restaurant.owner %> 
+    <dt><strong>Reservations</strong>
+      <% @restaurant.reservations.each do |reservation| %>
+        <dd><%= reservation.name %></dd> 
+        <dd><%= reservation.email %></dd> 
+        <dd><%= reservation.reserved_for.strftime("%A, %b %d, %y, at %I:%M%p" ) %></dd>
+        <hr>
+      <% end %>
+    </dt>
+  <% end %> 
 </dl>
+</div>
 
 <div class="form-actions">
   <% if current_owner == @restaurant.owner %>

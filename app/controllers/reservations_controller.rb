@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
 
 	def show
 		get_restaurant
-		@reservation = @restaurant.reservations.build(params[:id])
+		@reservation = Reservations.find(params[:restaurant_id])
 
 		respond_to do |format|
 			format.html
