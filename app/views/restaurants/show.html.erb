@@ -41,7 +41,7 @@
   <% else %>
     <%= link_to t('.back', :default => t("helpers.links.back")),
               restaurants_path, :class => 'btn'  %>
-    <%= link_to 'Reservations', 
+    <%= link_to 'Make a Reservation', 
               new_restaurant_reservation_path(@restaurant), :class => 'btn btn-success' %>
   <% end %>
 </div>
