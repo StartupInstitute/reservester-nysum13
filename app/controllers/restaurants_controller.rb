@@ -3,10 +3,12 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    @json = @restaurants.to_gmaps4rails
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @json = @restaurant.to_gmaps4rails
   end
 
   def new

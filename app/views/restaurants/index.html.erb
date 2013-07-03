@@ -1,6 +1,7 @@
-<div class="span10">
+<div>
   <h1>Restaurants</h1>
   <%= link_to "Categories", categories_path, class:"btn"%>
+  <%= gmaps4rails(@json) %>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -39,7 +40,4 @@
   </table>
 
 <%= link_to 'New Restaurant', new_restaurant_path, class:"btn" if owner_signed_in? %>
-</div>
-<div class="span2">
-  <div>This is the best place to reserve a meal at NY's hottest restaurants!</div>
 </div>
