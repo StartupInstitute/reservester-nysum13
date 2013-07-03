@@ -1,6 +1,8 @@
 Reservester2::Application.routes.draw do
 
-  resources :restaurants
+  resources :restaurants do
+    get 'download_menu', on: :member
+  end
 
   root to: 'restaurants#index'
   

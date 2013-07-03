@@ -1,0 +1,8 @@
+2013-06-20 21:49:11 ERROR  : Error connecting to the server: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2013-06-20 21:49:33 ERROR  : Error connecting to the server: fe_sendauth: no password supplied
+
+2013-06-20 21:52:22 ERROR  : Error connecting to the server: fe_sendauth: no password supplied
+

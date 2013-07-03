@@ -40,4 +40,12 @@ class RestaurantsController < ApplicationController
   	@restaurant.destroy
   	redirect_to restaurants_path, notice: 'Restaurant was successfully deleted!'
   end
+
+  def download_menu
+    @restaurant = Restaurant.find(params[:id])
+    send_file(@restaurant.menu.path,
+        :type => 'application/pdf',
+        :disposition => 'attachment',
+        :url_based_filename => true)
+  end
 end

@@ -15,5 +15,7 @@
 	<b>Phone:</b>
 	<%= @restaurant.phone %>
 </p>
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> | <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: 'Are you sure?'} %> | <%= link_to 'Back', restaurants_path %>
+<p>
+ <a href=<%= @restaurant.menu %> class="btn">Menu</a>
+</p>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), :class => "btn btn-success" %> | <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger" %> | <%= link_to 'Back', restaurants_path, :class => "btn btn-inverse" %>

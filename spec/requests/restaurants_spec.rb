@@ -45,8 +45,5 @@ feature "Restaurant management" do
 end
 
 feature "User interaction" do
-	# Test for downloading menu
-	scenario "downloads pdf menu" do
 
-	end
 end
