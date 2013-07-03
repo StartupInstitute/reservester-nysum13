@@ -1,23 +1,28 @@
-<%= form_for @restaurant, :html => {:multipart => true} do |r| %>
+<%= form_for @restaurant, :html => {:multipart => true} do |f| %>
 
 	<div class="field">
-		<%= r.label :name %><br />
-		<%= r.text_field :name , id: 'name' %>
+		<%= f.label :name %><br />
+		<%= f.text_field :name , id: 'name' %>
 	</div>
 	<div class="field">
-		<%= r.label :description %><br />
-		<%= r.text_area :description, id: 'description' %>
+		<%= f.label :description %><br />
+		<%= f.text_area :description, id: 'description' %>
 	</div>
 	<div class="field">
-		<%= r.label :address %><br />
-		<%= r.text_field :address, id: 'address' %>
+		<%= f.label :address %><br />
+		<%= f.text_field :address, id: 'address' %>
 	</div>
 	<div class="field">
-		<%= r.label :phone %><br />
-		<%= r.text_field :phone, id: 'phone' %>
+		<%= f.label :phone %><br />
+		<%= f.text_field :phone, id: 'phone' %>
 	</div>
-
+	<div class="field">
+		<%= f.file_field :image, id: 'file' %>
+	<div class="field">
+		<%= f.label :remote_image_url, "or image URL:" %>
+		<%= f.text_field :remote_image_url %>
+	</div>
 	<div class="form-actions">
-		<%= r.submit "Submit"%>
+		<%= f.submit "Submit"%>
 	</div>
 <% end %>

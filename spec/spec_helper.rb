@@ -33,6 +33,9 @@ RSpec.configure do |config|
   # Configures RSpec to include Capybara methods
   config.include Capybara::DSL
 
+  # Configures RSpec and Capybara to test CarrierWave
+  config.include CarrierWaveDirect::Test::CapybaraHelpers
+
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.

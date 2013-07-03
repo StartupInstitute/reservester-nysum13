@@ -72,7 +72,7 @@ describe RestaurantsController do
 
   describe "PUT 'update'" do
     before :each do
-      @restaurant = create(:restaurant)
+      @restaurant = create(:image_factory)
     end
 
     it "locates the requested restaurant" do

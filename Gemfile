@@ -56,6 +56,7 @@ end
 group :test do
 	gem 'faker'
 	gem 'capybara'
+	gem 'capybara-webkit'
 	gem 'guard-rspec'
 	gem 'launchy'
 	gem 'database_cleaner'
@@ -63,3 +64,14 @@ end
 
 #Phony gem - validates phone numbers
 gem 'phony_rails'
+
+#Image upload CarrierWave and RMagick
+gem 'rmagick'
+gem 'carrierwave'
+gem 'fog', '~> 1.3.1'
+
+#Testing CarrierWave with Capybara
+gem 'carrierwave_direct'
+
+#Figaro gem to protect sensitive keys
+gem 'figaro'

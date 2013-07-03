@@ -1,5 +1,5 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
-
+include ActionDispatch::TestProcess
 FactoryGirl.define do
   # valid restaurant factory
   factory :restaurant, :class => 'Restaurant' do
@@ -15,5 +15,10 @@ FactoryGirl.define do
   	address nil
   	description nil
   	phone "Alo Guvnah!"
+  end
+
+  # valid image factory
+  factory :image_factory, parent: :restaurant do
+    image {fixture_file_upload(Rails.root.to_s + '/spec/support/jed.jpg', 'img/jpg')}
   end
 end
