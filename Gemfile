@@ -75,3 +75,6 @@ gem 'carrierwave_direct'
 
 #Figaro gem to protect sensitive keys
 gem 'figaro'
+
+#Geocoder gem to use addresses for google maps
+gem 'geocoder'

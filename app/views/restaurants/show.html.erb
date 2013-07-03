@@ -2,7 +2,18 @@
 <!-- <p>Find me in app/views/restaurants/show.html.erb</p> -->
 
 <p id="notice"><%= notice %></p>
-<%= image_tag @restaurant.image_url(:masthead).to_s %>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span4">
+			<%= image_tag @restaurant.image_url(:masthead).to_s %>
+		</div>
+		<div class="span5">
+			<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
+		</div>
+	</div>
+</div>
+
 <p>
 	<b>Description:</b>
 	<%= @restaurant.description %>
