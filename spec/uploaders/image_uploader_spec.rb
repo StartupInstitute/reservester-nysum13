@@ -8,4 +8,8 @@ describe ImageUploader do
 	it 'has a valid image' do
 		@restaurant.should be_valid
 	end
+
+	it 'has a valid menu' do
+		@restaurant.should be_valid
+	end
 end

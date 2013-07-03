@@ -1,8 +1,10 @@
 class Restaurant < ActiveRecord::Base
   attr_accessible :address, :description, :name, :phone,
-  				  :image, :remote_image_url
+  				  :image, :remote_image_url, :menu, :remote_menu_url
 
   mount_uploader :image, ImageUploader, mount_on: :image
+
+  mount_uploader :menu, ImageUploader, mount_on: :menu
 
   validates :name, presence: true
   validates :address, presence: true

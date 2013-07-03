@@ -17,10 +17,18 @@
 		<%= f.text_field :phone, id: 'phone' %>
 	</div>
 	<div class="field">
+		<%= f.label :image %>
 		<%= f.file_field :image, id: 'file' %>
 	<div class="field">
 		<%= f.label :remote_image_url, "or image URL:" %>
 		<%= f.text_field :remote_image_url %>
+	</div>
+	<div class="field">
+		<%= f.label :menu %>
+		<%= f.file_field :menu, id: 'menu' %>
+	<div class="field">
+		<%= f.label :remote_menu_url, "or menu URL:" %>
+		<%= f.text_field :remote_menu_url, id: 'menu url' %>
 	</div>
 	<div class="form-actions">
 		<%= f.submit "Submit"%>

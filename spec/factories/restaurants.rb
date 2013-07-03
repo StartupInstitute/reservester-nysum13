@@ -20,5 +20,7 @@ FactoryGirl.define do
   # valid image factory
   factory :image_factory, parent: :restaurant do
     image {fixture_file_upload(Rails.root.to_s + '/spec/support/jed.jpg', 'img/jpg')}
+    menu  {fixture_file_upload(Rails.root.to_s + '/spec/support/Resume.pdf', 'menu/pdf')}
+
   end
 end
