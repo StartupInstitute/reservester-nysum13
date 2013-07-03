@@ -1,0 +1,65 @@
+<%= form_for @restaurant, :html => {:multipart => true}, class:"form-horizontal" do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+      <ul>
+      <% @restaurant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description %>
+    <div class="controls">
+      <%= f.text_area :description %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :address%>
+    <div class="controls">
+      <%= f.text_area :address %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :phone %>
+    <div class="controls">
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :photo %>
+    <div class="controls">
+      <%= image_tag @restaurant.photo.thumbnail.url if @restaurant.photo? %>
+      <%= f.file_field :photo %>
+      <%= f.hidden_field :photo_cache %>
+    </div>
+  </div>
+
+  <!--<div class="control-group">
+    <%= hidden_field_tag "restaurant[category_ids][]", nil %>
+    <% Category.all.each do |category| %>
+      <label class="checkbox"><%= check_box_tag "restaurant[category_ids][]", category.id, @restaurant.category_ids.include?(category.id), id: dom_id(category) %><%= category.name %></label>
+      <%= label_tag "restaurant[category_ids][]", category.name, class:"checkbox" %><br>
+    <% end %>
+  </div>-->
+  <div class="control-group">
+    <%= hidden_field_tag "restaurant[category_ids][]", nil %>
+    <%= f.collection_select :category_ids, Category.order(:name), :id, :name, {}, {multiple:true} %>
+  </div>
+
+  <div class="control-group">
+    <%= f.submit :class => 'btn' %>
+  </div>
+<% end %>

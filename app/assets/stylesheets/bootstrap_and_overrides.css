@@ -1,0 +1,66 @@
+/*
+  #twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "twitter-bootstrap-static/sprites"
+  #twitter-bootstrap-static/fontawesome
+  */
+
+  @import "twitter/bootstrap/bootstrap";
+
+  @media (min-width: 980px) {
+    /* Enable use of floated navbar text */
+    body > .container-fluid {
+      padding-top: 60px;
+    }
+}
+  @import "twitter/bootstrap/responsive";
+
+#options {
+  width:100%;
+}
+
+#options > div {
+  padding-bottom:5px;
+}
+
+#options > div > a.btn-mini {
+  width:80px;
+}
+
+textarea {
+  height:50px;
+}
+
+div.container-fluid > div.row-fluid {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.category_list {
+  min-height:100px!important;
+  margin-left:0px!important;
+}
+
+#map img { 
+  max-width: none;
+}
+#map label { 
+  width: auto; display:inline; 
+} 
+
+#map {
+  width: auto;
+  max-width: 1366px;
+}
+
+div.map_container {
+  width:auto;
+  padding: 0;
+  margin: 0;
+}
+
+#index_table {
+  margin-left: 0 auto!important;
+  margin-right: 0 auto!important;
+}

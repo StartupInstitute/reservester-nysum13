@@ -1,0 +1,14 @@
+<div class="row-fluid">
+  <h1> <%= @restaurant.name %> </h1>
+  <table class="table">
+    <% @reservations.each do |reservation| %>
+    	<tr>
+	      <td>Name <%= reservation.name %></td>     
+        <td>Date: <%= reservation.datetime %></td>
+        <td> <%= link_to "Delete Reservation", [@restaurant,reservation] , confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini" %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to 'Back', @restaurant %>
+</div>
+

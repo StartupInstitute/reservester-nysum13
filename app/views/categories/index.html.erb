@@ -1,0 +1,13 @@
+<h1>Categories</h1>
+<div>
+	<% Category.all.each do |category| %>
+		<div class="span3 category_list">
+			<h3><%= link_to category.name, category %></h3>
+			<% category.restaurants.each do |restaurant| %>
+				<div>
+					<%= link_to restaurant.name, restaurant %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
