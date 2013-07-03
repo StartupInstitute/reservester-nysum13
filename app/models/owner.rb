@@ -7,8 +7,8 @@ class Owner < ActiveRecord::Base
 
   has_many :restaurants
 
-  validates :name, :presence => true
-  validates :email, :presence => true
+  validates :name, presence: true
+  validates :email, presence: true
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name

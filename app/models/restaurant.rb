@@ -8,10 +8,10 @@ class Restaurant < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, through: :categorizations
 
-  validates :name, :presence => true
-  validates :address, :presence => true
-  validates :description, :presence => true
-  validates_length_of :phone, :is => 10
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :description, presence: true
+  validates_length_of :phone, is: 10
 
   mount_uploader :photo, PhotoUploader
 

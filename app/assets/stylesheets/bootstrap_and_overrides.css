@@ -33,7 +33,7 @@ textarea {
 }
 
 div.container-fluid > div.row-fluid {
-  max-width: 960px;
+  max-width: 1366px;
   margin: 0 auto;
 }
 
@@ -48,3 +48,19 @@ div.container-fluid > div.row-fluid {
 #map label { 
   width: auto; display:inline; 
 } 
+
+#map {
+  width: auto;
+  max-width: 1366px;
+}
+
+div.map_container {
+  width:auto;
+  padding: 0;
+  margin: 0;
+}
+
+#index_table {
+  margin-left: 0 auto!important;
+  margin-right: 0 auto!important;
+}
