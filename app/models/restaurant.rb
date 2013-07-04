@@ -35,6 +35,8 @@ class Restaurant < ActiveRecord::Base
   validates :phone, :numericality => true, :length => {:is => 10}, :allow_blank => true
   validates :owner_id, presence: true
   
+  # RESERVATIONS_PER_HOUR = 3
+  
   def catgory_tokens=(ids)
     self.category_ids = ids.split(",")
   end
