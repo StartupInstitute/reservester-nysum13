@@ -6727,3 +6727,407 @@ Processing by RestsController#index as HTML
   [1m[35mRest Load (0.6ms)[0m  SELECT "rests".* FROM "rests" 
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+PG::Error: ERROR:  relation "rests" does not exist
+LINE 5:              WHERE a.attrelid = '"rests"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"rests"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+PG::Error: ERROR:  relation "rests" does not exist
+LINE 5:              WHERE a.attrelid = '"rests"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"rests"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+PG::Error: ERROR:  relation "rests" does not exist
+LINE 5:              WHERE a.attrelid = '"rests"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"rests"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+PG::Error: ERROR:  relation "rests" does not exist
+LINE 5:              WHERE a.attrelid = '"rests"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"rests"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+PG::Error: ERROR:  relation "rests" does not exist
+LINE 5:              WHERE a.attrelid = '"rests"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"rests"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.5ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (29.6ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Thu, 04 Jul 2013 17:15:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith1@gmail.com"], ["encrypted_password", "$2a$04$nMwhWIt9jjm9TG21Kd6IneVgdrPE4GSuARQdiG6VWygBwS/HN/Qsq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 04 Jul 2013 17:15:07 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-07-04 13:15:07 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.9ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 165ms (Views: 162.7ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.9ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Thu, 04 Jul 2013 17:15:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith2@gmail.com"], ["encrypted_password", "$2a$04$k0zyzUlKZqnXdtMlZdoIo.tNZcHBj6MNvr0.G7GC3KqmUafRyBmY2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 04 Jul 2013 17:15:07 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-07-04 13:15:07 -0400
+Processing by RestsController#new as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/owners/sign_in" for 127.0.0.1 at 2013-07-04 13:15:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Thu, 04 Jul 2013 17:15:08 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith3@gmail.com"], ["encrypted_password", "$2a$04$aZwaH09nMbtQ59Q9wRDEteqnb0dP1YM8.mnt9xFeZc25vffhw2ioe"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 04 Jul 2013 17:15:08 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Thu, 04 Jul 2013 17:15:08 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith4@gmail.com"], ["encrypted_password", "$2a$04$bvNUs6w2eSen.vbwKDLq.O7Pro4rAFyoCN6GZs0bizqL9LAnnzo7S"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 04 Jul 2013 17:15:08 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (1.2ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Thu, 04 Jul 2013 17:15:08 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith5@gmail.com"], ["encrypted_password", "$2a$04$ji8BJ0kAxr2azWz.hujzOuRoJgw8h5/ES3.dQJznz.qi/Nj96tUhm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 04 Jul 2013 17:15:08 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 02:16:05 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith1@gmail.com"], ["encrypted_password", "$2a$04$ZNp8VWs/1tsnKMMyLQibtO1NDH/YJ3./8uTYMpQhgykc.8VCUv9Zq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 02:16:05 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-07-04 22:16:06 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.9ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 90ms (Views: 87.9ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.5ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith2@gmail.com"], ["encrypted_password", "$2a$04$OPloGRNDh/rTAjXW.UQjruD9IuM81ai2L2Kxcyo/EDZApkx4sikYC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-07-04 22:16:06 -0400
+Processing by RestsController#new as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/owners/sign_in" for 127.0.0.1 at 2013-07-04 22:16:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.7ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith3@gmail.com"], ["encrypted_password", "$2a$04$nf55m8HCoVs1RxsdFuqwyurCTrbAZ.z/gVG7fVjCn/EvdAMSgUCC6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.7ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith4@gmail.com"], ["encrypted_password", "$2a$04$8kSSSlB.iI5hLTeH1lkgy.GI0DciZeP1kAWtkR9UidW/p0eGSne3G"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith5@gmail.com"], ["encrypted_password", "$2a$04$n/NA99biQPcoxZnaaBGWb.6oQxiFC7qsN1YonItFC8qVVCTtvOAfi"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 02:16:06 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (51.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (90.7ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith1@gmail.com"], ["encrypted_password", "$2a$04$IuybJQFugMvmWSKDp2oTCuhgjRWAiB5xxyxZCdmK8O5Z8/vgixGYG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith2@gmail.com"], ["encrypted_password", "$2a$04$e7MvUzYvGLhI3j2MOkEgDOtdsjrgW59wSbBGyXJkrI6Wudng0MHsW"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith3@gmail.com"], ["encrypted_password", "$2a$04$dt8NX.MojBKskOvvlXTQ2.maQJUspgvqX1GCOXw9Kg/0q7.kdUZke"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith4@gmail.com"], ["encrypted_password", "$2a$04$uvXdTLsigwdsCoJ/22i/7e7oWK2cjv8x.wWXOBrduSAzVISu186Ga"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:34:26 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-07-05 12:34:26 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.8ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 209ms (Views: 206.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 16:34:27 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith5@gmail.com"], ["encrypted_password", "$2a$04$5oRqlqOSkwxVcx2mWybsse2xibJ5zVKUIgfojzm37G92kmtWvXgza"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:34:27 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-07-05 12:34:27 -0400
+Processing by RestsController#new as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/owners/sign_in" for 127.0.0.1 at 2013-07-05 12:34:27 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.6ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith1@gmail.com"], ["encrypted_password", "$2a$04$uzIOHREiv.7BzqLmgrYTqevvzMipJOoXmVK5xQe7/yms9YXUwELia"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith2@gmail.com"], ["encrypted_password", "$2a$04$mRyasym42eMZV/cpbJK/o.ofMX1rND9.d8eilK/CU5KrPCPnL5VHS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith3@gmail.com"], ["encrypted_password", "$2a$04$HPAbRYxd7H5AQK2qgMH8Iu7eeiaF3l55G35wGVs.zCQmi2vF6fvs6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith4@gmail.com"], ["encrypted_password", "$2a$04$55Vt.av33UHPlcLkQYpcP.k0cHDhgwDBa7YaZ/I2nF1nq5NYt7UX2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:41:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-07-05 12:41:33 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (1.1ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 90ms (Views: 88.2ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 16:41:34 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith5@gmail.com"], ["encrypted_password", "$2a$04$Wp/lbc4/Fc1rYmXqrC6QIePu.P7ydyL0FJn73qnN.N56O8iHj4Wva"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:41:34 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-07-05 12:41:34 -0400
+Processing by RestsController#new as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/owners/sign_in" for 127.0.0.1 at 2013-07-05 12:41:34 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.6ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (38.9ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith1@gmail.com"], ["encrypted_password", "$2a$04$pYBuCtkJgQC/WPUc2NJ8JOkM/TwOeRe7aMTJ.nQDhDNVYg4SQLHLW"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith2@gmail.com"], ["encrypted_password", "$2a$04$dFXMJMoTvkOpccaAd/53vuWSujD8U8027L72XvgtHYa31jspA5UF6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith3@gmail.com"], ["encrypted_password", "$2a$04$dEnxLJ/6.X4tBHMKoOIpN.fz2fq/vZ3bahrIngp8Hi4h.lHUQjGa."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-07-05 12:52:19 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.8ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith4@gmail.com"], ["encrypted_password", "$2a$04$OtnRqUvxEhxoD2bOc.zcMOVk1M6d.oi/mBO/xI.WVRXWqU931N4OS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:52:19 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-07-05 12:52:19 -0400
+Processing by RestsController#new as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/owners/sign_in" for 127.0.0.1 at 2013-07-05 12:52:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (42.5ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.6ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 16:52:20 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith5@gmail.com"], ["encrypted_password", "$2a$04$NbybdTjWzjDkSLMTMxFUx.faq42VSDa0rWxw09qFqhQYUCdnGQ2Y2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 16:52:20 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (4.5ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith1@gmail.com"], ["encrypted_password", "$2a$04$KFkazDUB1.3XphafoSGfIOk6apG4We0KaXK1rtEVRnqlBIIkKwsKm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith2@gmail.com"], ["encrypted_password", "$2a$04$skEsHkB3tfKs9F3iYgoQd.kCV2FPlFF3jnpbKMaw6hNDb.MecQDvS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith3@gmail.com"], ["encrypted_password", "$2a$04$rGxGEje2CHCb144XfV7mBe8pk0hSxkirtbuuzt9uErvoRoTHdsio2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOwner Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith4@gmail.com"], ["encrypted_password", "$2a$04$KWb0pwyr6u2Qn85kWQDAfufb0VjmWLDTAcWklgnuSyFaBe2GUAdiq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/rests" for 127.0.0.1 at 2013-07-05 14:23:07 -0400
+Processing by RestsController#index as HTML
+  [1m[35mRest Load (0.9ms)[0m  SELECT "rests".* FROM "rests" 
+Completed 200 OK in 90ms (Views: 88.3ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOwner Exists (0.5ms)[0m  SELECT 1 AS one FROM "owners" WHERE "owners"."email" = 'johnsmith5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "owners" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "johnsmith5@gmail.com"], ["encrypted_password", "$2a$04$/g1AhXZ/NeLjWRNIDtv9oevF/wD5YSwgzaYYxisxrf2Vo8GDWnA.2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "John Smith"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 05 Jul 2013 18:23:07 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/rests/new" for 127.0.0.1 at 2013-07-05 14:23:07 -0400
+Processing by RestsController#new as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/owners/sign_in" for 127.0.0.1 at 2013-07-05 14:23:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.6ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m

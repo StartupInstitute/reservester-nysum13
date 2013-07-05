@@ -3,7 +3,7 @@ require 'capybara/rspec'
 
 describe "Rests" do
   before do
-    @rest = Rest.create!(:name => 'Danies Vegan Awesomeness')
+    @rest = FactoryGirl.build(:rest)
   end
   
   describe "GET /rests" do

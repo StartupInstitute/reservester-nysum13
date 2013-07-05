@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '3.2.13'
 gem 'pg'
 
@@ -14,18 +15,24 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'fog', "~> 1.3.1"
+gem 'fog', '~> 1.3.1'
 gem 'nokogiri', "~> 1.5.0"
 gem 'figaro'
-
 gem 'carrierwave'
 gem 'rmagick', '2.13.2'
+gem 'devise'
 
 group :test, :development do
-	gem 'rspec-rails' 
-	gem "factory_girl_rails", "~>4.0"
-	gem "database_cleaner"
-	gem 'capybara'
-	gem 'launchy'
+	gem 'rspec-rails'
+  gem 'rspec-core'
+	gem "factory_girl_rails"
   gem 'debugger'
+
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem "database_cleaner"
+  gem 'launchy'
 end

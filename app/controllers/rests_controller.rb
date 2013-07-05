@@ -1,15 +1,17 @@
 class RestsController < ApplicationController
+  before_filter :authenticate_owner!, :except => [:show, :index]
+
   def index
   	@rests = Rest.all
   end
 
   def new
-  	@rest = Rest.new
+  	@rest = current_owner.rests.new
   end
 
   def create
-  	@rest = Rest.new(params[:rest])
-  	
+  	@rest = current_owner.rests.new(params[:rest])
+
   	if @rest.save
   	redirect_to rests_path
   else
@@ -18,7 +20,12 @@ class RestsController < ApplicationController
   end
 
   def edit
-  	@rest = Rest.find(params[:id])
+    @rest = Rest.find(params[:id])
+    if current_owner == @rest.owner
+  	  @rest = Rest.find(params[:id])
+    else
+      redirect_to rests_path, :notice => "You cannot edit Restaurants you don't own."
+    end
   end
 
   def show

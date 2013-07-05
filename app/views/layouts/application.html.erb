@@ -6,10 +6,22 @@
 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <div id="owner_nav">
+	<% if owner_signed_in? %>
+	  Signed in as <%= current_owner.name %>. Not you?
+	  <%= link_to "Sign Out", destroy_owner_session_path, method: :delete %>
+	<% else %>
+	  <%= link_to "Sign Up", new_owner_registration_path %> or <%= link_to "Sign In", new_owner_session_path %>.
+	<% end %>
+	</div>
 </head>
 <body>
-
+<p class = "alert"><%= alert %></p>
+<p id='notice'>
+<%= notice %>
 <%= yield %>
+
+
 
 </body>
 </html>

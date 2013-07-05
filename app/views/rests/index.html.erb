@@ -1,7 +1,4 @@
 <h1><center>Restaurants</center></h1>
-<p id='notice'>
-<%= notice %>
-</p>
 
 
 <table class="table table-bordered">
@@ -11,6 +8,7 @@
 	<td><%="Description"%></td>
 	<td><%="Address"%></td>
 	<td><%="Phone Number"%></td>
+	<td><%="Owner"%></td>
 </tr>
 
 	<% @rests.each do |r| %>
@@ -20,6 +18,7 @@
 		<td><%= r.description %></td>
 		<td><%= r.address %></td>
 		<td><%= r.phone %></td>
+		<td><%= r.owner.name %></td>
 	</tr>
 	<% end %>
 

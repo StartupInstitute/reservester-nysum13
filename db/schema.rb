@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628125508) do
+ActiveRecord::Schema.define(:version => 20130701235205) do
 
   create_table "owners", :force => true do |t|
     t.string   "name",                   :default => "", :null => false
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20130628125508) do
   end
 
   add_index "owners", ["email"], :name => "index_owners_on_email", :unique => true
-  add_index "owners", ["name"], :name => "index_owners_on_name", :unique => true
   add_index "owners", ["reset_password_token"], :name => "index_owners_on_reset_password_token", :unique => true
 
   create_table "rests", :force => true do |t|
@@ -41,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130628125508) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image"
+    t.integer  "owner_id"
   end
 
 end
