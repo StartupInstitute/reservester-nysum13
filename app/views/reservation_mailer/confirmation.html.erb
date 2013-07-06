@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Sup, <%= @reserver.name %>!</h3>
+    <p>
+      Your reservation for <%= @restaurant.name %> is complete!<br/>
+      You're all set for <%= @reserver.reserved_for.strftime("%A, %b %d, %Y, at %I:%M%p") %>
+    </p><br/></br>
+
+    <p>Thanks for using Reservester and have a great day!</p></br></br>
+    <p>Your boy,</p></br>
+    <p><strong>Elvin G.</strong></p>
+  </body>
+</html>

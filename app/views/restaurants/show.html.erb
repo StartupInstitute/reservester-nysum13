@@ -19,7 +19,7 @@
       <% @restaurant.reservations.each do |reservation| %>
         <dd><%= reservation.name %></dd> 
         <dd><%= reservation.email %></dd> 
-        <dd><%= reservation.reserved_for.strftime("%A, %b %d, %y, at %I:%M%p" ) %></dd>
+        <dd><%= reservation.reserved_for.strftime("%A, %b %d, %Y, at %I:%M%p" ) %></dd>
         <hr>
       <% end %>
     </dt>
