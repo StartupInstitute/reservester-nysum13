@@ -1,4 +1,4 @@
-<h1>Restaurant Listing</h1>
+<h1>My Restaurants</h1>
 
 <div class="row-fluid">
   <ul class="thumbnails">
@@ -10,9 +10,6 @@
           <h3><%= restaurant.name %></h3>
           <p><%= restaurant.description %><%= restaurant.phone %><%= restaurant.address %></p>
           <p><%= link_to 'More Details', restaurant, class: 'btn btn-primary'%></p>
-          <% unless restaurant.belong_to?(current_owner) %>
-          <p><%= link_to 'Make Reservation', restaurant, class: 'btn btn-primary'%></p>
-          <% end %>
         </div>
       </div>
     </li>

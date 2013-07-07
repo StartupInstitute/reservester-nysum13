@@ -21,7 +21,7 @@ class RestaurantsController < ApplicationController
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", error: 'Some error stopped restaurant from saving.' }
       end
     end
   end
@@ -35,6 +35,10 @@ class RestaurantsController < ApplicationController
 	# Show restaurant details with given ID
   def show
     @restaurant = Restaurant.find(params[:id])
+
+    # New Reservation form on the show page only
+    @reservation = Reservation.new
+    @reservation.restaurant = @restaurant
 
     respond_to :html
   end

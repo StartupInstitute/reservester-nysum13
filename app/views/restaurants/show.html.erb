@@ -31,8 +31,18 @@
 </p>
 
 <% if @restaurant.belong_to?(current_owner) %>
+  <p>
+    <h3>Reservations</h3>
+    <% @restaurant.reservations.each do |reservation| %>
+      <%= print_reservation_details(reservation) %>
+    <% end %>
+  </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% else %>
+  <h2>New Reservation</h2>
+  <%= render 'reservations/form', :reservation => @reservation %>
 <% end %>
+
 <%= link_to 'Back', restaurants_path %>

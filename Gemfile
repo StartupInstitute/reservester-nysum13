@@ -17,9 +17,8 @@ gem 'jquery-rails'
 
 group :development, :test do
 	#gem 'debugger'
+	gem 'therubyracer'
 end
-
-gem 'therubyracer'
 
 gem 'bootstrap-sass'
 
