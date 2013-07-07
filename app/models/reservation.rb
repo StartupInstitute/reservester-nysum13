@@ -18,9 +18,13 @@ class Reservation < ActiveRecord::Base
   belongs_to :user
   belongs_to :owner
   
+  validates :user_id, presence: true
+  validates :owner_id, presence: true
+  validates :restaurant_id, presence: true
+  
   apply_simple_captcha
   
-  validate :restaurant_is_not_overbooked
+  # validate :restaurant_is_not_overbooked
   # validate :user_has_not_reserved
   # after_create :reduce_table_qty
   
@@ -34,13 +38,13 @@ class Reservation < ActiveRecord::Base
     )
   }
   
-  protected
-  
-    def restaurant_is_not_overbooked
-      if restaurant.full?(reserve_on)
-        errors.add(:restaurant, "is overbooked")
-      end
-    end
+  # protected
+    
+    # def restaurant_is_not_overbooked
+    #   if restaurant.full?(reserve_on)
+    #     errors.add(:restaurant, "is overbooked")
+    #   end
+    # end
     
     # def user_has_not_reserved
     #   if Reservation.during(reserve_on).where(user_id: user_id, restaurant_id: restaurant_id).count > 0

@@ -26,7 +26,8 @@ class Restaurant < ActiveRecord::Base
   belongs_to :owner
   has_many :reservations
   has_many :categorizations
-  has_many :categories, through: :categorizations
+  has_many :categories, :through => :categorizations
+  has_many :users, :through => :reservations
   
   mount_uploader :image, ImageUploader
   mount_uploader :menu, MenuUploader
@@ -41,9 +42,9 @@ class Restaurant < ActiveRecord::Base
     self.category_ids = ids.split(",")
   end
   
-  def full?(time_of_day)
-    reservations.during(time_of_day).count >= table_qty
-  end
+  # def full?(time_of_day)
+  #   reservations.during(time_of_day).count >= table_qty
+  # end
   
   def address
     "#{self.street} #{self.city}, #{self.state} #{self.zip}"
