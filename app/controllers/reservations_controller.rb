@@ -26,7 +26,7 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       OwnerMailer.notify_reservation(@reservation).deliver
-      redirect_to [@restaurant, @reservation], notice: 'Reservation was successfully created.'
+      redirect_to [@restaurant,@reservation], notice: 'Reservation was successfully created.'
     else
       render action: "new"
     end
