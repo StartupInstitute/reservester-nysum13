@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
- 
+
+<% if :authenticate_owner! %>
+
+   <%= @restaurant.owner.email %>
+ <% end %> 
+
 <p>
   <b>Name:</b>
   <%= @restaurant.name %>
