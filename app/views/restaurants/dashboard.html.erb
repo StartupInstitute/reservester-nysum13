@@ -1,0 +1,45 @@
+<%- model_class = Restaurant -%>
+<div class="page-header">
+  <h1><%=t current_owner.name, :default => current_owner.name.titleize %></h1>
+</div>
+<div>
+	  <% if current_owner.restaurants.empty? %>
+	  	<h5>Womp! You haven't added any restaurants, dude!</h5>
+	  	<p>Start adding restaurants by clicking <%= link_to 'here', new_restaurant_path %>.</p>
+	  <% else %>
+		<h4>Here are your restaurants, <%= current_owner.name %></h4>
+		<table class="table table-striped">
+		  <thead>
+		    <tr>
+		      <th><%= model_class.human_attribute_name(:name) %></th>
+		      <th><%= model_class.human_attribute_name(:phone) %></th>
+		      <th><%= model_class.human_attribute_name(:address) %></th>
+		      <th><%= model_class.human_attribute_name(:description) %></th>
+		      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <% @restaurants.each do |restaurant| %>
+		      <tr>
+		      	<td><%= image_tag restaurant.image_url(:thumb).to_s %></td>
+		        <td><%= restaurant.name %></td>
+		        <td><%= restaurant.phone %></td>
+		        <td><%= restaurant.address %></td>
+		        <td><%= restaurant.description %></td>
+		        <td>
+		          <%= link_to t('.show', :default => t("helpers.links.show")), restaurant, :class => 'btn btn-mini' %>
+		          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+		                edit_restaurant_path(restaurant), :class => 'btn btn-mini' %>
+		          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+		                  restaurant_path(restaurant),
+		                  :method => :delete,
+		                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+		                  :class => 'btn btn-mini btn-danger' %>
+		        </td>
+		      </tr>
+		    <% end %>
+		   	  <tr><%= link_to 'New Restaurant', new_restaurant_path, :class => 'btn btn-primary' %></tr>
+		  </tbody>
+		</table>
+	  <% end %>
+</div>
