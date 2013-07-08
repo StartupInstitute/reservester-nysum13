@@ -23,16 +23,6 @@
 	<%= f.text_field :description %>
 	<%= f.label :category_tokens, "Categories" %>
 	<%= f.text_field :category_tokens, "data-pre" => @restaurant.categories.map(&:attributes).to_json %>
-	<p>
-		<%= f.label :category %>
-		<%= hidden_field_tag "restaurant[category_ids][]", nil %>
-		<% Category.all.each do |category| %>
-			<div>
-				<%= check_box_tag "restaurant[category_ids][]", category.id, @restaurant.category_ids.include?(category.id), id: dom_id(category) %>
-				<%= label_tag dom_id(category), category.name %>
-			</div>
-		<% end %>
-	</p>
 	<%= f.label :total_number_of_tables %>
 	<%= f.number_field :table_qty %>
 	<%= f.label :upload_image %>

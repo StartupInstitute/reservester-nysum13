@@ -12,6 +12,8 @@ Reservester::Application.routes.draw do
     resources :reservations
   end
   
+  resources :categories, only: [:index]
+  
   get "pages/index"
   
   root to: "pages#index"
