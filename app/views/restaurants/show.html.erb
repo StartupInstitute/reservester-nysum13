@@ -14,16 +14,24 @@
   <dd><%= @restaurant.address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
   <dd><%= @restaurant.phone %></dd>
+  <dt><strong>Categories</strong>
+  <dd>
+      <% @restaurant.categories.each do |category| %>
+      <%= category.name %>
+      <% end %>
+  </dd>
   <% if current_owner == @restaurant.owner %> 
     <dt><strong>Reservations</strong>
       <% @restaurant.reservations.each do |reservation| %>
         <dd><%= reservation.name %></dd> 
         <dd><%= reservation.email %></dd> 
         <dd><%= reservation.reserved_for.strftime("%A, %b %d, %Y, at %I:%M%p" ) %></dd>
+    </dt>
         <hr>
       <% end %>
-    </dt>
   <% end %> 
+
+  
 </dl>
 </div>
 
