@@ -10,6 +10,9 @@ require "capybara/rspec"
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
+  
+  # Include factory girl syntax to simplify calls to factories
+  config.include FactoryGirl::Syntax::Methods
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

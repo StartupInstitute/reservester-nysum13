@@ -31,6 +31,6 @@ FactoryGirl.define do
     f.city { Faker::Address.city }
     f.state { Faker::Address.state }
     f.zip { Faker::Address.zip_code }
-    f.owner_id 1
+    f.association :owner
   end 
 end 

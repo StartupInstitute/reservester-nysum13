@@ -38,7 +38,7 @@ describe Reservation do
     reservation1 = FactoryGirl.create(:reservation)
     reservation2 = FactoryGirl.create(:reservation)
     reservation3 = FactoryGirl.build(:reservation, reserve_on: Time.now-1.day)
-    expect(Reservation.during(Time.now).count).to eq(2)
+    expect(Reservation.during(Time.now)).to eq([reservation1, reservation2])
   end
   
   it "should not be overbooked"

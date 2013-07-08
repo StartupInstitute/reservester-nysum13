@@ -45,15 +45,18 @@ describe Restaurant do
     expect(restaurant).to have(1).errors_on(:owner_id)
   end
   
-  it "returns a restaurants full address as a string" do
-    restaurant = FactoryGirl.create(:restaurant, street: "7 Liberty Street", city: "New York", state: "NY", zip: "10128")
-    expect(restaurant.address).to eq("7 Liberty Street New York, NY 10128")
-  end
+  describe "full address and google maps url string" do
+    before :each do
+    @restaurant = FactoryGirl.create(:restaurant, street: "7 Liberty Street", city: "New York", state: "NY", zip: "10128")
+    end
   
-  it "returns a restaurants google maps location as a url string" do
-    restaurant = FactoryGirl.create(:restaurant, street: "7 Liberty Street", city: "New York", state: "NY", zip: "10128")
-    expect(restaurant.google_map).to eq("http://maps.googleapis.com/maps/api/staticmap?center=7+Liberty+Street,New+York,NY&zoom=13&size=550x400&maptype=roadmap
-    &markers=label%7size:small%7Ccolor:blue%7C7+Liberty+Street,New+York,NY\&sensor=false")
+    it "returns a restaurants full address as a string" do
+      expect(@restaurant.address).to eq("7 Liberty Street New York, NY 10128")
+    end
+  
+    it "returns a restaurants google maps location as a url string" do
+      expect(@restaurant.google_map).to eq('http://maps.googleapis.com/maps/api/staticmap?center=7+Liberty+Street,New+York,NY&zoom=13&size=550x400&maptype=roadmap&markers=label%7size:small%7Ccolor:blue%7C7+Liberty+Street,New+York,NY&sensor=false')
+    end
   end
   
   it "returns a formated version of the restaurants phone" do
