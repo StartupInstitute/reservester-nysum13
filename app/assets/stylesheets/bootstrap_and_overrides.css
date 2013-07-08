@@ -7,16 +7,6 @@
   */
 
 
-@import "bootstrap";
-
-  @media (min-width: 980px) {
-    /* Enable use of floated navbar text */
-    body > .container-fluid {
-      padding-top: 60px;
-    }
-}
-@import "bootstrap-responsive";
-
 #options {
   width:100%;
 }
