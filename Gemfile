@@ -23,5 +23,8 @@ end
 gem 'jquery-rails'
 gem 'rmagick'
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 gem 'devise'
+gem 'figaro'
+gem 'aws-sdk'
 gem 'validates_email_format_of'

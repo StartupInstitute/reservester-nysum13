@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-owner1 = Owner.new(:name => 'Test Owner1', :email => 'emurphh@gmail.com', :password => 'test123', :password_confirmation => 'test123')
+owner1 = Owner.new(:name => 'Test Owner1', :email => 'egm0921@gmail.com', :password => 'test123', :password_confirmation => 'test123')
 owner1.save!(:validate => false)
 owner2 = Owner.new(:name => 'Test Owner2', :email => 'team.reservester@gmail.com', :password => 'test123', :password_confirmation => 'test123')
 owner2.save!(:validate => false)
