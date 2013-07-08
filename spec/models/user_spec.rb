@@ -22,12 +22,12 @@ require 'spec_helper'
 
 describe User do
   it "has a valid factory" do
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     expect(user).to be_valid
   end
   
   it "is invalid without an email" do
-    user = FactoryGirl.build(:user, email: nil)
+    user = build(:user, email: nil)
     expect(user).to have(1).errors_on(:email)
   end
 end

@@ -26,28 +26,28 @@ require 'spec_helper'
 describe Restaurant do
   
   it "has a valid factory" do
-    restaurant = FactoryGirl.create(:restaurant)
+    restaurant = create(:restaurant)
     expect(restaurant).to be_valid
   end
   
   it "is invalid without a name" do
-    restaurant = FactoryGirl.build(:restaurant, name: nil)
+    restaurant = build(:restaurant, name: nil)
     expect(restaurant).to have(1).errors_on(:name)
   end
   
   it "is invalid without a 10-digit phone number" do
-    restaurant = FactoryGirl.build(:restaurant, phone: "15161234567")
+    restaurant = build(:restaurant, phone: "15161234567")
     expect(restaurant).to have(1).errors_on(:phone)
   end
   
   it "belongs to an owner" do
-    restaurant = FactoryGirl.build(:restaurant, owner_id: nil)
+    restaurant = build(:restaurant, owner_id: nil)
     expect(restaurant).to have(1).errors_on(:owner_id)
   end
   
   describe "full address and google maps url string" do
     before :each do
-    @restaurant = FactoryGirl.create(:restaurant, street: "7 Liberty Street", city: "New York", state: "NY", zip: "10128")
+    @restaurant = create(:restaurant, street: "7 Liberty Street", city: "New York", state: "NY", zip: "10128")
     end
   
     it "returns a restaurants full address as a string" do
@@ -60,7 +60,7 @@ describe Restaurant do
   end
   
   it "returns a formated version of the restaurants phone" do
-    restaurant = FactoryGirl.create(:restaurant, phone: "5161234567")
+    restaurant = create(:restaurant, phone: "5161234567")
     expect(restaurant.format_phone).to eq("(516) 123-4567")
   end
   
