@@ -20,18 +20,45 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
- 
+
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="localhost:3000/restaurants">Reservester
-      </a>
+      <a class="brand" href="<%= root_path %>">Reservester</a>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
-        <ul class="nav">
-  			<li class="active"><a href="#">Home</a></li>
-  			<li><a href="#">Link1</a></li>
-  			<li><a href="#">Link2</a></li>
-		</ul>
+			    <% if owner_signed_in? %>  
+            <ul class="nav pull-left"><li><%= link_to('Dashboard', dashboard_path) %></ul></li>
+            <ul class="nav pull-right"><li><%= link_to('Logout', destroy_owner_session_path, :method => :delete) %></ul></li>
+          <% else %>
+            <ul class="nav pull-right">
+              <li><%= link_to('Owner Sign-Up!', new_owner_registration_path)  %></li>
+              <li><%= link_to('Login as an Owner!', new_owner_session_path) %></li>
+            </ul>
+
+
+        <!--     <ul class="nav pull-right">
+              <li class="dropdown">
+                <a data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                  Sign-Up
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="signup">
+                  <li role="presentation"><%= link_to('Owner Sign-Up!', new_owner_registration_path)  %></li>
+                  <li role="presentation"><a href="#">Reserver Sign-Up!</a></li>
+                </ul>
+              </li>           
+              <li class="dropdown">
+                <a data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                  Login
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><%= link_to('Login as an Owner!', new_owner_session_path) %></li>
+                  <li role="presentation"><a href="#" role="menuitem" tabindex="-1">Login as a Reserver!</a></li>
+                </ul>
+              </li>
+            </ul> -->
+          <% end %>
       </div>
     </div>
   </div>
@@ -40,8 +67,15 @@
 	<div class="row">
 		<div class="span1">
 		</div>
-		<div class="span11"><%= yield %></div>
+		<div class="span11">
+      <div class="container">
+        <%= bootstrap_flash %>
+        <%= yield %>
+      </div>
+    </div>
 	</div>
 </div>
 </body>
 </html>
+
+
