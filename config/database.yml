@@ -1,5 +1,5 @@
 development:
-  adapter: sqlite3
+  adapter: postgresql
   database: reservester_development
   username: huge
   password: 
@@ -7,7 +7,7 @@ development:
   timeout: 5000
 
 test:
-  adapter: sqlite3
+  adapter: postgresql
   database: reservester_test
   username: huge
   password: 

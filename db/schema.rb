@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703035207) do
+ActiveRecord::Schema.define(:version => 20130708184326) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(:version => 20130703035207) do
     t.integer  "restaurant_id"
     t.integer  "category_id"
   end
+
+  add_index "categorizations", ["category_id"], :name => "index_categorizations_on_category_id"
+  add_index "categorizations", ["restaurant_id"], :name => "index_categorizations_on_restaurant_id"
 
   create_table "owners", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
