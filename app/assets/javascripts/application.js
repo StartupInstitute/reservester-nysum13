@@ -19,6 +19,8 @@
 
 $(function() {
 	$("#restaurant_category_tokens").tokenInput("/categories.json", {
-		crossDomain: false
+		crossDomain: false,
+		prePopulate: $("#restaurant_category_tokens").data("pre"),
+		theme: "facebook"
 	})
 });

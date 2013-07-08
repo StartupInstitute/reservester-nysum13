@@ -124,7 +124,7 @@ h1 {
 
 
 
-/* Reservation new */
+/* Reservation new */a
 
 .reservation-form  {
 	text-align: center;
@@ -144,3 +144,12 @@ h1 {
 .new-restaurant-form {
 	text-align: center;
 }
+
+.new-restaurant-form .category-tokens {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
