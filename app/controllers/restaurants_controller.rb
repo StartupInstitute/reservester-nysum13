@@ -15,6 +15,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    debugger
     @restaurant = current_owner.restaurants.build(params[:restaurant])
     # @restaurant.update_attributes(open_time: params[:open_time][:hour], close_time: params[:close_time][:hour])
     if @restaurant.save
