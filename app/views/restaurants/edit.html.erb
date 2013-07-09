@@ -16,9 +16,9 @@
 	<%= f.label :phone %>
 	<%= f.text_field :phone, data: { trigger: "change", rangelength: "[10,10]"} %>
 	<%= f.label :open_time %>
-	<%= select_hour Time.now, :ampm => true, :prefix => :open_time %>
+	<%= f.select(:open_time, options_for_select([["5 AM", 5], ["6 AM", 6], ["7 AM", 7], ["8 AM", 8], ["9 AM", 9], ["10 AM", 10], ["11 AM", 11], ["12 PM", 12], ["1 PM", 13], ["2 PM", 14], ["3 PM", 15], ["4 PM", 16]])) %>
 	<%= f.label :close_time %>
-	<%= select_hour Time.now, :ampm => true, :prefix => :close_time %><br/>
+	<%= f.select(:close_time, options_for_select([["5 PM", 17], ["6 PM", 18], ["7 PM", 19], ["8 PM", 20], ["9 PM", 21], ["10 PM", 22], ["11 PM", 23], ["12 AM", 24], ["1 AM", 1], ["2 AM", 2], ["3 AM", 3], ["4 AM", 4], ["5 AM", 5], ["6 AM", 6]])) %><br/>
 	<%= f.label :description %>
 	<%= f.text_field :description %>
 	<%= f.label :category_tokens, "Categories" %>

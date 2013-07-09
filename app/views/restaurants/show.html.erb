@@ -18,7 +18,7 @@
 		<%= @restaurant.street %><br/>
 		<%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip %><br/>
 		<% if @restaurant.open_time.present?  && @restaurant.close_time.present? %>
-			Hours: <%= @restaurant.open_time.strftime("%I:%M %p") %> - <%= @restaurant.close_time.strftime("%I:%M %p") %>
+			Hours: <%= @restaurant.format_time(@restaurant.open_time) %> - <%= @restaurant.format_time(@restaurant.close_time) %>
 		<% end %>
 		</div>
 	</div>
