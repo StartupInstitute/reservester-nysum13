@@ -1,8 +1,11 @@
 Reservester::Application.routes.draw do
 
+  #get "reservations/index"
+
   devise_for :owners
 
  resources :rests
+ resources :reservations
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

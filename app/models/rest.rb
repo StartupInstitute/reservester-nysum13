@@ -3,4 +3,5 @@ class Rest < ActiveRecord::Base
   validates :name, :owner_id, presence: true
   mount_uploader :image, AvatarUploader
   belongs_to :owner
+  has_many :reservations
 end
