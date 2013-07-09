@@ -4,7 +4,7 @@ class CreateReservations < ActiveRecord::Migration
       t.datetime :reservetime
       t.integer  :restaurant_id
       t.string :status
-   		t.datetime :approved_at
+   	  t.datetime :approved_at
       t.timestamps
     end
   end

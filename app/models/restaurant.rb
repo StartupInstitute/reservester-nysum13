@@ -4,6 +4,7 @@ class Restaurant < ActiveRecord::Base
 
   # Have it only to allow seed data
   attr_accessible :owner_id
+  attr_accessible :category_ids
 
   validates_presence_of :name, :address, :description, :phone, :owner_id
 	validates_uniqueness_of :address, :case_sensitive => false
@@ -18,9 +19,14 @@ class Restaurant < ActiveRecord::Base
   belongs_to :owner
   has_many :reservations
 
-  has_many :categories, through: :categories_restaurants
-  has_many :categories_restaurants
+  has_many :categorizations, dependent: :destroy
+  has_many :categories, through: :categorizations
+  
 
+ # accepts_nested_attributes_for :categories, 
+ #                               allow_destroy: true,
+ #                               reject_if: :all_blank
+ # accepts_nested_attributes_for :categories_restaurants
 
   def belong_to?(owner)
   	self.owner.eql?(owner)
