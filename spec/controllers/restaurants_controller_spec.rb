@@ -97,19 +97,64 @@ describe RestaurantsController do
   end
   
   describe 'PUT #update' do
+    before do
+      owner = create(:owner)
+      sign_in owner
+      @restaurant = create(:restaurant, name: "Connollys Station", owner_id: owner.id)
+    end
+    
+    it "locates the requested restaurant" do
+      put :update, id: @restaurant, restaurant: attributes_for(:restaurant)
+      expect(assigns(:restaurant)).to eq(@restaurant)
+    end
+    
     context "with valid attributes" do
-      it "updates the restaurant in the database"
-      it "redirects to the restaurant"
+      it "changes @restaurant's attributes" do
+        put :update, id: @restaurant,
+          restaurant: attributes_for(:restaurant,
+            name: "Brews Brothers")
+          @restaurant.reload
+          expect(@restaurant.name).to eq("Brews Brothers")
+      end
+      
+      it "redirects to the updated restaurant" do
+        put :update, id: @restaurant, restaurant: attributes_for(:restaurant)
+        expect(response).to redirect_to @restaurant
+      end
     end
     
     context "with invalid attributes" do
-      it "does not update the restaurant"
-      it "re-renders the #edit template"
+      it "does not change @restaurant's attributes" do
+        put :update, id: @restaurant,
+          restaurant: attributes_for(:restaurant,
+            name: nil)
+        @restaurant.reload
+        expect(@restaurant.name).to_not eq(nil)
+      end
+      
+      it "re-renders the #edit template" do
+        put :update, id: @restaurant, restaurant: attributes_for(:invalid_message)
+        expect(response).to redirect_to edit_restaurant_path(@restaurant)
+      end
     end
   end
   
   describe 'DELETE #destroy' do
-    it "deletes the message from the database"
-    it "redirects to the restaurant index page"
+    before do
+      owner = create(:owner)
+      sign_in owner
+      @restaurant = create(:restaurant, owner_id: owner.id)
+    end
+    
+    it "deletes the restaurant from the database" do
+      expect{
+        delete :destroy, id: @restaurant
+      }.to change(Restaurant, :count).by(-1)
+    end
+    
+    it "redirects to the restaurant index page" do
+      delete :destroy, id: @restaurant
+      expect(response).to redirect_to restaurants_path
+    end
   end
 end

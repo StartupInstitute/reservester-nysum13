@@ -33,7 +33,7 @@ class RestaurantsController < ApplicationController
     @restaurant.update_attributes(params[:restaurant])
     if @restaurant.errors.any?
       flash[:error] = display_errors(@restaurant)
-      redirect_to edit_restaurant_path
+      redirect_to edit_restaurant_path(@restaurant)
     else
       redirect_to restaurant_path(@restaurant)
     end
