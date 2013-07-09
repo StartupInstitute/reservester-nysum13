@@ -31,6 +31,12 @@ FactoryGirl.define do
     f.city { Faker::Address.city }
     f.state { Faker::Address.state }
     f.zip { Faker::Address.zip_code }
+    f.open_time Time.now
+    f.close_time Time.now+6.hours
     f.association :owner
+    
+    factory :invalid_message do
+      name nil
+    end
   end 
 end 

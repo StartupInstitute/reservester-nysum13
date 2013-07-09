@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = current_owner.restaurants.build(params[:restaurant])
-    @restaurant.update_attributes(open_time: params[:open_time][:hour], close_time: params[:close_time][:hour])
+    # @restaurant.update_attributes(open_time: params[:open_time][:hour], close_time: params[:close_time][:hour])
     if @restaurant.save
       redirect_to restaurants_path
     else
