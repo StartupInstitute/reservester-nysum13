@@ -5,8 +5,10 @@
 <dl>
   <dt>Name</dt>
   <dd><%= @reservation.name %></dd> <!--Reservation.find(:id) <%= restaurant_reservation_path([@restaurant, @reservation]) %></h1>-->
-  <dt>Date and Time</dt>
-  <dd><%= @reservation.datetime %></dd>
+  <dt>Date</dt>
+  <dd><%= @reservation.date %></dd>
+  <dt>Time</dt>
+  <dd><%= @reservation.time %></dd>
 </dl>
 
 <%= link_to 'Edit', edit_restaurant_reservation_path(@reservation) %> |

@@ -5,6 +5,7 @@
         <tr>
         <th>Restaurant</th>
         <th>Reservation Name</th>
+        <th>Reservation Date</th>
         <th>Reservation Time</th>
       </tr>
     </thead>
@@ -14,7 +15,8 @@
           <tr>
             <td><%= link_to restaurant.name, restaurant %></td>
               <td><%= link_to reservation.name, [restaurant, reservation] %></td>
-              <td><%= reservation.datetime %></td>
+              <td><%= reservation.date %></td>
+              <td><%= reservation.time %></td>
           </tr>
         <% end %>
       <% end %>

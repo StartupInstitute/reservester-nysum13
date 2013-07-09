@@ -4,8 +4,9 @@
     <% @reservations.each do |reservation| %>
     	<tr>
 	      <td>Name <%= reservation.name %></td>     
-        <td>Date: <%= reservation.datetime %></td>
-        <td> <%= link_to "Delete Reservation", [@restaurant,reservation] , confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini" %></td>
+        <td>Date: <%= reservation.date %></td>
+        <td>Time: <%= reservation.time %></td>
+        <td> <%= link_to "Delete Reservation", [@restaurant,reservation] , method: :delete, class:"btn btn-danger btn-mini" %></td>
       </tr>
     <% end %>
   </table>

@@ -1,9 +1,10 @@
 class Reservation < ActiveRecord::Base
-  attr_accessible :name, :datetime
+  attr_accessible :name, :date, :time
 
   belongs_to :restaurant
 
-  validates :datetime, presence: true
+  validates :date, presence: true
+  validates :time, presence: true
   validates :name, presence: true
 
   def return_restaurant_name
