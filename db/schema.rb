@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701125644) do
+ActiveRecord::Schema.define(:version => 20130709124318) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(:version => 20130701125644) do
     t.string   "state"
     t.string   "zip"
     t.integer  "owner_id"
-    t.time     "open_time"
-    t.time     "close_time"
+    t.integer  "open_time"
+    t.integer  "close_time"
     t.integer  "table_qty"
   end
 

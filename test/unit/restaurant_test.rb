@@ -15,8 +15,8 @@
 #  state       :string(255)
 #  zip         :string(255)
 #  owner_id    :integer
-#  open_time   :time
-#  close_time  :time
+#  open_time   :integer
+#  close_time  :integer
 #  table_qty   :integer
 #
 
