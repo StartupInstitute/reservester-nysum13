@@ -20,7 +20,7 @@ class RestaurantsController < ApplicationController
       redirect_to restaurants_path
     else
       flash[:error] = display_errors(@restaurant)
-      redirect_to new_restaurant_path
+      render new_restaurant_path
     end
   end
 

@@ -74,15 +74,25 @@ describe RestaurantsController do
         }.to change(Restaurant, :count).by(1)
       end
       
-      # it "redirects to the restaurants index page" do
-      #   post :create, restaurant: attributes_for(:restaurant)
-      #   expect(response).to redirect_to restaurants_path
-      # end
+      it "redirects to the restaurants index page" do
+        post :create, restaurant: attributes_for(:restaurant)
+        expect(response).to redirect_to restaurants_path
+      end
     end
     
     context "with invalid attributes" do
-      it "does not save the new restaurant in the database"
-      it "re-renders the :new template"
+      it "does not save the new restaurant in the database" do
+        expect{
+          post :create,
+            restaurant: attributes_for(:invalid_message)
+        }.to_not change(Restaurant, :count)
+      end
+      
+      it "re-renders the :new template" do
+        post :create,
+          restaurant: attributes_for(:invalid_message)
+          expect(response).to render_template :new
+      end
     end
   end
   
