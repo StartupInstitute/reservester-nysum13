@@ -3,6 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-$j = jQuery.noConflict();
 jQuery ->
-	$j('#reservation_date').datepicker()
+	$('#reservation_date').datepicker()
