@@ -40,10 +40,6 @@ class Restaurant < ActiveRecord::Base
     self.category_ids = ids.split(",")
   end
   
-  # def full?(time_of_day)
-  #   reservations.during(time_of_day).count >= table_qty
-  # end
-  
   def address
     "#{self.street} #{self.city}, #{self.state} #{self.zip}"
   end

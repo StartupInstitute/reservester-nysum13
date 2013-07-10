@@ -24,9 +24,20 @@ class Reservation < ActiveRecord::Base
   
   apply_simple_captcha
   
-  # validate :restaurant_is_not_overbooked
+  validate :restaurant_is_not_overbooked
   # validate :user_has_not_reserved
-  # after_create :reduce_table_qty
+  
+  
+  scope :availability, ->(reserve_on) {
+    reservation = reserve_on.change(min: 0)
+    
+    where(
+      "reserve_on >= ? AND reserve_on <= ?",
+      reservation,
+      reservation + 59.minutes
+    )
+  }
+  
   
   scope :during, ->(time_of_day) {
     hour_of_day = time_of_day.change(min: 0) # e.g. 2:15pm -> 2:00pm
@@ -38,23 +49,24 @@ class Reservation < ActiveRecord::Base
     )
   }
   
-  # protected
+  
+
+  protected
+  
+    def restaurant_is_not_overbooked
+      # Make the table qty dynamic by adding it as an attribute to the Restaurant model
+      if Reservation.availability(reserve_on).count > 20
+        errors.add(:reservation, "Restaurant is already overbooked for this date and time slot.")
+      end
+    end
     
-    # def restaurant_is_not_overbooked
-    #   if restaurant.full?(reserve_on)
-    #     errors.add(:restaurant, "is overbooked")
-    #   end
-    # end
-    
+
     # def user_has_not_reserved
     #   if Reservation.during(reserve_on).where(user_id: user_id, restaurant_id: restaurant_id).count > 0
     #     errors.add(:restaurant, "user already reserved")
     #   end
     # end
     
-    # def reduce_table_qty
-    #   restaurant.table_qty -= 1
-    # end
 end
 
 

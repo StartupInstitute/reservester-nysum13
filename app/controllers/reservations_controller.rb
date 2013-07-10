@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
       @restaurant.owner.send_reservation_notification(@reservation)
       redirect_to restaurant_path(Restaurant.find(params[:restaurant_id])), notice: "Your reservation has been created."
     else
-      flash[:error] = "You are already reserved for this restaurant today" 
+      flash[:error] = "#{(@reservation.errors.full_messages[0]).gsub("Reservation", '')}" 
       redirect_to :back
     end
   end
