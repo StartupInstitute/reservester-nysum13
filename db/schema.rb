@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710180058) do
+ActiveRecord::Schema.define(:version => 20130710195823) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20130710180058) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.string   "calendar"
+    t.integer  "max_tables"
   end
 
 end

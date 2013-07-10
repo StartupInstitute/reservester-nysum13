@@ -1,30 +1,37 @@
 class ReservationsController < ApplicationController
+  before_filter :find_restaurant
+
+  def find_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 
   def index
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservations = Reservation.where(["restaurant_id = ?", @restaurant.id])
   end
 
   def show
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.find(params[:id])
   end
 
   def new
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.new
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.find(params[:id])
   end
 
   def create
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.new(params[:reservation])
+    date = @reservation.date
 
     if @reservation.save
+
+      #if @restaurant.calendar.has_key?(date)
+      #  @restaurant.calendar[date].append(@reservation)
+      #else
+      #  @restaurant.calendar[date] = [@reservation]
+      #end
       OwnerMailer.notify_reservation(@reservation).deliver
       redirect_to [@restaurant,@reservation], notice: 'Reservation was successfully created.'
     else
@@ -33,7 +40,6 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.find(params[:id])
 
     if @reservation.update_attributes(params[:reservation])
@@ -44,7 +50,6 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.find(params[:id])
     @reservation.destroy
 

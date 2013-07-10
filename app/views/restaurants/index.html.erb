@@ -17,7 +17,7 @@
           <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
           <td><%= link_to restaurant.name, restaurant %></td>
           <td><%= restaurant.address %></td>
-          <td><%= restaurant.owner.name%><%= restaurant.calendar %></td>            
+          <td><%= restaurant.owner.name%></td>
           <td>
             <%- if current_owner %>
               <%- if restaurant.is_owner?(current_owner) %>

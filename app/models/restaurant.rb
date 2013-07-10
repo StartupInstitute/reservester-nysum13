@@ -1,5 +1,5 @@
 class Restaurant < ActiveRecord::Base
-  attr_accessible :address, :description, :name, :phone, :photo, :photo_cache, :category_ids, :calendar
+  attr_accessible :address, :description, :name, :phone, :photo, :photo_cache, :category_ids, :calendar, :max_tables
   acts_as_gmappable
   serialize :calendar
 
