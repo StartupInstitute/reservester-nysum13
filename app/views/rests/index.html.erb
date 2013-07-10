@@ -12,7 +12,7 @@
 </tr>
 
 	<% @rests.each do |r| %>
-	<tr>
+<tr>
 		<td><%= image_tag r.image_url(:thumb).to_s %></td>
 		<td><%= r.name %> | <%= link_to 'Show', rest_path(r) %></td>
 		<td><%= r.description %></td>
@@ -23,5 +23,8 @@
 	<% end %>
 
 </table>
+
 <p>
-<%= link_to 'Add New Restaurant',new_rest_path %>
+	<% if owner_signed_in? %>
+      <%= link_to 'Add New Restaurant',new_rest_path %>
+    <% end %>

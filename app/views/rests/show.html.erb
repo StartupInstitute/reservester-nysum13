@@ -3,7 +3,7 @@
 <table class="table table-bordered">
 <tr>
 	<td><%="Image"%></td>
-	<td><%= image_tag @rest.image_url.to_s %></td>
+	<td colspan="5"><%= image_tag @rest.image_url.to_s %></td>
 </tr>
 <tr>
 	<td><%="Name"%></td>
@@ -14,7 +14,11 @@
 </tr>
 
 <tr>
-	<td><%= @rest.name %> | <%= link_to 'Edit', edit_rest_path(@rest) %> | <%= link_to 'Delete', rest_path(@rest), method: :delete %></td>
+	<% if current_owner == @rest.owner %>
+	  <td><%= @rest.name %> | <%= link_to 'Edit', edit_rest_path(@rest) %> | <%= link_to 'Delete', rest_path(@rest), method: :delete %></td>
+	<% else %>
+	  <td><%= @rest.name %></td>
+	<% end %>
 	<td><%= @rest.description %></td>
 	<td><%= @rest.address %></td>
 	<td><%= @rest.phone %></td>
@@ -22,4 +26,11 @@
 </tr>
 </table>
 <p>
+	<% if current_owner == @rest.owner %>
+      <%= link_to 'View Reservations', rest_reservations_path(@rest) %>
+      <% else %>
+      <%= link_to 'Add a Reservation', new_rest_reservation_path(@rest) %>
+      <% end %>
+
+      <p>
 <%= link_to 'Back',rests_path %>

@@ -21,11 +21,7 @@ class RestsController < ApplicationController
 
   def edit
     @rest = Rest.find(params[:id])
-    if current_owner == @rest.owner
-  	  @rest = Rest.find(params[:id])
-    else
-      redirect_to rests_path, :notice => "You cannot edit Restaurants you don't own."
-    end
+    @rest = Rest.find(params[:id])
   end
 
   def show

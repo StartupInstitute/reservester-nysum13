@@ -1,0 +1,10 @@
+<%= form_for [@rest, @reservation] do |r| %>
+
+  <%= r.label :username %>
+  <%= r.text_field :username %><br>
+
+  <%= r.label :reservation_time %>
+  <%= r.datetime_select :reservation_time %><br>
+
+  <%= r.submit %>
+  <% end %>
