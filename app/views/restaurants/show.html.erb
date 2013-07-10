@@ -14,17 +14,17 @@
     </p>
 
     <p>
-      <b>Address:</b>
+      <b>Street:</b>
       <%= @restaurant.street %>
     </p>
 
     <p>
-      <b>Address:</b>
+      <b>City:</b>
       <%= @restaurant.city %>
     </p>
 
     <p>
-      <b>Address:</b>
+      <b>State:</b>
       <%= @restaurant.state %>
     </p>
 
@@ -33,6 +33,12 @@
       <%= @restaurant.phone %>
     </p>
 
+    <p>
+        <b>Category:</b><br/>
+        <% @restaurant.categories.each do |c| %>
+            <%= link_to c.name , category_path(c) %><br/>
+        <% end %>
+      </p>
     <p>
       <b>Picture:</b>
       <%= image_tag(@restaurant.image_url(:masthead).to_s) if @restaurant.image? %>

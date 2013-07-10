@@ -1,4 +1,4 @@
-#Restaurant Step Definitions
+### Restaurant Step Definitions ###
 
 Given(/^owner at homepage$/) do
   step'Owner Test exists'
@@ -9,14 +9,15 @@ end
 When(/^owner create new restaurant$/) do
   visit restaurants_path
   click_link 'New Restaurant'
-  #save_and_open_page
 end
 
 
 When(/^owner fill up the restaurant info$/) do
   fill_in('restaurant_name', with:'Restaurant X')
   fill_in('restaurant_description', with:'Restaurant X Description Test')
-  fill_in('restaurant_address', with:'123 Main St')
+  fill_in('restaurant_street', with:'123 Main St')
+  fill_in('restaurant_city', with:'New York')
+  fill_in('restaurant_state', with:'NY')
   fill_in('restaurant_phone', with:'212-212-1234')
   click_button'Create Restaurant'
   #save_and_open_page
@@ -30,10 +31,11 @@ Given(/^the restaurant (.*) exist$/) do |name|
   visit new_restaurant_path
   fill_in('restaurant_name', with:"Restaurant #{name}")
   fill_in('restaurant_description', with:"Restaurant #{name} Description Test")
-  fill_in('restaurant_address', with:"123 #{name} Main St")
+  fill_in('restaurant_street', with:"123 #{name} Broadway")
+  fill_in('restaurant_city', with:'New York')
+  fill_in('restaurant_state', with:'NY')
   fill_in('restaurant_phone', with:'212-212-1234')
   click_button'Create Restaurant'
-  #save_and_open_page
 end
 
 Given(/^owner want to delete the restaurant A$/) do
@@ -55,7 +57,7 @@ end
 When(/^owner edit restaurant A info$/) do
   fill_in('restaurant_name', with:'Restaurant A edited')
   fill_in('restaurant_description', with:'Restaurant Edited Description Test')
-  fill_in('restaurant_address', with:'77 Broadway')
+  fill_in('restaurant_street', with:'77 Broadway')
   fill_in('restaurant_phone', with:'212-000-0000')
   click_button'Update Restaurant'
 end

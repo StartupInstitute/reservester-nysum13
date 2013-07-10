@@ -39,5 +39,3 @@ Reservester::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
 
-ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lf2feMSAAAAAPstU8oUjHFQRuGMeR2yyeWG_CEN'
-ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lf2feMSAAAAACKr5r1I1q_vUgLudz8DAe3vPCYF'

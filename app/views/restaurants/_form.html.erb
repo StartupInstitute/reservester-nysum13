@@ -1,14 +1,14 @@
 <%= form_for @restaurant,:html => {:multipart => true} do |f| %>
-  <% if @restaurant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
-      <ul>
-      <% @restaurant.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <!--<% if @restaurant.errors.any? %>-->
+    <!--<div id="error_explanation">-->
+      <!--<h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>-->
+      <!--<ul>-->
+      <!--<% @restaurant.errors.full_messages.each do |msg| %>-->
+        <!--<li><%= msg %></li>-->
+      <!--<% end %>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--<% end %>-->
 
   <div class="field" >
     <%= f.label :name %>
@@ -41,6 +41,10 @@
    <div class="field">
     <%= f.label :phone %>
     <%= f.text_field :phone %>
+  </div>
+  <div>
+    <%= f.label :category_ids, "Category" %>
+    <%= f.collection_select :category_ids, Category.order(:name), :id, :name, {}, {multiple: true} %>
   </div>
   <div>
     <p>Upload Menu: <%= f.file_field :menu %></p>

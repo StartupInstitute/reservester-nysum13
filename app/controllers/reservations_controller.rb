@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   def index
     restaurant = Restaurant.find(params[:restaurant_id])
-    @reservations = restaurant.reservations
+    @reservations = restaurant.reservations.text_search(params[:query]).page(params[:page]).per_page(10)
   end
 
   def show
@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
   def create
     restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = restaurant.reservations.create(params[:reservation])
-    if verify_recaptcha() and @reservation.save
+    if @reservation.save # && verify_recaptcha()
       redirect_to [@reservation.restaurant, @reservation] , :notice => 'Reservation was successfully created. '
       ReservationMailer.reservation_confirmation(@reservation).deliver
     else
