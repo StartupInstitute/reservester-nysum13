@@ -8,7 +8,7 @@
   <dt>Date</dt>
   <dd><%= @reservation.date %></dd>
   <dt>Time</dt>
-  <dd><%= @reservation.time %></dd>
+  <dd><%= @reservation.time.strftime("%I:%M%p") %></dd>
 </dl>
 
 <%= link_to 'Edit', edit_restaurant_reservation_path(@reservation) %> |

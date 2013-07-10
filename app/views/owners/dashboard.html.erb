@@ -16,7 +16,7 @@
             <td><%= link_to restaurant.name, restaurant %></td>
               <td><%= link_to reservation.name, [restaurant, reservation] %></td>
               <td><%= reservation.date %></td>
-              <td><%= reservation.time %></td>
+              <td><%= reservation.time.strftime("%I:%M%p") %></td>
           </tr>
         <% end %>
       <% end %>

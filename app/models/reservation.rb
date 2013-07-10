@@ -3,9 +3,9 @@ class Reservation < ActiveRecord::Base
 
   belongs_to :restaurant
 
+  validates :name, presence: true
   validates :date, presence: true
   validates :time, presence: true
-  validates :name, presence: true
 
   def return_restaurant_name
   	return :restaurant.name

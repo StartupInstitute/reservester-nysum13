@@ -28,7 +28,7 @@
   <div class="control-group">
     <%= f.label :time %>
     <div class="controls">
-      <%= f.text_area :time %>
+      <%= f.time_select :time, minute_step: 30, :ampm => true %>
     </div>
   </div>
 
