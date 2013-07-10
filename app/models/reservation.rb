@@ -25,7 +25,7 @@ class Reservation < ActiveRecord::Base
   apply_simple_captcha
   
   validate :restaurant_is_not_overbooked
-  # validate :user_has_not_reserved
+  validate :user_has_not_reserved
   
   
   scope :availability, ->(reserve_on) {
@@ -35,6 +35,16 @@ class Reservation < ActiveRecord::Base
       "reserve_on >= ? AND reserve_on <= ?",
       reservation,
       reservation + 59.minutes
+    )
+  }
+  
+  scope :day, ->(reserve_on) {
+    start_date = reserve_on.change(hour: 0)
+    
+    where(
+      "reserve_on >= ? AND reserve_on <= ?",
+      start_date,
+      start_date + 23.hours + 59.minutes
     )
   }
   
@@ -61,11 +71,13 @@ class Reservation < ActiveRecord::Base
     end
     
 
-    # def user_has_not_reserved
-    #   if Reservation.during(reserve_on).where(user_id: user_id, restaurant_id: restaurant_id).count > 0
-    #     errors.add(:restaurant, "user already reserved")
-    #   end
-    # end
+    def user_has_not_reserved
+      Reservation.day(reserve_on).each do |reservation|
+        if reservation.user == self.user
+          errors.add(:reservation, "User already reserved")
+        end
+      end
+    end
     
 end
 
