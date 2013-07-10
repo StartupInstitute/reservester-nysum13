@@ -2,6 +2,7 @@ class Restaurant < ActiveRecord::Base
   attr_accessible :address, :description, :name, :phone, :photo, :photo_cache, :category_ids
   acts_as_gmappable
 
+  after_initialize 
 
   belongs_to :owner
   has_many :reservations
@@ -15,6 +16,10 @@ class Restaurant < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
+  def initialize      
+    @sample_acc = []
+  end
+
   def gmaps4rails_address
   #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
     "#{self.address}" 
@@ -23,5 +28,7 @@ class Restaurant < ActiveRecord::Base
   def is_owner?(owner)
     owner.id == owner_id
   end
+
+
 
 end

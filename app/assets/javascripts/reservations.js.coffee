@@ -4,4 +4,5 @@
 
 
 jQuery ->
-	$('#reservation_date').datepicker()
+	$('#reservation_date').datepicker
+		format: 'M-dd-yyyy'
