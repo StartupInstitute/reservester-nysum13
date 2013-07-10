@@ -1,8 +1,6 @@
 <% restaurant = Restaurant.find(params[:restaurant_id]) %>
 
-<h1>
-  Reservation for <%= restaurant.name %>
-</h1>
+<h2>Reservation for <%= restaurant.name %></h2>
 
 <%= form_tag restaurant_reservations_path, method: :get do %>
     <%= text_field_tag :query, params[:query] %>

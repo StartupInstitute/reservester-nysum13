@@ -1,6 +1,8 @@
-<h1>Listing restaurants</h1>
+<h2>Listing restaurants</h2>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<% if owner_signed_in? %>
+    <%= link_to 'New Restaurant', new_restaurant_path %>
+<% end %>
 
 <%= form_tag restaurants_path, method: :get do %>
     <%= text_field_tag :query, params[:query] %>

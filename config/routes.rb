@@ -10,6 +10,8 @@ Reservester::Application.routes.draw do
 
   root :to => 'page#home'
 
+  get 'page/about'
+
   resources :restaurants do
     resources :reservations
   end
