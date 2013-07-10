@@ -12,7 +12,7 @@ Reservester::Application.routes.draw do
     resources :reservations
   end
   
-  resources :categories, only: [:index]
+  resources :categories, only: [:index, :show]
   
   get "pages/index"
   

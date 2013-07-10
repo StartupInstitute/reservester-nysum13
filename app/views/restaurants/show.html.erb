@@ -34,7 +34,7 @@
 	
 	<div class="restaurant-description well well-large">
 		<% @restaurant.categories.each do |category| %>
-		<%= category.name %><br/>
+		<%= link_to category.name, category_path(category) %><br/>
 		<% end %>
 		<% if @restaurant.owner %>
 			Owned by: <%= @restaurant.owner.name %><br/>

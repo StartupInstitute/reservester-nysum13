@@ -5,6 +5,13 @@
 	<% end %>
 
 	<h1>Restaurants</h1>
+	
+	<div class="categories">
+	<h6>Categories</h6>
+	<% @categories.each do |category| %>
+		<%= link_to "#{category.name} (#{category.restaurants.count})", category_path(category) %> -
+	<% end %>
+	</div>
 
 	<div class="restaurants">
 		<% @restaurants.each do |restaurant| %>

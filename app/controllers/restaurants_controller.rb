@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
   
   def index
     @restaurants = Restaurant.all
+    @categories = Category.all
   end
 
   def show
