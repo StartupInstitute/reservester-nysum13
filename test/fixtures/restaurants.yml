@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: General Tso's Delicatesen
+  description: This deli-asian fusion restaurant will knock down walls!
+  address: 1313 Mockingbird Lane
+  phone: 1-555-864-558
+
+two:
+  name: Antonio's
+  description: It's actually just his house!
+  address: Antonio's house
+  phone: 1-555-874-741

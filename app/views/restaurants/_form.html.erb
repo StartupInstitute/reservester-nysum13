@@ -1,0 +1,28 @@
+<%= form_for(@restaurant, :html => {:multipart => true}) do |r| %>
+
+	<div class="field">
+		<%= r.label :name %><br />
+		<%= r.text_field :name %>
+	</div>
+	<div class="field">
+		<%= r.label :description %><br />
+		<%= r.text_area :description %>
+	</div>
+	<div class="field">
+		<%= r.label :address %><br />
+		<%= r.text_field :address %>
+	</div>
+	<div class="field">
+		<%= r.label :phone %><br />
+		<%= r.text_field :phone %>
+	</div>
+	<div class="field">
+		<%= r.file_field :image %>
+	<div class="field">
+		<%= r.label :remote_image_url, "or image URL:" %>
+		<%= r.text_field :remote_image_url %>
+	</div>
+	<div class="actions">
+		<%= r.submit %>
+	</div>
+<% end %>
