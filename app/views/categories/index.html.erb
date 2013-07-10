@@ -1,0 +1,30 @@
+<h1>Categories</h1>
+
+<%= link_to 'New Category', new_category_path  %>
+
+<%= form_tag categories_path, method: :get do %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<table class="table table-striped">
+    <tr>
+      <th>Category Name</th>
+      <th>How Many Restaurants</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @categories.each do |cat| %>
+        <tr>
+          <td><%= cat.name %></td>
+          <td><%= cat.restaurants.count %> restaurants </td>
+          <td><%= link_to 'Show', cat %></td>
+          <td><%= link_to 'Edit', edit_category_path(cat) %></td>
+          <td><%= link_to 'Destroy', cat, method:  :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= will_paginate @categories %>

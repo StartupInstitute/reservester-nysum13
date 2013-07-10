@@ -1,8 +1,9 @@
-#Owner step definition
+### Owner step definition ###
 
 Given(/^Owner Test exists$/) do
   visit new_owner_registration_path
-  fill_in('owner_email', with:'owner@test.com')
+  fill_in 'owner_name', with:'ownername'
+  fill_in 'owner_email', with:'owner@test.com'
   fill_in('owner_password', with:'Abcd1234')
   fill_in('owner_password_confirmation', with:'Abcd1234')
   click_button 'Sign up'
@@ -11,6 +12,7 @@ Given(/^Owner Test exists$/) do
 end
 
 When(/^Owner Test want to login$/) do
+  visit new_owner_session_path
   fill_in('owner_email', with:'owner@test.com')
   fill_in('owner_password', with:'Abcd1234')
   click_button 'Sign in'

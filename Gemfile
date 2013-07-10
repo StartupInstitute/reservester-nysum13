@@ -2,10 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'rake', '~>10.1.0'
-
-group :production do
 gem 'pg'
-end
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -30,6 +28,7 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+gem 'will_paginate'
 gem 'gmaps4rails'
 gem 'recaptcha' , :require => 'recaptcha/rails'
 gem 'devise'
@@ -40,5 +39,4 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'therubyracer'
 gem 'nokogiri'
-gem 'pusher'
 gem 'figaro'

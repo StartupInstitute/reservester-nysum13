@@ -2,7 +2,12 @@
 
 <%= link_to 'New Restaurant', new_restaurant_path %>
 
-<table>
+<%= form_tag restaurants_path, method: :get do %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<table class="table table-striped">
   <tr>
     <th>Picture</th>
     <th>Name</th>
@@ -28,16 +33,13 @@
 
     <td><%= link_to 'Show', restaurant %></td>
     <% if owner_signed_in? %>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+        <% if current_owner.id == restaurant.owner_id %>
+            <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+            <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+     <% end %>
    </tr>
 <% end %>
 </table>
 
-<br />
-
-
-
-
-
+<%= will_paginate @restaurants %>
