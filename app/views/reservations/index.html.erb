@@ -4,7 +4,12 @@
   Reservation for <%= restaurant.name %>
 </h1>
 
-<table>
+<%= form_tag restaurant_reservations_path, method: :get do %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<table class="table table-striped">
   <tr>
     <th>Reserver Name</th>
     <th>Date of Reservation</th>
@@ -21,4 +26,6 @@
   </tr>
   <% end %>
 </table>
+
+<%= will_paginate @reservations %>
 

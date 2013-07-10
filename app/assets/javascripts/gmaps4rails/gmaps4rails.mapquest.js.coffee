@@ -1,7 +1,7 @@
 #######################################################################################################
 ##############################################  Map Quest #############################################
 #######################################################################################################
-# http://developer.mapquest.com/web/documentation/sdk/javascript/v7.0/api/MQA.Poi.html
+# http://developer.mapquest.com/web/documentation/sdk/javascripts/v7.0/api/MQA.Poi.html
 
 class @Gmaps4RailsMapquest extends Gmaps4Rails
 

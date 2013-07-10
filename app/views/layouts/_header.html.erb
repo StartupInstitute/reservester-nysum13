@@ -10,6 +10,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li><%= link_to "Browse Restaurant", restaurants_path %></li>
+          <li><%= link_to "Category", categories_path %></li>
           <li><%= link_to "About", "#" %></li>
         </ul>
         <ul class="nav pull-right">
@@ -18,7 +19,7 @@
           </form>
           <% if owner_signed_in? %>
               <li><%= link_to "Edit Profile", edit_owner_registration_path %></li>
-              <li><%= link_to "Logout", destroy_owner_session_path , :method => :delete %></li>
+              <li><%= link_to "Logout", destroy_owner_session_path , method: :delete %></li>
           <% elsif user_signed_in? %>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path , :method => :delete %></li>
@@ -26,8 +27,7 @@
               <li><%= link_to "User Login", new_user_session_path %></li>
               <li><%= link_to "Owner Login", new_owner_session_path %></li>
               <li><%= link_to "Register", new_owner_registration_path %></li>
-
-        <% end %>
+          <% end %>
         </ul>
       </div>
     </div>

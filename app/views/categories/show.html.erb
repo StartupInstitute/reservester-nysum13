@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <td>
+        <b>Name:</b>
+        <%= @category.name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <b>Restaurant:</b>
+        <%= @category.restaurants.count %><br/>
+        <% @category.restaurants.each do |rest|  %>
+           <%= link_to rest.name, restaurant_path(rest) %><br/>
+        <% end %>
+    </td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_category_path(@category) %>
+<%= link_to 'Back', categories_path %>
