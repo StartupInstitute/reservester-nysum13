@@ -1,0 +1,60 @@
+<div class="restaurant-show">
+	
+	<% if !current_owner.nil? && current_owner.has_ownership?(@restaurant) %>
+	<div class="edit-delete">
+		<%= link_to "Edit", edit_restaurant_path(@restaurant) %>&nbsp;&nbsp;
+		<%= link_to "Delete", restaurant_path(@restaurant), confirm: "Are you sure?", method: :delete %>
+	</div>
+	<% end %>
+	<br/>
+	
+	<div class="show-header">
+		<h1><%= @restaurant.name %></h1>
+		<a class="btn btn-primary" href="<%= @restaurant.menu_url %>" target="_blank">View menu</a>
+		<a class="btn btn-primary" href="<%= new_restaurant_reservation_path(@restaurant) %>">Make reservation</a>
+		<br/><br/>
+		<div class="restaurant-show-address well well-small">
+		<%= @restaurant.format_phone %><br/>
+		<%= @restaurant.street %><br/>
+		<%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip %><br/>
+		<% if @restaurant.open_time.present?  && @restaurant.close_time.present? %>
+			Hours: <%= @restaurant.format_time(@restaurant.open_time) %> - <%= @restaurant.format_time(@restaurant.close_time) %>
+		<% end %>
+		</div>
+	</div>
+
+	<div class="restaurant-show-images">
+		<div class="masthead">
+		<% if !@restaurant.image_url.nil? %>
+		<%= image_tag(@restaurant.image_url(:masthead).to_s) %>
+		<% end %>
+		</div>
+	</div>
+	<br/>
+	
+	<div class="restaurant-description well well-large">
+		<% @restaurant.categories.each do |category| %>
+		<%= link_to category.name, category_path(category) %><br/>
+		<% end %>
+		<% if @restaurant.owner %>
+			Owned by: <%= @restaurant.owner.name %><br/>
+		<% end %>
+		<%= @restaurant.description %>
+	</div>
+	<br/>
+	
+	<div class="google-map" style="display: block; margin-left: auto; margin-right: auto;">
+	<%= image_tag(@restaurant.google_map) if @restaurant.street? %>
+	</div>
+	
+	<br/>
+	<div>
+		<% if !current_owner.nil? && current_owner.has_ownership?(@restaurant) %>
+				<b><u>Reservations</u></b><br/>
+				<% @restaurant.reservations.each do |reservation| %>
+					<%= link_to 'Marked as Confirmed', restaurant_reservation_path(reservation), method: :delete, confirm: 'Mark this reservation confirmed?' %>
+					<%=  reservation.reserve_on.strftime("%m/%d/%y at %I:%M %p") %><br/>
+				<% end %>
+		<% end %>
+	</div>
+</div>

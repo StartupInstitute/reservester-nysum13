@@ -1,0 +1,35 @@
+<h1>Edit Restaurant</h1>
+<div class="new-restaurant-form">
+<%= form_for(@restaurant, :html => {:multipart => true, :data => { :validate => "parsley" } }) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, data: { trigger: "keyup", required: true } %>
+	<div class="form-address">
+	<%= f.label :address %>
+	<%= f.text_field :street %>
+	<%= f.label :city %>
+	<%= f.text_field :city %> 
+	<%= f.label :state %>
+	<%= f.text_field :state %>
+	<%= f.label :zip_code %>
+	<%= f.text_field :zip %>
+	</div>
+	<%= f.label :phone %>
+	<%= f.text_field :phone, data: { trigger: "change", rangelength: "[10,10]"} %>
+	<%= f.label :open_time %>
+	<%= f.select(:open_time, options_for_select([["5 AM", 5], ["6 AM", 6], ["7 AM", 7], ["8 AM", 8], ["9 AM", 9], ["10 AM", 10], ["11 AM", 11], ["12 PM", 12], ["1 PM", 13], ["2 PM", 14], ["3 PM", 15], ["4 PM", 16]])) %>
+	<%= f.label :close_time %>
+	<%= f.select(:close_time, options_for_select([["5 PM", 17], ["6 PM", 18], ["7 PM", 19], ["8 PM", 20], ["9 PM", 21], ["10 PM", 22], ["11 PM", 23], ["12 AM", 24], ["1 AM", 1], ["2 AM", 2], ["3 AM", 3], ["4 AM", 4], ["5 AM", 5], ["6 AM", 6]])) %><br/>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<%= f.label :category_tokens, "Categories" %>
+	<%= f.text_field :category_tokens, "data-pre" => @restaurant.categories.map(&:attributes).to_json %>
+	<%= f.label :total_number_of_tables %>
+	<%= f.number_field :table_qty %>
+	<%= f.label :upload_image %>
+	<%= f.file_field :image %>
+	<%= f.label :remote_image_url, "or image URL:" %>
+	<%= f.text_field :remote_image_url %>
+	<%= f.label :upload_menu %>
+	<%= f.file_field :menu %><br/><br/>
+	<%= f.submit "Update Restaurant" %>
+<% end %>

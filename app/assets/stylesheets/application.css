@@ -11,3 +11,149 @@
  *= require_self
  *= require_tree .
  */
+
+
+ body {
+   padding-top: 20px;
+   padding-bottom: 60px;
+ }
+
+ /* Custom container */
+ .container {
+   margin: 0 auto;
+   max-width: 1000px;
+ }
+ .container > hr {
+   margin: 60px 0;
+ }
+
+ /* Main marketing message and sign up button */
+ .jumbotron {
+   margin: 80px 0;
+   text-align: center;
+ }
+ .jumbotron h1 {
+   font-size: 100px;
+   line-height: 1;
+ }
+ .jumbotron .lead {
+   font-size: 24px;
+   line-height: 1.25;
+ }
+ .jumbotron .btn {
+   font-size: 21px;
+   padding: 14px 24px;
+ }
+
+ /* Supporting marketing content */
+ .marketing {
+   margin: 60px 0;
+ }
+ .marketing p + h4 {
+   margin-top: 28px;
+ }
+
+
+
+/* Restaurants index page */
+
+.restaurants div {
+	display: inline-block;
+	margin: 0px;
+}
+
+.restaurants .restaurant {
+	margin: 15px 10px 15px 10px;
+	text-align: center;
+	
+}
+
+.restaurant-address {
+	font-size: 12px;
+}
+
+
+
+/* Restaurant show page */
+
+.show-header .header div {
+	display: inline-block;
+}
+
+.restaurant-show {
+	text-align: center;
+}
+
+
+body div.content div#image {
+	border: 25px solid;
+}
+
+
+.edit-delete {
+	float: right;
+	font-size: 16px;
+}
+
+
+.google-map img {
+    display: block;
+    margin: 0 auto;
+}
+
+.restaurant-description {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.restaurant-show-address {
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+/* Restaurants index */
+
+h1 {
+	text-align: center;
+}
+
+.categories {
+	text-align: center;
+}
+
+
+
+/* Reservation new */a
+
+.reservation-form  {
+	text-align: center;
+}
+
+.simple_captcha {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+
+/* Restaurant form */
+
+.new-restaurant-form {
+	text-align: center;
+}
+
+.new-restaurant-form .category-tokens {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
