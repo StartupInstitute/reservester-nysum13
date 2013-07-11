@@ -20,13 +20,11 @@
           <td><%= restaurant.user.name%></td>
           <td>
             <%- if current_user %>
-              <%- if restaurant.is_user?(current_user) %>
                 <div class="span1" id="options">
                   <div><%= link_to "Reservations", restaurant_reservations_path(restaurant), class:"btn btn-mini"%></div>
                   <div><%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %></div>
                   <div><%= link_to "Delete", restaurant, confirm: "Are you sure you want to delete?", method: :delete, class:"btn btn-danger btn-mini"%></div>
                 </div>
-              <% end %>
             <%- else %>
               <%= link_to "Make Reservation", new_restaurant_reservation_path(restaurant), class:"btn btn-mini" %>
             <% end %>

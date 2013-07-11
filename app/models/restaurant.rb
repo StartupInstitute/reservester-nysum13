@@ -4,7 +4,7 @@ class Restaurant < ActiveRecord::Base
   acts_as_gmappable
   serialize :calendar
 
-  belongs_to :owner
+  belongs_to :user
   has_many :reservations
   has_many :categorizations
   has_many :categories, through: :categorizations
@@ -21,8 +21,8 @@ class Restaurant < ActiveRecord::Base
     "#{self.address}" 
   end
 
-  def is_owner?(owner)
-    owner.id == owner_id
+  def is_user?(user)
+    user.id == user_id
   end
 
 
