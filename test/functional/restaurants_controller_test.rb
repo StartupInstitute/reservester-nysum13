@@ -20,7 +20,7 @@ class RestaurantsControllerTest < ActionController::TestCase
 
   test "should create restaurant" do
     assert_difference('Restaurant.count') do
-      sign_in Owner.first
+      sign_in user.first
       post :create, restaurant: { name:@restaurant.name, address: @restaurant.address, phone: @restaurant.phone, description: @restaurant.description}
     end
 

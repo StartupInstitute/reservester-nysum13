@@ -17,10 +17,10 @@
           <td><%= image_tag restaurant.photo.thumbnail.url if restaurant.photo? %></td>
           <td><%= link_to restaurant.name, restaurant %></td>
           <td><%= restaurant.address %></td>
-          <td><%= restaurant.owner.name%></td>
+          <td><%= restaurant.user.name%></td>
           <td>
-            <%- if current_owner %>
-              <%- if restaurant.is_owner?(current_owner) %>
+            <%- if current_user %>
+              <%- if restaurant.is_user?(current_user) %>
                 <div class="span1" id="options">
                   <div><%= link_to "Reservations", restaurant_reservations_path(restaurant), class:"btn btn-mini"%></div>
                   <div><%= link_to "Edit", edit_restaurant_path(restaurant), class:"btn btn-mini" %></div>
@@ -37,6 +37,6 @@
   </table>
 </div>
 <div class="span2" id="index_bar">
-  <%= link_to 'New Restaurant', new_restaurant_path, class:"btn" if owner_signed_in? %>
+  <%= link_to 'New Restaurant', new_restaurant_path, class:"btn" if user_signed_in? %>
   <%= link_to "Categories", categories_path, class:"btn"%>
 </div>

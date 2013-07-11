@@ -20,12 +20,12 @@
             <ul class="nav">
             </ul>
             <ul class="nav pull-right">
-              <% if owner_signed_in? %>
+              <% if user_signed_in? %>
                 <li><%= link_to "Dashboard", dashboard_path %></li>
-                <li><%= link_to("Profile", edit_owner_registration_path) %></li>
-                <li><%= link_to("Logout", destroy_owner_session_path, :method => :delete) %></li>
+                <li><%= link_to("Profile", edit_user_registration_path) %></li>
+                <li><%= link_to("Logout", destroy_user_session_path, :method => :delete) %></li>
               <% else %>
-                <li><%= link_to("Sign In", owner_session_path, :method => :create) %></li>
+                <li><%= link_to("Sign In", user_session_path, :method => :create) %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->

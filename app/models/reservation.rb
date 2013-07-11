@@ -6,9 +6,9 @@ class Reservation < ActiveRecord::Base
   validates :name, presence: true
   validates :date, presence: true
   validates :time, presence: true
+  validate :free_table
 
-  def return_restaurant_name
-  	return :restaurant.name
+  def free_table
+  	errors.add(:base, "Restaurant does not have enough tables!") if (self.restaurant.max_tables < self.restaurant.reservations.count+1)
   end
-
 end

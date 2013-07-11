@@ -1,4 +1,4 @@
-class Owner < ActiveRecord::Base
+class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -11,6 +11,6 @@ class Owner < ActiveRecord::Base
   validates :email, presence: true
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :role
   # attr_accessible :title, :body
 end

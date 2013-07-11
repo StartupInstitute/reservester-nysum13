@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  skip_before_filter :authenticate_owner!, :only => [:index, :show]
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
 
   def index
     @restaurants = Restaurant.all
@@ -18,13 +18,13 @@ class RestaurantsController < ApplicationController
   def edit
     @restaurant = Restaurant.find(params[:id])
 
-    if !@restaurant.is_owner?(current_owner)
-      redirect_to @restaurant, notice: 'You are not the owner!'
+    if !@restaurant.is_user?(current_user)
+      redirect_to @restaurant, notice: 'You are not the user!'
     end
   end
 
   def create
-    @restaurant = current_owner.restaurants.new(params[:restaurant])
+    @restaurant = current_user.restaurants.new(params[:restaurant])
 
     if @restaurant.save
       redirect_to @restaurant, notice: 'Restaurant was successfully created.'

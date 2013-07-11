@@ -3,11 +3,11 @@ Reservester::Application.routes.draw do
 
   get "categories/show"
 
-  devise_for :owners
+  devise_for :users
 
-  get '/dashboard' => 'owners#dashboard', :as => :dashboard
+  get '/dashboard' => 'users#dashboard', :as => :dashboard
 
-  resources :owners 
+  resources :users 
   resources :categories, only: [:index, :show]
 
   resources :restaurants do

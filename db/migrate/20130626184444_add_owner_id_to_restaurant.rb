@@ -1,5 +1,5 @@
-class AddOwnerIdToRestaurant < ActiveRecord::Migration
+class AdduserIdToRestaurant < ActiveRecord::Migration
   def change
-  	add_column :restaurants, :owner_id, :integer
+  	add_column :restaurants, :user_id, :integer
   end
 end

@@ -16,6 +16,12 @@
     <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %></div>
 
+    <div><%= f.radio_button(:role, "patron") %>
+      <%= f.label(:role_patron, "Patron") %>
+      <%= f.radio_button(:role, "owner") %>
+      <%= f.label(:role_owner, "Owner") %>
+    </div>
+
     <div><%= f.submit "Sign up" %></div>
   <% end %>
 
