@@ -21,7 +21,6 @@ class RestsController < ApplicationController
 
   def edit
     @rest = Rest.find(params[:id])
-    @rest = Rest.find(params[:id])
   end
 
   def show
