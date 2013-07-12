@@ -1,2 +1,15 @@
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
+<h1>New Reservation for <%=@rest.name %></h1>
+
+<table class="table table-bordered">
+<tr>
+	<td><%="User Name"%></td>
+	<td><%="Reservation Date"%></td>
+	<td><%="Reservation Time"%></td>
+</tr>
+
+<tr>
+	<td><%= @reservation.username %></td>
+	<td><%= @reservation.reservation_time.strftime("%a, %b %d, %Y") %></td>
+	<td><%= @reservation.reservation_time.strftime("%I:%M %p") %></td>
+</tr>
+</table>

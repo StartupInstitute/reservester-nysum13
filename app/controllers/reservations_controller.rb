@@ -15,13 +15,14 @@ class ReservationsController < ApplicationController
     @reservation = rest.reservations.new(params[:reservation])
 
     if rest.save
-    redirect_to rest_reservation_path(rest, @reservation)
+    redirect_to rest_reservation_path(rest, @reservation), :notice => "Reservation Created"
   else
       render 'new'
     end
   end
 
  def show
+  @rest = Rest.find(params[:rest_id])
   @reservation = Reservation.find(params[:id])
  end
 
