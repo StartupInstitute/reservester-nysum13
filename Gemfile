@@ -11,6 +11,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
   gem 'less-rails'
+  gem 'jquery-ui-rails'
 end
 
 group :development do
@@ -32,6 +33,7 @@ gem 'will_paginate'
 gem 'gmaps4rails'
 gem 'recaptcha' , :require => 'recaptcha/rails'
 gem 'devise'
+gem 'devise_rpx_connectable'
 gem 'parsley-rails'
 gem 'jquery-rails'
 gem 'fog'
