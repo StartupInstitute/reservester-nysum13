@@ -16,13 +16,14 @@
          
          <div class="hero-unit">
          <h1>RESTAURANTS</h1>
-         <p>The place where you can find all your faovurites restaurans</p>
+         <p>The place where you can find your favorite restaurans</p>
          </div><!-- .hero-unit -->
    <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
   <% if owner_signed_in? %>
   <%= link_to "log out", destroy_owner_session_path, :method => :delete %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= link_to "edit owner account", edit_owner_registration_path%><br />
+  <%= link_to "DASHBOARD", dashboard_index_path %>
 
 <% else %>
 <%= link_to "Sign up", new_owner_registration_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

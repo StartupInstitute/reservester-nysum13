@@ -27,7 +27,9 @@
  	<%= image_tag @restaurant.image_url.to_s %>
  	<%= image_tag @restaurant.pdf_url.to_s %>
  </p>
- 
+
+
+<td><%= link_to "create a reservation", new_restaurant_reservation_path(@restaurant.id) %></td> 
 <%= link_to 'Back', restaurants_path %>
 <%= link_to 'Edit', edit_restaurant_path %>
 <%= link_to 'Destroy', restaurant_path, confirm: "Are you sure?", method: :delete %>

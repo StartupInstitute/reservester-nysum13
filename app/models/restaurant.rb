@@ -3,6 +3,6 @@ class Restaurant < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   mount_uploader :pdf, PdfUploader
   belongs_to :owner
-
+  has_many :reservations
 
 end
