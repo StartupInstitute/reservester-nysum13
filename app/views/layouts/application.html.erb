@@ -2,11 +2,34 @@
 <html>
 <head>
   <title>Reservester</title>
+  <meta charset="utf-8">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="http://flip.hr/css/bootstrap.min.css">
 </head>
 <body>
+	<div class="container">
+         
+         <div class="hero-unit">
+         <h1>RESTAURANTS</h1>
+         <p>The place where you can find your favorite restaurans</p>
+         </div><!-- .hero-unit -->
+   <script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+  <% if owner_signed_in? %>
+  <%= link_to "log out", destroy_owner_session_path, :method => :delete %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to "edit owner account", edit_owner_registration_path%><br />
+  <%= link_to "DASHBOARD", dashboard_index_path %>
+
+<% else %>
+<%= link_to "Sign up", new_owner_registration_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to "Log in", new_owner_session_path %><br />
+<% end %>
+
 
 <%= yield %>
 

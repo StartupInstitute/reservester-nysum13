@@ -1,0 +1,25 @@
+<h1>Confirmation of your reservation</h1>
+<p>
+  <b>Name:</b>
+  <%= @reservation.name %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @reservation.email %>
+</p>
+<p>
+  <b>Date:</b>
+  <%= @reservation.date %>
+
+  <%#= @reservation.due_at.strftime("due on %B %d at %I:%M %p") %></li>
+</p>
+<p>
+  <b>Time:</b>
+  <%= @reservation.time %>
+
+  <%#= @reservation.due_at.strftime("due on %B %d at %I:%M %p") %></li>
+</p>
+<p>
+  <b>Phone:</b>
+  <%= @reservation.phone %>
+</p>

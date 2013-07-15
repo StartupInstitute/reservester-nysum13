@@ -1,0 +1,19 @@
+<%= form_for [@reservation.restaurant, @reservation] do |f| %>
+
+ 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+    <%= f.label :time %><br />
+    <%= f.time_select :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
