@@ -10,4 +10,10 @@ class Reservation < ActiveRecord::Base
         scoped
      end
   end
+
+  def self.make_expired
+
+  end
+
+
 end

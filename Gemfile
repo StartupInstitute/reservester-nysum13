@@ -42,3 +42,4 @@ gem 'carrierwave'
 gem 'therubyracer'
 gem 'nokogiri'
 gem 'figaro'
+gem 'whenever' , require: false
