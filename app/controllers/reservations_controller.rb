@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   
   def index
   	@rest = Rest.find(params[:rest_id])
-  	@reservations = @rest.reservations.all
+  	@reservation = @rest.reservations.all
   end
 
  def new
@@ -14,8 +14,8 @@ class ReservationsController < ApplicationController
     rest = Rest.find(params[:rest_id])
     @reservation = rest.reservations.new(params[:reservation])
 
-    if rest.save
-    redirect_to rest_reservation_path(rest, @reservation), :notice => "Reservation Created"
+    if @reservation.save
+    redirect_to(rest_reservation_path(rest, @reservation), :notice => "Reservation Created")
   else
       render 'new'
     end
@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
 
  def show
   @rest = Rest.find(params[:rest_id])
-  @reservation = Reservation.find(params[:id])
- end
-
+  @reservation = @rest.reservations.find(params[:id]) 
+  end
 end
+
