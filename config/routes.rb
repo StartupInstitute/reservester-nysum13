@@ -1,10 +1,9 @@
 Reservester::Application.routes.draw do
-  resources :categories
-
 
   root :to => 'restaurants#index'
 
   devise_for :owners
+  resources :categories
   resources :restaurants do
   	resources :reservations
   end
