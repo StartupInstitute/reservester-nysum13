@@ -34,6 +34,16 @@
       </div>
   </div>
 
+  <div class="control-group">
+    <%= f.label :category, :class => 'control-label' %>
+      <div class="controls">
+        <% Category.all.each do |category| %>
+          <%= radio_button_tag "restaurant[category_ids][]", category.ids, :class => 'radio_button' %>
+          <%= category.name.humanize %><br>
+        <% end %>
+      </div>
+  </div>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
