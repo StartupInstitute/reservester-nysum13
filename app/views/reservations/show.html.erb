@@ -3,7 +3,7 @@
 <div>
 <p>Reserver Name : <%= @reservation.reserver_name %> </p>
 <p>Date of Reservation : <%= @reservation.reservation_date.to_s(:long) %>  </p>
-<p>Time of Reservation : <%= @reservation.reservation_time %> </p>
+<p>Time of Reservation : <%= @reservation.reservation_time.strftime("%I:%M %p")  %> </p>
 </div>
 <%= link_to 'Back', restaurant_reservations_path(@reservation.restaurant) %> |
 <%= link_to 'Edit', edit_restaurant_reservation_path(@reservation.restaurant, @reservation) %>
