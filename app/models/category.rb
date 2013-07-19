@@ -5,7 +5,10 @@ class Category < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  has_many :restaurants, through: :categories_restaurants
-  has_many :categories_restaurants
+  has_many :categorizations, dependent: :destroy
+  has_many :restaurants, through: :categorizations
+  
+
+  # accepts_nested_attributes_for :categories_restaurants, allow_destroy: true
 
 end

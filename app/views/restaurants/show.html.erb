@@ -30,6 +30,12 @@
   <%= @restaurant.owner.name %>
 </p>
 
+<p>
+  <b>Categories</b>
+  <%= @restaurant.categories.collect {|r| r.name}.to_sentence %>
+
+</p>
+
 <% if @restaurant.belong_to?(current_owner) %>
   <p>
     <h3>Reservations</h3>

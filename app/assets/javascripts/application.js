@@ -15,3 +15,14 @@
 //= require bootstrap
 //= require_tree .
 //= require parsley
+
+
+
+/*$(document).ready(function () {
+  $.noConflict();
+
+  $('#restaurant_categories').multiSelect();
+
+  alert("from coffee file END");
+});
+*/

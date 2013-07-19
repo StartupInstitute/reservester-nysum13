@@ -1,2 +1,0 @@
-== Welcome to Reservester - Open Table Clone project built while at Startup Institute
-

@@ -51,12 +51,13 @@ class RestaurantsController < ApplicationController
 	# Save update Restaurant
   def update
     @restaurant = Restaurant.find(params[:id])
+    #@category = @restaurant.categories.build(params[:category]) unless params[:category][:name].blank?
 
     respond_to do |format|
       if @restaurant.update_attributes(params[:restaurant])
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", error: 'Restaurant not updated' }
       end
     end
   end
