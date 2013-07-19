@@ -12,12 +12,12 @@ class Owner < ActiveRecord::Base
   # attr_accessible :title, :body
 
   #Validations
-  validates :name,	:presence => true,
-  					:with => /^[^0-9`!@#\$%\^&*+_=]+$/
+  validates :name,	:presence => true
 
   validates :email, :presence => true, 
-  					:uniqueness => true, 
-  					:format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
+  					:uniqueness => true,
+            :email_format => {:message => 'invalid address'} 
+  					# :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
 
 	def has_ownership?(restaurant)
 		self.restaurants.find_by_id(restaurant.id).present?

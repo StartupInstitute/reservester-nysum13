@@ -20,6 +20,9 @@ group :test, :development do
   gem 'debugger'
 end
 
+group :production do
+  ruby '2.0.0'
+end
 gem 'jquery-rails'
 gem 'rmagick'
 gem 'carrierwave'
