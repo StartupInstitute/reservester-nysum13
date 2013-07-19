@@ -15,11 +15,6 @@ end
 
 gem 'jquery-rails'
 
-group :development, :test do
-	#gem 'debugger'
-	gem 'therubyracer'
-end
-
 gem 'bootstrap-sass'
 
 gem 'carrierwave'
@@ -35,11 +30,13 @@ gem 'figaro'
 
 gem 'devise'
 
-# Gems for testing
+# Gems for testing and some others
 group :development, :test do
 	gem 'rspec-rails'
 	gem "factory_girl_rails"
 	gem 'guard-rspec'
+
+	gem 'thin'
 end
 
 group :test do
