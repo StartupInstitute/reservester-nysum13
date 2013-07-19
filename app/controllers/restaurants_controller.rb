@@ -21,7 +21,6 @@ class RestaurantsController < ApplicationController
 	end
 	
 	def new
-		flash[:notice] = "Please log in as a restaurant owner to create a new restaurant."
 		@restaurant = current_owner.restaurants.new
 	end
 	
