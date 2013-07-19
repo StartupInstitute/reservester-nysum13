@@ -67,13 +67,6 @@ class RestaurantsController < ApplicationController
 		end 
 	end
 
-	def dashboard
-		@restaurants = current_owner.restaurants.all
-
-		respond_to do |format|
-			format.html
-		end
-	end
 private
 
 	def check_if_owner 

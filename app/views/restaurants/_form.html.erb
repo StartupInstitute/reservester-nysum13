@@ -38,7 +38,7 @@
     <%= f.label :category, :class => 'control-label' %>
       <div class="controls">
         <% Category.all.each do |category| %>
-          <%= radio_button_tag "restaurant[category_ids][]", category.ids, :class => 'radio_button' %>
+          <%= radio_button_tag "restaurant[category_ids][]", category.id, :class => 'radio_button' %>
           <%= category.name.humanize %><br>
         <% end %>
       </div>

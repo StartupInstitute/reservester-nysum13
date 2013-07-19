@@ -9,5 +9,5 @@ Reservester::Application.routes.draw do
   end
 
   # Owner specific pages
-  get '/dashboard', :to => 'restaurants#dashboard'
+  match '/dashboard', :to => 'owners#dashboard'
 end
