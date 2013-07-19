@@ -6,10 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-owner1 = Owner.new(:name => 'Test Owner1', :email => 'egm0921@gmail.com', :password => 'test123', :password_confirmation => 'test123')
-owner1.save!(:validate => false)
-owner2 = Owner.new(:name => 'Test Owner2', :email => 'team.reservester@gmail.com', :password => 'test123', :password_confirmation => 'test123')
-owner2.save!(:validate => false)
+owner1 = Owner.create(:name => 'Seeded Owner3', :email => 'seedOwner3@gmail.com', :password => 'test12345', :password_confirmation => 'test12345')
+owner2 = Owner.create(:name => 'Seeded Owner4', :email => 'seedOwner4@gmail.com', :password => 'test12345', :password_confirmation => 'test12345')
 
 owner1_restaurant_list = [
 	["Black Iron Burger", "212-677-6067", "540 E 5th St New York, NY 10009", "Great burger and bar in the East Village. Iron Horse is their signature burger."],
