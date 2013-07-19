@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require parsley
 //= require jquery.ui.datepicker
+//= require common
 //= require_tree .
