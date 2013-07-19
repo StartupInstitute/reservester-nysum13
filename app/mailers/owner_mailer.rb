@@ -1,9 +1,10 @@
 class OwnerMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "admin@reservester.com"
 
-  def reservation_email(owner)
-  	@owner = owner
-  	@rest = 'http://example.com/login'
-  	mail(to: @owner.email, subject: 'Welcome to Reservester')
+  def reservation_email(reservation)
+  	@reservation = reservation
+  	@owner_name = reservation.rest.owner.name
+  	@owner_email = reservation.rest.owner.email
+  	mail(to: @owner_email, subject: 'Reservation Received')
   end
 end

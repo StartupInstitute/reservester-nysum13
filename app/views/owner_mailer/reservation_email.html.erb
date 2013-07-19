@@ -4,8 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1><%= @owner.name %>, A New Reservation has been made.</h1>
-    <p>A new reservation has been made at
+    <h1><%= @owner_name %>, A New Reservation has been made.</h1>
+    <p>A new reservation has been made at <%=@reservation.rest.name  %>.
+    </p>
+    <p> To view this reservation, select this link.
     </p>
   </body>
 </html>
