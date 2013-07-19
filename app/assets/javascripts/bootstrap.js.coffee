@@ -1,4 +1,5 @@
-jQuery ->
-  $("a[rel=popover]").popover()
-  $(".tooltip").tooltip()
-  $("a[rel=tooltip]").tooltip()
+k = jQuery.noConflict()
+k ->
+  k("a[rel=popover]").popover()
+  k(".tooltip").tooltip()
+  k("a[rel=tooltip]").tooltip()

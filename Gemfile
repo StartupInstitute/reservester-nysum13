@@ -31,7 +31,7 @@ end
 
 gem 'will_paginate'
 gem 'gmaps4rails'
-gem 'recaptcha' , :require => 'recaptcha/rails'
+#gem 'recaptcha' , :require => 'recaptcha/rails'
 gem 'devise'
 gem 'devise_rpx_connectable'
 gem 'parsley-rails'
