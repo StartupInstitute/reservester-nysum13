@@ -1,4 +1,4 @@
-<h1>New Reservation for <%=@rest.name %></h1>
+<h1>New Reservation for </h1>
 
 <table class="table table-bordered">
 <tr>
@@ -8,7 +8,7 @@
 </tr>
 
 <tr>
-	<td><%= @reservation.username %></td>
+	<td><%= @reservation.username %> </td>
 	<td><%= @reservation.reservation_time.strftime("%a, %b %d, %Y") %></td>
 	<td><%= @reservation.reservation_time.strftime("%I:%M %p") %></td>
 </tr>

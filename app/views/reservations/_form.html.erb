@@ -1,4 +1,4 @@
-<%= form_for [@rest, @reservation] do |r| %>
+<%= form_for ([@reservation.rest, @reservation]) do |r| %>
 
   <%= r.label :username %>
   <%= r.text_field :username %><br>

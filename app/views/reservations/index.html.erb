@@ -1,4 +1,4 @@
-<h1><center><%=@rest.name%> Reservations</center></h1>
+<h1><center> <%=  %>Reservations</center></h1>
 
 <table class="table table-bordered">
 <tr>
@@ -7,9 +7,9 @@
 	<td><%="Reservation Time"%></td>
 </tr>
 
-	<% @rest.reservations.each do |r| %>
+	<% @reservations.each do |r| %>
 <tr>
-	<td><%= r.username %></td>
+	<td><%= r.username %> | <%= link_to 'Delete', [r.rest, r], :method => :delete %></td>
 	<td><%= r.reservation_time.strftime("%a, %b %d, %Y") %></td>
 	<td><%= r.reservation_time.strftime("%I:%M %p") %></td>
 </tr>
