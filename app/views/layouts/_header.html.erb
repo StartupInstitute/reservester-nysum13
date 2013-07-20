@@ -13,22 +13,20 @@
             <li><input type="text" class="search-query" placeholder="Search"></li>
           </form>
           <% if owner_signed_in? %>
+              <li>Hello,<%= @owner.name %> !</li>
+              <li><%= link_to "Dashboard", dashboard_path %></li>
               <li><%= link_to "Edit Profile", edit_owner_registration_path %></li>
               <li><%= link_to "Logout", destroy_owner_session_path , method: :delete %></li>
-          <% elsif user_signed_in? %>
-              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-              <li><%= link_to "Logout", destroy_user_session_path , :method => :delete %></li>
-          <% else %>
+         <% else %>
               <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Log in or Register
                     <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu" role="menu aria-labelledby="dLabel">
-                    <li><%= link_to "User Login", new_user_session_path %></li>
-                    <li><%= link_to "Owner Login", new_owner_session_path %></li>
+                    <li><%= link_to "Log In Here", new_owner_session_path %></li>
+                    <li><%= link_to "Register Here", new_owner_registration_path %></li>
                   </ul>
               </li>
-              <li><%= link_to "Register", new_owner_registration_path %></li>
           <% end %>
         </ul>
       </div>
