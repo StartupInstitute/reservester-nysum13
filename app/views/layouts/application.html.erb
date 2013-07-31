@@ -12,23 +12,33 @@
 <link rel="stylesheet" href="http://flip.hr/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container">
-         
-         <div class="hero-unit">
-         <h1>RESTAURANTS</h1>
-         <p>The place where you can find your favorite restaurans</p>
-         </div><!-- .hero-unit -->
-   <script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<div class="navbar navbar-fixed-top">  
+  <div class="navbar-inner">  
+    <div class="container">  
+    <!--navigation does here--> 
+
+    <ul class="nav">  
+  <li class="active">  
+    <a class="brand" href="#">OPEN YOUR TABLE</a>
+
   <% if owner_signed_in? %>
-  <%= link_to "log out", destroy_owner_session_path, :method => :delete %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <%= link_to "edit owner account", edit_owner_registration_path%><br />
-  <%= link_to "DASHBOARD", dashboard_index_path %>
+  <li><%= link_to "new", new_restaurant_path %></li>
+  <li><%= link_to "log out", destroy_owner_session_path, :method => :delete %></li></li>
+  <li><%= link_to "account", edit_owner_registration_path%><br /></li>
+  <li><%= link_to "DASHBOARD", dashboard_index_path %></li>
 
 <% else %>
-<%= link_to "Sign up", new_owner_registration_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= link_to "Log in", new_owner_session_path %><br />
-<% end %>
+<li><%= link_to "Sign up", new_owner_registration_path %></li>
+<li><%= link_to "Log in", new_owner_session_path %><br /></li>
+<% end %> 
+      <li><%= link_to 'home', restaurants_path %></li>
+  
+
+    </div>  
+  </div>  
+</div>  
+
+ 
 
 
 <%= yield %>

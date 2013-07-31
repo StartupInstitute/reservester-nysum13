@@ -11,24 +11,22 @@
   </div>
   <% end %> -->
  
-  <div class="field">
-    <%= f.label :name %><br />
+  <div class="span12" style="text-align:center; margin: 0 auto;" >
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address %>
     <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ 
   <div>
     <%= f.file_field :image %>
   </div>
   <div>
     <%= f.file_field :pdf %>
+  </div> 
+   <div class="actions">
+    <%= f.submit %>
+  </div> 
+</div>
 <% end %>

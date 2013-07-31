@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
-
-group :production do
-	gem 'pg'
-
-end
+gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -21,8 +16,7 @@ group :development do
 end
 
 gem 'jquery-rails'
-
 gem 'rmagick'
-gem 'debugger'
 gem 'carrierwave'
 gem 'devise'
+gem "figaro"
