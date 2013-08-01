@@ -20,3 +20,4 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'devise'
 gem "figaro"
+gem 'masonry-rails'

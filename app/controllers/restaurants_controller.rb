@@ -1,33 +1,33 @@
 class RestaurantsController < ApplicationController
   before_filter :authenticate_owner!, :except => [:show, :index] 
-   
   before_filter :check_if_owner!, :only => [:edit, :update, :destroy]
 
  def index
     @restaurants = Restaurant.all
-      respond_to do |format|
+    respond_to do |format|
     format.html  # show.html.erb
     format.json  { render :json => @restaurant }
-    end
   end
+end
 
  def show
-       @restaurant = Restaurant.find(params[:id])
-          respond_to do |format|
-    format.html  # show.html.erb
-    format.json  { render :json => @restaurant }
-    end
-  end
+  @restaurant = Restaurant.find(params[:id])
+  respond_to do |format|
+  format.html  # show.html.erb
+  format.json  { render :json => @restaurant }
+end
+
+end
 
  def new
-       @restaurant = Restaurant.new
-         respond_to do |format|
-    format.html  # new.html.erb
-    format.json  { render :json => @restaurant }
-  end
+  @restaurant = Restaurant.new
+  respond_to do |format|
+  format.html  # new.html.erb
+  format.json  { render :json => @restaurant }
  end
+end
 
- def create
+def create
   
   @restaurant = Restaurant.new(params[:restaurant])
   @restaurant.owner_id = current_owner.id

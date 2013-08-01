@@ -1,17 +1,13 @@
 
-
-<div style="margin-top: 150px;">
+<br>
+<br>
+    <div id="masonry-container" >
 	<% @restaurants.each do |restaurant| %>
-<ul class="thumbnails">
-<li class="span4">
-<div class="thumbnail">
+
 <%= link_to restaurant.name, restaurant_path(restaurant) %>
 <%= image_tag restaurant.image_url(:thumb).to_s %>
-</div>
-</li>
-</div><br>
-</ul>
 
 <% end %>
+
 
 

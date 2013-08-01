@@ -77,6 +77,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.0)
+      rails
     mime-types (1.23)
     multi_json (1.7.7)
     orm_adapter (0.4.0)
@@ -142,6 +144,7 @@ DEPENDENCIES
   devise
   figaro
   jquery-rails
+  masonry-rails
   pg
   rails (= 3.2.13)
   rmagick
